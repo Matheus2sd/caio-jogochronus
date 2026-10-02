@@ -13,6 +13,7 @@ Estado verificado em 2026-10-02 no clone atual, com Godot 4.5.1 stable. COMPLETE
 | TODO | Partida manual do começo ao fim | Jogar sem teleporte nem derrota programática, revisar ritmo, colisões, acessibilidade, gamepad, áudio e legibilidade de todas as áreas. |
 | TODO | Menus e progressão completos | Há menu, pausa, controles, configurações e equipamento de consulta. A tela de Progressão, conflitos de remapeamento e cobertura completa de configurações oficiais ainda faltam. |
 | COMPLETE | Persistência em disco isolada | `game/tests/save_io.gd` gravou e leu campanha, checkpoint, backup, marca e configurações em `tools/local/profile` via `user://`; também validou conclusão repetida e migração de save v1 completo sem duplicar a marca. |
+| COMPLETE | Reimportação a partir de cópia limpa | `git archive` de `cadcfb4` sem `.godot/` foi extraído em `tools/local/`; o validador reimportou 25 recursos e passou smoke/fluxo/save. |
 | TODO | Importação após clone limpo | Repetir `tools/validate_chapter1.ps1` em um clone novo quando esta milestone estiver publicada. |
 | TODO | Encerramento editorial e polimento | Revisar falas, gesto de Daigo sobrevivente, apresentação da marca e todos os assets finais antes de declarar o capítulo completo. |
 

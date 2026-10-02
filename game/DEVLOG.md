@@ -13,6 +13,7 @@
 - `game/tests/save_io.gd` validou gravação e leitura reais em perfil `user://` isolado: campanha nova, checkpoint, backup anterior, marca e opções. `tools/validate_chapter1.ps1 -Visual` executou importação, smoke, fluxo, save e captura visual com código 0; resolve os caminhos pela localização do script e redireciona `APPDATA`/`LOCALAPPDATA` para `tools/local/profile` apenas durante a execução.
 - No sandbox, a Godot imprime `Failed to read the root certificate store` mesmo com testes passando; isso afeta a leitura da store de certificados do sistema no ambiente restrito, e nenhum recurso do capítulo depende de rede. O aviso de saída de áudio permanece como TODO.
 - Revisão de código identificou que saves v1 já concluídos pulavam a nova marca. A retomada agora concede e persiste a marca ausente uma vez. `chapter_flow.gd` falhou antes da correção e passou depois; `save_io.gd` foi ampliado para chamar a conclusão real, recarregar o JSON, repetir a conclusão e migrar um save v1 completo em disco sem duplicação.
+- Após o commit `cadcfb4`, foi gerada uma cópia limpa somente dos arquivos rastreados (`git archive HEAD`) em `tools/local/`. Usando a Godot portátil externa à cópia, a importação inicial dos 25 recursos e os testes smoke/fluxo/save passaram. Isto verifica independência do cache e do diretório de trabalho anterior; um `git clone` em outro computador ainda deve ser revalidado quando disponível.
 
 ## 2026-10-02 — Auditoria e organização
 
