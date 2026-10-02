@@ -1,6 +1,6 @@
 # Questões e limites
 
-- TODO: executar uma partida humana contínua, sem acelerar deslocamento ou vitórias, antes de declarar o Capítulo I completo.
+- COMPLETE: percurso automatizado contínuo `chapter_playthrough.gd` chegou a `CAPÍTULO I — FIM` com deslocamento e golpes reais, sem teleporte nem derrota por código. TODO: executar uma partida humana contínua para julgar ritmo, dificuldade e leitura antes de declarar o Capítulo I completo.
 - TODO: ampliar remapeamento para entradas de controle e confirmar a navegação com gamepad real; o conflito entre teclas já oferece troca ou cancelamento.
 - COMPLETE: Progressão L1–L3 e bloqueio E1 verificados em teste automatizado; o teste injeta uma marca porque a primeira recompensa da campanha chega somente após o encerramento. TODO: validar a troca de marca por uma pessoa em descanso quando o fluxo de capítulos seguintes existir, sem implementar o Capítulo II agora.
 - COMPLETE: gravação, backup, marca única e migração de save v1 completo validados em `tools/local/profile` isolado. Os outros testes usam `--test` para preservar o save do usuário.
