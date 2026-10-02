@@ -1,0 +1,508 @@
+[
+  {
+    "file": "characters/ren/TEMP_poses.png",
+    "source": "01_PERSONAGENS/REN_JOVEM/Ren_Jovem_Folha_Producao.png",
+    "crop": [
+      [
+        433,
+        171,
+        535,
+        302
+      ],
+      [
+        749,
+        186,
+        893,
+        302
+      ],
+      [
+        910,
+        161,
+        1055,
+        302
+      ],
+      [
+        559,
+        191,
+        728,
+        302
+      ],
+      [
+        429,
+        348,
+        638,
+        482
+      ],
+      [
+        683,
+        348,
+        838,
+        482
+      ],
+      [
+        879,
+        355,
+        1041,
+        482
+      ],
+      [
+        559,
+        191,
+        728,
+        302
+      ]
+    ],
+    "size": [
+      768,
+      96
+    ],
+    "status": "TEMPORARY",
+    "pivot": [
+      48,
+      80
+    ],
+    "cell": [
+      96,
+      96
+    ],
+    "poses": [
+      "idle",
+      "run",
+      "jump",
+      "light",
+      "heavy",
+      "guard",
+      "hurt",
+      "down"
+    ]
+  },
+  {
+    "file": "characters/akio/TEMP_poses.png",
+    "source": "01_PERSONAGENS/AKIO_JOVEM/Akio_Jovem_Folha_Producao_01.png",
+    "crop": [
+      [
+        442,
+        174,
+        531,
+        263
+      ],
+      [
+        744,
+        186,
+        831,
+        263
+      ],
+      [
+        840,
+        171,
+        965,
+        263
+      ],
+      [
+        554,
+        313,
+        693,
+        400
+      ],
+      [
+        683,
+        306,
+        830,
+        400
+      ],
+      [
+        1043,
+        306,
+        1165,
+        400
+      ],
+      [
+        609,
+        450,
+        716,
+        529
+      ],
+      [
+        1068,
+        479,
+        1255,
+        530
+      ]
+    ],
+    "size": [
+      768,
+      96
+    ],
+    "status": "TEMPORARY",
+    "pivot": [
+      48,
+      80
+    ],
+    "cell": [
+      96,
+      96
+    ],
+    "poses": [
+      "idle",
+      "run",
+      "jump",
+      "light",
+      "heavy",
+      "guard",
+      "hurt",
+      "down"
+    ]
+  },
+  {
+    "file": "characters/daigo/TEMP_poses.png",
+    "source": "01_PERSONAGENS/DAIGO/Daigo_Folha_Producao_VISUAL.png",
+    "crop": [
+      [
+        17,
+        459,
+        90,
+        534
+      ],
+      [
+        182,
+        461,
+        269,
+        534
+      ],
+      [
+        285,
+        460,
+        380,
+        534
+      ],
+      [
+        822,
+        460,
+        932,
+        534
+      ],
+      [
+        1134,
+        459,
+        1251,
+        534
+      ],
+      [
+        1406,
+        458,
+        1518,
+        534
+      ],
+      [
+        13,
+        739,
+        115,
+        813
+      ],
+      [
+        92,
+        611,
+        154,
+        680
+      ]
+    ],
+    "size": [
+      768,
+      96
+    ],
+    "status": "TEMPORARY",
+    "pivot": [
+      48,
+      80
+    ],
+    "cell": [
+      96,
+      96
+    ],
+    "poses": [
+      "idle",
+      "run",
+      "jump",
+      "light",
+      "heavy",
+      "guard",
+      "hurt",
+      "down"
+    ]
+  },
+  {
+    "file": "enemies/human_base/TEMP_poses.png",
+    "source": "01_PERSONAGENS/INIMIGO_HUMANO/Inimigo_Humano_Base_Folha_Producao.png",
+    "crop": [
+      [
+        446,
+        194,
+        505,
+        278
+      ],
+      [
+        687,
+        193,
+        746,
+        278
+      ],
+      [
+        758,
+        193,
+        815,
+        278
+      ],
+      [
+        884,
+        194,
+        965,
+        278
+      ],
+      [
+        1194,
+        193,
+        1324,
+        278
+      ],
+      [
+        510,
+        327,
+        592,
+        424
+      ],
+      [
+        603,
+        341,
+        703,
+        424
+      ],
+      [
+        1254,
+        388,
+        1417,
+        424
+      ]
+    ],
+    "size": [
+      768,
+      96
+    ],
+    "status": "TEMPORARY",
+    "pivot": [
+      48,
+      80
+    ],
+    "cell": [
+      96,
+      96
+    ],
+    "poses": [
+      "idle",
+      "run",
+      "jump",
+      "light",
+      "heavy",
+      "guard",
+      "hurt",
+      "down"
+    ]
+  },
+  {
+    "file": "environments/present/TEMP_background.png",
+    "source": "02_CENARIOS_TILESETS/Tileset_Capitulo1_Primavera_Referencia.png",
+    "crop": [
+      482,
+      421,
+      1437,
+      649
+    ],
+    "size": [
+      640,
+      220
+    ],
+    "status": "TEMPORARY"
+  },
+  {
+    "file": "environments/echo/TEMP_background.png",
+    "source": "03_MUNDO_ECO_VFX/Mundo_Eco_Transformacao_Referencia.png",
+    "crop": [
+      1094,
+      435,
+      1429,
+      599
+    ],
+    "size": [
+      640,
+      220
+    ],
+    "status": "TEMPORARY"
+  },
+  {
+    "file": "environments/backgrounds/TEMP_arena.png",
+    "source": "01_PERSONAGENS/DAIGO/Daigo_Folha_Producao_VISUAL.png",
+    "crop": [
+      14,
+      872,
+      575,
+      1005
+    ],
+    "size": [
+      640,
+      220
+    ],
+    "status": "TEMPORARY"
+  },
+  {
+    "file": "environments/tilesets/TEMP_tiles.png",
+    "source": "02_CENARIOS_TILESETS/Tileset_Capitulo1_Primavera_Referencia.png",
+    "crop": [
+      [
+        26,
+        172,
+        51,
+        198
+      ],
+      [
+        120,
+        173,
+        146,
+        198
+      ],
+      [
+        368,
+        175,
+        393,
+        200
+      ],
+      [
+        120,
+        279,
+        144,
+        305
+      ],
+      [
+        120,
+        386,
+        144,
+        412
+      ],
+      [
+        286,
+        600,
+        314,
+        627
+      ],
+      [
+        264,
+        176,
+        286,
+        199
+      ],
+      [
+        25,
+        278,
+        51,
+        304
+      ]
+    ],
+    "size": [
+      128,
+      16
+    ],
+    "status": "TEMPORARY",
+    "cell": [
+      16,
+      16
+    ]
+  },
+  {
+    "file": "environments/props/TEMP_tree.png",
+    "source": "02_CENARIOS_TILESETS/Tileset_Capitulo1_Primavera_Referencia.png",
+    "crop": [
+      480,
+      160,
+      654,
+      337
+    ],
+    "size": [
+      122,
+      125
+    ],
+    "status": "TEMPORARY"
+  },
+  {
+    "file": "environments/props/TEMP_pine.png",
+    "source": "02_CENARIOS_TILESETS/Tileset_Capitulo1_Primavera_Referencia.png",
+    "crop": [
+      649,
+      160,
+      754,
+      337
+    ],
+    "size": [
+      78,
+      130
+    ],
+    "status": "TEMPORARY"
+  },
+  {
+    "file": "environments/props/TEMP_gate.png",
+    "source": "02_CENARIOS_TILESETS/Tileset_Capitulo1_Primavera_Referencia.png",
+    "crop": [
+      750,
+      210,
+      860,
+      340
+    ],
+    "size": [
+      85,
+      105
+    ],
+    "status": "TEMPORARY"
+  },
+  {
+    "file": "environments/props/TEMP_lantern.png",
+    "source": "02_CENARIOS_TILESETS/Tileset_Capitulo1_Primavera_Referencia.png",
+    "crop": [
+      856,
+      233,
+      908,
+      337
+    ],
+    "size": [
+      26,
+      52
+    ],
+    "status": "TEMPORARY"
+  },
+  {
+    "file": "environments/props/TEMP_house.png",
+    "source": "02_CENARIOS_TILESETS/Tileset_Capitulo1_Primavera_Referencia.png",
+    "crop": [
+      959,
+      162,
+      1149,
+      340
+    ],
+    "size": [
+      170,
+      156
+    ],
+    "status": "TEMPORARY"
+  },
+  {
+    "file": "environments/props/TEMP_fence.png",
+    "source": "02_CENARIOS_TILESETS/Tileset_Capitulo1_Primavera_Referencia.png",
+    "crop": [
+      1148,
+      292,
+      1293,
+      340
+    ],
+    "size": [
+      110,
+      36
+    ],
+    "status": "TEMPORARY"
+  }
+]
