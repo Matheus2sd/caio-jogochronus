@@ -34,7 +34,7 @@ try {
     & $godotExe --headless --editor --path $gameRoot --log-file $editorLog --quit
     if ($LASTEXITCODE -ne 0) { throw 'Falha na importação/editor Godot.' }
 
-    foreach ($name in @('chapter_smoke', 'chapter_flow', 'chapter_traversal', 'menu_smoke', 'save_io')) {
+    foreach ($name in @('chapter_smoke', 'chapter_flow', 'chapter_traversal', 'menu_smoke', 'progression_smoke', 'save_io')) {
         $logPath = Join-Path $localRoot "$name.log"
         $scriptPath = "res://tests/$name.gd"
         if ($name -eq 'save_io') {

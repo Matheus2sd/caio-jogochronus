@@ -326,6 +326,7 @@ func show_pause() -> void:
 	screen = "pause"
 	var box := menu_box("Pausa", "CAPÍTULO I / PRIMAVERA")
 	button(box,"Retomar",resume).grab_focus()
+	button(box,"Progressão",func(): show_progression("pause"))
 	button(box,"Equipamento",show_equipment)
 	button(box,"Controles",func(): show_controls("pause"))
 	button(box,"Configurações",func(): show_settings("pause"))
@@ -336,6 +337,38 @@ func resume() -> void:
 	clear_overlay()
 	get_tree().paused = false
 	screen = "game"
+
+func progression_editable() -> bool:
+	return is_instance_valid(world) and is_instance_valid(world.player) and not Save.progress.get("complete", false) and world.near_checkpoint() and not world.nearby_threat()
+
+func show_progression(back: String) -> void:
+	settings_return = back
+	screen = "progression"
+	var editable := progression_editable()
+	var box := menu_box("Progressão", "Marcas disponíveis: %d/3" % Save.available_marks(), true)
+	var cards := GridContainer.new()
+	cards.columns = 2
+	cards.add_theme_constant_override("h_separation", 8)
+	cards.add_theme_constant_override("v_separation", 8)
+	box.add_child(cards)
+	for entry in [["l1", "L1 · Resposta firme", "Resposta: 18 → 24 postura"],
+		["l2", "L2 · Respiração", "Após parry: +20% stamina por 1 s"],
+		["l3", "L3 · Corte econômico", "Forte: 18 → 15 stamina"],
+		["e1", "E1 · Passo sereno", "Capítulo IV · bloqueada"]]:
+		var key: String = entry[0]
+		var owned := Save.has_upgrade(key)
+		var state_text := "Equipada · remover" if owned else ("Bloqueada" if key == "e1" else ("Aplicar 1 marca" if Save.available_marks() > 0 else "Sem marca"))
+		var card := button(cards, "%s\n%s\n%s" % [entry[1], entry[2], state_text], func(): toggle_upgrade(key, back))
+		card.custom_minimum_size = Vector2(235, 75)
+		card.add_theme_stylebox_override("disabled", make_style(Color("18282b"), Color("63736e")))
+		card.add_theme_color_override("font_disabled_color", Color("c1c4bc"))
+		card.disabled = key == "e1" or not editable or (not owned and Save.available_marks() <= 0)
+	box.add_child(label("Alterações disponíveis no descanso" if not editable else "Aplicar e remover marcas sem custo no ponto seguro", 11))
+	button(box, "Voltar", func(): return_to(back)).grab_focus()
+
+func toggle_upgrade(key: String, back: String) -> void:
+	if progression_editable() and Save.set_upgrade(key, not Save.has_upgrade(key)):
+		show_progression(back)
 
 func show_equipment() -> void:
 	var box := menu_box("Equipamento", "Espada de Akio • arma fixa",true)
@@ -384,6 +417,8 @@ func return_to(back: String) -> void:
 	reset_rebind()
 	if back=="pause":
 		show_pause()
+	elif back=="complete":
+		show_complete()
 	else:
 		show_menu()
 
@@ -458,6 +493,7 @@ func show_complete() -> void:
 	var spacer := Control.new()
 	spacer.custom_minimum_size.y = 25
 	box.add_child(spacer)
+	button(box,"Progressão",func(): show_progression("complete"))
 	button(box,"Voltar ao menu",show_menu).grab_focus()
 
 func _input(event: InputEvent) -> void:
@@ -503,7 +539,7 @@ func _input(event: InputEvent) -> void:
 			show_pause()
 		elif screen=="pause":
 			resume()
-		elif screen in ["settings","controls"]:
+		elif screen in ["settings","controls","progression"]:
 			return_to(settings_return)
 		elif screen == "controls_conflict":
 			cancel_rebind_swap()

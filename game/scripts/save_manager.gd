@@ -36,8 +36,33 @@ func new_campaign() -> void:
 	progress = {"version": 1, "checkpoint": 0, "echo_done": false,
 		"garca": false, "garca_equipped": false, "daigo_intro": false,
 		"daigo_defeated": false, "complete": false,
-		"marks": 0, "chapter1_mark_awarded": false}
+		"marks": 0, "chapter1_mark_awarded": false, "upgrades": []}
 	store_campaign()
+
+func has_upgrade(key: String) -> bool:
+	return key in progress.get("upgrades", [])
+
+func available_marks() -> int:
+	return maxi(0, int(progress.get("marks", 0)) - progress.get("upgrades", []).size())
+
+func set_upgrade(key: String, enabled: bool) -> bool:
+	if key not in ["l1", "l2", "l3"] or progress.is_empty():
+		return false
+	var upgrades: Array = progress.get("upgrades", []).duplicate()
+	if enabled:
+		if key in upgrades or available_marks() <= 0:
+			return false
+		upgrades.append(key)
+	else:
+		if key not in upgrades:
+			return false
+		upgrades.erase(key)
+	var previous: Array = progress.get("upgrades", []).duplicate()
+	progress.upgrades = upgrades
+	if store_campaign():
+		return true
+	progress.upgrades = previous
+	return false
 
 func award_chapter1_mark() -> bool:
 	if progress.get("chapter1_mark_awarded", false):

@@ -25,6 +25,7 @@ var state := "idle"
 var state_time := 0.0
 var invulnerable := 0.0
 var stamina_delay := 0.0
+var parry_regen_bonus := 0.0
 var posture_delay := 0.0
 var parry_cooldown := 0.0
 var counter_window := 0.0
@@ -93,6 +94,7 @@ func _physics_process(delta: float) -> void:
 	state_time += delta
 	invulnerable = maxf(0, invulnerable - delta)
 	stamina_delay = maxf(0, stamina_delay - delta)
+	parry_regen_bonus = maxf(0, parry_regen_bonus - delta)
 	posture_delay = maxf(0, posture_delay - delta)
 	parry_cooldown = maxf(0, parry_cooldown - delta)
 	counter_window = maxf(0, counter_window - delta)
@@ -111,8 +113,8 @@ func _physics_process(delta: float) -> void:
 		last_safe = position
 	coyote -= delta
 	jump_buffer -= delta
-	if stamina_delay <= 0 and state in ["idle", "walk", "run", "guard_hold", "guard_release", "jump", "fall", "land"]:
-		stamina = minf(100, stamina + delta * (12 if state == "guard_hold" else 24))
+	if stamina_delay <= 0 and state in ["idle", "walk", "run", "parry_window", "parry", "guard_hold", "guard_release", "jump", "fall", "land"]:
+		stamina = minf(100, stamina + delta * (12 if state == "guard_hold" else 24) * (1.2 if parry_regen_bonus > 0 else 1.0))
 	if posture_delay <= 0 and state != "posture_break" and attack.is_empty():
 		posture = minf(max_posture, posture + delta * (30 if state == "guard_hold" else 22))
 	if state in ["hurt", "posture_break"]:
@@ -182,6 +184,7 @@ func process_player(delta: float) -> void:
 		dodge_cooldown = 0.45
 		return
 	if Input.is_action_just_pressed("heal") and cures > 0 and hp < max_hp and is_on_floor():
+		parry_regen_bonus = 0
 		set_state("heal")
 		return
 	if Input.is_action_just_pressed("light_attack"):
@@ -222,6 +225,7 @@ func spend(cost: float) -> bool:
 		return false
 	stamina -= cost
 	stamina_delay = 0.6
+	parry_regen_bonus = 0
 	return true
 
 func start_attack(type: String) -> bool:
@@ -233,7 +237,7 @@ func start_attack(type: String) -> bool:
 		for foe in get_tree().get_nodes_in_group("fighters"):
 			if foe.enemy and foe.state == "posture_break" and global_position.distance_to(foe.global_position) <= 40:
 				type = "rupture"
-	var cost: float = 18 if type == "heavy" else (0 if type == "rupture" else 8)
+	var cost: float = (15 if kind == "ren" and Save.has_upgrade("l3") else 18) if type == "heavy" else (0 if type == "rupture" else 8)
 	if not enemy and not spend(cost):
 		return false
 	sword_drawn = true
@@ -248,7 +252,7 @@ func start_attack(type: String) -> bool:
 	if type == "counter":
 		windup = 0.09 if kind == "akio" else 0.12
 		damage = 22
-		pressure = 18
+		pressure = 18 + (6 if kind == "ren" and Save.has_upgrade("l1") else 0)
 		counter_window = 0
 	if type == "rupture":
 		damage = 36
@@ -314,6 +318,9 @@ func receive_hit(source, damage: float, pressure: float, heavy: bool = false, ru
 	if front and state == "parry_window" and state_time <= active_parry_window():
 		counter_window = 0.35
 		posture = minf(max_posture, posture + 12)
+		if kind == "ren" and Save.has_upgrade("l2"):
+			stamina_delay = 0
+			parry_regen_bonus = 1.0
 		source.damage_posture(26 if kind == "akio" else 20)
 		if source.state != "posture_break":
 			source.set_state("hurt")

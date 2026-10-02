@@ -2,7 +2,7 @@
 
 Todos os recortes desta versão são TEMPORARY até limpeza e animação final.
 
-Validação visual em 2026-10-02: Ren aparece em cena e o fundo provisório agora cobre a tela acima do chão. Ainda é necessário revisar contraste de Ren sobre cenários detalhados, leitura dos golpes, pose de Daigo derrotado mas vivo e escala dos elementos de HUD em uma partida completa.
+Validação visual em 2026-10-02: Ren aparece em cena e o fundo provisório agora cobre a tela acima do chão. A grade provisória de Progressão cabe em 640×360 e mantém legível o cartão E1 bloqueado. Ainda é necessário revisar contraste de Ren sobre cenários detalhados, leitura dos golpes, pose de Daigo derrotado mas vivo e escala dos elementos de HUD em uma partida completa.
 
 | Estado | Nome / sistema | Animações e frames aproximados | Tamanho | Referência / motivo |
 |---|---|---|---|---|
@@ -15,4 +15,5 @@ Validação visual em 2026-10-02: Ren aparece em cena e o fundo provisório agor
 | TODO | Tileset final | terra/grama/pedra/madeira/água, bordas e transições | 16×16 | tileset referência; recortes exigem costuras finais |
 | TODO | VFX final | slash/heavy/impact/parry/break/heal/eco 4–8 | 32–128 px | Eco e pranchas de combate; implementação procedural provisória |
 | TODO | UI final | barras/ícones/menus/diálogo | 640×360 | HUD referência; widgets nativos provisórios |
+| TODO | Cartões finais de Progressão | 4 cartões L1/L2/L3/E1; estados disponível/equipado/bloqueado, 1 quadro por estado | grade 2×2 em 640×360; cartão até 235×75 | UI/UX v0.1 e referência HUD; substituir estilo nativo provisório sem alterar nomes/efeitos oficiais |
 | TEMPORARY | Áudio | golpes, guarda, parry, cura, Eco; loops ambiente/música | WAV | síntese original; falta direção sonora final |

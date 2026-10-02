@@ -11,12 +11,13 @@ Estado verificado em 2026-10-02 no clone atual, com Godot 4.5.1 stable. COMPLETE
 | COMPLETE | Lógica de percurso do Capítulo I em teste automatizado | `game/tests/chapter_flow.gd` verifica portões, inimigos, CP2, falha/recomeço no Eco, Akio, restauração de Ren, CP3, nova tentativa com Daigo sem repetir conversa, encerramento e marca única. O teste acelera deslocamento e derrota de inimigos; não substitui partida manual. |
 | COMPLETE | Travessia física automatizada | `game/tests/chapter_traversal.gd` percorre com movimento e salto reais todas as áreas de Ren e Akio, sem teleporte de posição; inimigos são derrotados programaticamente para isolar colisões e saídas. |
 | COMPLETE | Pausa e remapeamento de teclado em teste automatizado | `game/tests/menu_smoke.gd` verifica pausa, configurações, botão de remapear, confirmação de troca, cancelamento, tecla livre, descarte ao sair, Escape com Pausa remapeada e retomada. |
+| COMPLETE | Progressão L1–L3 em ponto seguro | `game/tests/progression_smoke.gd` verifica cartões, aplicação/reembolso, efeitos de combate, consulta fora do descanso e bloqueio de E1. A marca do Capítulo I é obtida somente no fim; o teste injeta uma marca para exercer a troca antes do fim. `save_io.gd` verifica persistência em disco. |
 | TEMPORARY | Arte, UI e áudio | Recortes e síntese `TEMP_` funcionam, mas precisam de animação, integração visual, revisão de leitura e produção final. Ver `TODO_ASSETS.md`. |
 | TODO | Partida manual do começo ao fim | Jogar sem teleporte nem derrota programática, revisar ritmo, colisões, acessibilidade, gamepad, áudio e legibilidade de todas as áreas. |
-| TODO | Menus e progressão completos | Há menu, pausa, controles, configurações e equipamento de consulta. A tela de Progressão e cobertura completa de opções oficiais, inclusive remapeamento de gamepad, ainda faltam. |
+| TODO | Menus e configurações completos | Há menu, pausa, Progressão, controles, configurações e equipamento de consulta. Cobertura completa das opções oficiais e remapeamento de gamepad ainda faltam. |
 | COMPLETE | Persistência em disco isolada | `game/tests/save_io.gd` gravou e leu campanha, checkpoint, backup, marca e configurações em `tools/local/profile` via `user://`; também validou conclusão repetida e migração de save v1 completo sem duplicar a marca. |
 | COMPLETE | Reimportação a partir de cópia limpa | `git archive` de `cadcfb4` sem `.godot/` foi extraído em `tools/local/`; o validador reimportou 25 recursos e passou smoke/fluxo/save. |
-| TODO | Importação após clone limpo | Repetir `tools/validate_chapter1.ps1` em um clone novo quando esta milestone estiver publicada. |
+| COMPLETE | Importação após clone limpo | Clone da URL oficial em `tools/local/clone-check-33be535`: Godot reimportou 25 recursos e passou o validador com captura visual. |
 | TODO | Encerramento editorial e polimento | Revisar falas, gesto de Daigo sobrevivente, apresentação da marca e todos os assets finais antes de declarar o capítulo completo. |
 
 Somente Capítulo I está em implementação. Não iniciar Capítulo II sem autorização.

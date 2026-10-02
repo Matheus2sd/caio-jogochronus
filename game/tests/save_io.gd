@@ -29,6 +29,12 @@ func run_check() -> void:
 		fail_test("Chapter I completion and mark did not persist")
 		return
 	save.progress = completed_save
+	if not save.set_upgrade("l1", true) or save.read_campaign("user://chapter1.json").get("upgrades", []) != ["l1"] or save.available_marks() != 0:
+		fail_test("an applied improvement did not persist or consumed an extra mark")
+		return
+	if not save.set_upgrade("l1", false) or save.read_campaign("user://chapter1.json").get("upgrades", []) != [] or save.available_marks() != 1:
+		fail_test("refunded improvement did not persist")
+		return
 	chapter.finish_chapter()
 	if save.read_campaign("user://chapter1.json").get("marks", 0) != 1:
 		fail_test("reloaded completion duplicated the Chapter I mark")
@@ -54,7 +60,7 @@ func run_check() -> void:
 	if config.load("user://settings.cfg") != OK or not config.get_value("settings", "parry_assist", false):
 		fail_test("settings did not persist")
 		return
-	print("SAVE PASS: isolated user:// campaign, checkpoint, backup, completion mark, legacy migration, settings")
+	print("SAVE PASS: isolated user:// campaign, checkpoint, backup, completion mark, upgrade/refund, legacy migration, settings")
 	quit(0)
 
 func fail_test(reason: String) -> void:

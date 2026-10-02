@@ -36,7 +36,18 @@ func capture() -> void:
 		push_error("Chapter start has a flat, uncovered strip above the background")
 		quit(1)
 		return
-	print("VISUAL CAPTURE: menu and Chapter I start saved")
+	root.get_node("Save").progress.marks = 1
+	main.world.player.position.x = main.world.checkpoint_x()
+	main.show_pause()
+	main.show_progression("pause")
+	for i in range(4):
+		await process_frame
+	image = root.get_texture().get_image()
+	if image.save_png(output_dir.path_join("progression-capture.png")) != OK:
+		push_error("Could not capture progression")
+		quit(1)
+		return
+	print("VISUAL CAPTURE: menu, Chapter I start, and Progression saved")
 	main.queue_free()
 	await process_frame
 	quit(0)
