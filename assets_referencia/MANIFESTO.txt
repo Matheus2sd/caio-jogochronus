@@ -1,0 +1,15 @@
+PERSONAGENS
+- Ren jovem: folha completa de conceito, poses, paleta e animacoes de referencia.
+- Akio jovem: duas folhas de referencia visual/animacao.
+- Daigo: folha visual de producao; considerar apenas visual e movimentos, nao textos narrativos adicionais gerados na propria imagem.
+- Inimigo humano: folha de referencia do inimigo-base.
+
+CENARIOS
+- Tileset Primavera: tiles, elementos e exemplo de composicao.
+- Mundo Eco: paleta, efeitos e transformacao do mesmo ambiente.
+
+UI / HUD
+- HUD normal e Eco, vida, postura, stamina, curas, talismas, Passo do Eco, chefe, prompts, menus e configuracoes como referencia visual.
+
+PRODUCAO
+- Checklist final P1: referencia de cobertura do Capitulo I.

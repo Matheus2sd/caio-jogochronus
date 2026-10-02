@@ -1,0 +1,22 @@
+CHRONUS - ASSETS VISUAIS DO CAPITULO I - PACOTE CORRIGIDO
+
+Este ZIP contem SOMENTE os arquivos visuais originais gerados durante esta conversa e organizados por categoria.
+Nao contem projeto Godot, scripts, cenas, placeholders diferentes, nem arte refeita.
+
+IMPORTANTE:
+- Estes PNGs sao exatamente as pranchas/folhas visuais que foram geradas e aprovadas como direcao visual.
+- Elas sao referencias de producao/concept sheets, nao spritesheets finais recortados com fundo transparente.
+- Portanto, nao devem ser importadas diretamente como sprites finais sem antes separar/limpar os quadros desejados.
+- Alguns textos dentro das pranchas geradas podem conter inconsistencias narrativas. Use a IMAGEM como referencia visual e a documentacao oficial como fonte de historia/gameplay.
+
+ESTRUTURA:
+00_REFERENCIAS_PRINCIPAIS = guia visual inicial.
+01_PERSONAGENS = Ren, Akio, Daigo e inimigo humano.
+02_CENARIOS_TILESETS = prancha visual do tileset de primavera.
+03_MUNDO_ECO_VFX = transformacao e efeitos visuais do Mundo Eco.
+04_UI_HUD = HUD/UI do Capitulo I.
+05_EXTRAS_E_PRANCHAS_GERAIS = pranchas combinadas/duplicadas criadas durante o processo.
+06_PRODUCAO = checklist visual de fechamento do P1.
+
+PROXIMO PASSO CORRETO PARA GODOT:
+Criar, a partir dessas referencias, arquivos game-ready separados: spritesheets transparentes por personagem, tilesheet 16x16 limpo, VFX transparentes e atlas de UI. Esses arquivos devem manter este visual, mas precisam ser produzidos separadamente para uso real na engine.

@@ -1,0 +1,48 @@
+Estamos continuando o desenvolvimento de CHRONUS dentro do mesmo projeto.
+
+Antes de começar, leia e trate como base oficial, nesta ordem:
+1. Chronus_Handoff_Completo_v2_OFICIAL.docx
+2. Chronus_GDD_v0.2_OFICIAL.docx
+3. Chronus_Biblia_de_Personagens_v0.1_FINAL.docx
+4. Chronus_Biblia_do_Mundo_e_Direcao_Visual_v0.1_FINAL.docx
+5. Chronus_Gameplay_v0.1_FINAL.docx
+6. Chronus_Guia_Tecnico_de_Arte_v0.1_FINAL.docx
+7. Chronus_Capitulo_I_e_Roteiro_Base_v0.1_FINAL.docx
+8. Chronus_UI_UX_v0.1_FINAL.docx
+9. Chronus_Plano_de_Producao_v0.1_FINAL.docx
+
+A documentação das Fases 0-5 está fechada em nível v0.1/v0.2. Não reabra decisões marcadas DECIDIDO sem conversar comigo antes. Questões marcadas EM ABERTO continuam abertas e não devem ser preenchidas automaticamente.
+
+ORDEM ATUAL DO PROJETO:
+- Fases 0-5: documentação concluída.
+- Fase 6: PRODUÇÃO DE CONTEÚDO - etapa atual.
+- Fase 7: protótipo e integração na Godot, somente depois da produção.
+- Fase 8: polimento, QA e publicação.
+
+COMECE PELA FASE 6, LOTE P0 - PADRÃO VISUAL.
+
+Objetivo do P0:
+- criar/aprovar uma primeira referência visual em escala real com Ren jovem, Daigo e um trecho de cenário;
+- usar resolução lógica 640x360, tiles 16x16, Ren com cerca de 52 px e Daigo com cerca de 58 px;
+- mostrar Ren parado, Ren preparando um corte e Daigo em guarda;
+- criar o mesmo recorte no Presente e no Mundo Eco;
+- preservar legibilidade de espada, silhuetas e preparação dos ataques;
+- incluir somente UI mínima suficiente para testar contraste do HUD, sem produzir todos os menus ainda.
+
+NÃO iniciar Godot, código, implementação ou mapa jogável. Primeiro vamos fechar visualmente o P0. Depois seguimos para P1-P5 conforme o Plano de Produção.
+
+Decisões importantes já fechadas:
+- produção antes da Godot;
+- cronologia T01: Masaru tem aproximadamente 90 anos no confronto final, quando Ren tem aproximadamente 63;
+- combate com espada, parry, postura e stamina;
+- vida base 100, duas curas de 45, sem barra separada de energia Eco;
+- quatro melhorias opcionais, três marcas;
+- quatro talismãs (Garça, Tartaruga, Raposa e Oni), máximo de dois equipados;
+- sem inventário tradicional, crafting, raridade de itens ou troca de armas;
+- UI/UX oficial está no documento específico;
+- Daigo e Katsuro sobrevivem à derrota; Isamu e Masaru têm escolha de matar/poupar;
+- não existe medidor de moralidade.
+
+Mantenha o escopo de um jogo 2D em pixel art de 2-5 horas. Quando uma nova decisão for realmente necessária, apresente poucas opções coerentes com o que já está decidido, explique o impacto e espere minha aprovação antes de mudar a base oficial.
+
+Comece lendo os documentos e depois prepare a primeira etapa concreta do Lote P0.

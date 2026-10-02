@@ -1,0 +1,16 @@
+**/.godot/
+tools/local/
+builds/
+**/__pycache__/
+*.pyc
+*.local.txt
+*.log
+*.tmp
+*.bak
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.exe
+*.zip
+game/export_credentials.cfg

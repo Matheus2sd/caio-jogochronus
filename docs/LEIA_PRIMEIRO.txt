@@ -1,0 +1,13 @@
+CHRONUS - DOCUMENTACAO OFICIAL v1.0
+
+Ordem sugerida de leitura:
+1. Handoff v2
+2. GDD v0.2
+3. UI/UX v0.1
+4. Plano de Producao v0.1
+5. Demais documentos por assunto
+
+Proxima etapa: Fase 6 - Producao de Conteudo, lote P0 - Padrao Visual.
+Godot somente na Fase 7.
+
+Arquivos antigos permanecem historicos; este pacote tem precedencia.

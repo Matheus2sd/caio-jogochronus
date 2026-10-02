@@ -1,0 +1,23 @@
+CHRONUS - DOCUMENTACAO OFICIAL v1.0
+Data: 23/09/2026
+
+Este pacote consolida a documentacao aprovada do projeto ate a Fase 5 e define a Fase 6 como etapa atual.
+
+ORDEM DE PRECEDENCIA
+1. Chronus_Handoff_Completo_v2_OFICIAL.docx
+2. Chronus_GDD_v0.2_OFICIAL.docx
+3. Chronus_Biblia_de_Personagens_v0.1_FINAL.docx
+4. Chronus_Biblia_do_Mundo_e_Direcao_Visual_v0.1_FINAL.docx
+5. Chronus_Gameplay_v0.1_FINAL.docx
+6. Chronus_Guia_Tecnico_de_Arte_v0.1_FINAL.docx
+7. Chronus_Capitulo_I_e_Roteiro_Base_v0.1_FINAL.docx
+8. Chronus_UI_UX_v0.1_FINAL.docx
+9. Chronus_Plano_de_Producao_v0.1_FINAL.docx
+10. Chronus_Indice_Documentacao_Oficial_v1.0.docx
+
+CONTINUIDADE
+Fase 6: Producao de Conteudo - lote P0 Padrao Visual.
+Fase 7: prototipo e integracao na Godot, somente depois da producao.
+Fase 8: polimento, QA e publicacao.
+
+As secoes EM ABERTO dos documentos continuam deliberadamente abertas. Valores numericos de gameplay podem ser balanceados quando a Godot for iniciada sem reabrir automaticamente a regra do sistema.
