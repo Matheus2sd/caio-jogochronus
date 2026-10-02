@@ -18,7 +18,7 @@ Estado verificado em 2026-10-02 no clone atual, com Godot 4.5.1 stable. COMPLETE
 | TODO | Menus e configurações completos | Há menu, pausa, Progressão, controles, configurações e equipamento de consulta. Cobertura completa das opções oficiais e remapeamento de gamepad ainda faltam. |
 | COMPLETE | Persistência em disco isolada | `game/tests/save_io.gd` gravou e leu campanha, checkpoint, backup, marca e configurações em `tools/local/profile` via `user://`; também validou conclusão repetida e migração de save v1 completo sem duplicar a marca. |
 | COMPLETE | Reimportação a partir de cópia limpa | `git archive` de `cadcfb4` sem `.godot/` foi extraído em `tools/local/`; o validador reimportou 25 recursos e passou smoke/fluxo/save. |
-| COMPLETE | Importação após clone limpo | Clone da URL oficial em `tools/local/clone-check-33be535`: Godot reimportou 25 recursos e passou o validador com captura visual. |
+| COMPLETE | Importação após clone limpo | Clones da URL oficial em `tools/local/`: no estado publicado `df551f5`, Godot reimportou 25 recursos e passou todo o validador, inclusive percurso contínuo e captura visual. |
 | TODO | Encerramento editorial e polimento | Revisar falas, gesto de Daigo sobrevivente, apresentação da marca e todos os assets finais antes de declarar o capítulo completo. |
 
 Somente Capítulo I está em implementação. Não iniciar Capítulo II sem autorização.
