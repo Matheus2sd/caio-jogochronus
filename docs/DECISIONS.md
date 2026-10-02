@@ -10,3 +10,4 @@
 - Fonte padrão incorporada na Godot; áudio sintetizado original provisório, sem download de obras externas.
 - No novo computador, a instrução de 2026-10-02 autoriza baixar Godot 4.5.1 oficial para `tools/local/`, testar o projeto existente, corrigir falhas e publicar commits em `main`; substitui os bloqueios de Godot e autenticação anotados antes.
 - A marca do Capítulo I é registrada uma única vez como `marks` + `chapter1_mark_awarded` no save. O menu de Progressão completo permanece pendente e não amplia o escopo para o Capítulo II.
+- No remapeamento de teclado, uma tecla já usada abre confirmação para trocar as duas ações ou cancelar, conforme UI/UX oficial. A extensão para entradas de controle requer validação própria.

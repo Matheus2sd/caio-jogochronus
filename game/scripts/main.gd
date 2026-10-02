@@ -22,11 +22,15 @@ var dialogue_after: Callable
 var dialogue_text: Label
 var dialogue_name: Label
 var rebind_action := ""
+var rebind_pending_action := ""
+var rebind_conflict_action := ""
+var rebind_pending_key := 0
 var settings_return := "menu"
 var gamepad := false
 var intro_block := 0.0
 var theme_ui: Theme
 var test_mode := false
+const ACTION_NAMES = {"move_left":"Esquerda","move_right":"Direita","jump":"Salto","dodge":"Esquiva","light_attack":"Leve / contra-ataque","heavy_attack":"Forte","guard":"Guarda / parry","interact":"Interação","heal":"Cura","pause":"Pausa","run":"Corrida"}
 
 func _ready() -> void:
 	process_mode = Node.PROCESS_MODE_ALWAYS
@@ -111,6 +115,7 @@ func menu_box(title: String, subtitle: String = "", wide: bool = false) -> VBoxC
 	return box
 
 func show_menu() -> void:
+	reset_rebind()
 	get_tree().paused = false
 	if is_instance_valid(world):
 		world.queue_free()
@@ -327,6 +332,7 @@ func show_pause() -> void:
 	button(box,"Voltar ao menu",show_menu)
 
 func resume() -> void:
+	reset_rebind()
 	clear_overlay()
 	get_tree().paused = false
 	screen = "game"
@@ -375,12 +381,14 @@ func show_settings(back: String) -> void:
 	button(box,"Voltar",func(): return_to(back)).grab_focus()
 
 func return_to(back: String) -> void:
+	reset_rebind()
 	if back=="pause":
 		show_pause()
 	else:
 		show_menu()
 
 func show_controls(back: String) -> void:
+	reset_rebind()
 	screen = "controls"
 	settings_return = back
 	var box := menu_box("Controles","Selecione uma ação para remapear o teclado. Esc cancela.",true)
@@ -390,12 +398,44 @@ func show_controls(back: String) -> void:
 	var rows := VBoxContainer.new()
 	rows.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	scroll.add_child(rows)
-	var names := {"move_left":"Esquerda","move_right":"Direita","jump":"Salto","dodge":"Esquiva","light_attack":"Leve / contra-ataque","heavy_attack":"Forte","guard":"Guarda / parry","interact":"Interação","heal":"Cura","pause":"Pausa","run":"Corrida"}
 	for action in InputConfig.KEYS:
-		var text: String = "%s   [%s]   Controle: %s" % [names[action],InputConfig.prompt(action),InputConfig.prompt(action,true)]
-		button(rows,text,func(): rebind_action=action; show_notice("Pressione uma tecla para "+names[action]))
+		var text: String = "%s   [%s]   Controle: %s" % [ACTION_NAMES[action],InputConfig.prompt(action),InputConfig.prompt(action,true)]
+		button(rows,text,func(): rebind_action=action; show_notice("Pressione uma tecla para "+ACTION_NAMES[action]))
 	button(rows,"Restaurar padrões",func(): Save.settings.keys={}; InputConfig.setup({}); Save.store_settings(); show_controls(back))
 	button(box,"Voltar",func():return_to(back)).grab_focus()
+
+func show_rebind_conflict() -> void:
+	screen = "controls_conflict"
+	var key_name := OS.get_keycode_string(rebind_pending_key)
+	var box := menu_box("Tecla em uso", "%s já controla %s." % [key_name, ACTION_NAMES[rebind_conflict_action]], true)
+	box.add_child(label("Trocar as teclas de %s e %s?" % [ACTION_NAMES[rebind_pending_action], ACTION_NAMES[rebind_conflict_action]], 12))
+	button(box,"Trocar ações",confirm_rebind_swap).grab_focus()
+	button(box,"Cancelar",cancel_rebind_swap)
+
+func confirm_rebind_swap() -> void:
+	var old_key := 0
+	for mapped in InputMap.action_get_events(rebind_pending_action):
+		if mapped is InputEventKey:
+			old_key = mapped.physical_keycode
+			break
+	if old_key == 0:
+		cancel_rebind_swap()
+		return
+	Save.settings.keys[rebind_pending_action] = rebind_pending_key
+	Save.settings.keys[rebind_conflict_action] = old_key
+	InputConfig.setup(Save.settings.keys)
+	Save.store_settings()
+	cancel_rebind_swap()
+
+func cancel_rebind_swap() -> void:
+	reset_rebind()
+	show_controls(settings_return)
+
+func reset_rebind() -> void:
+	rebind_action = ""
+	rebind_pending_action = ""
+	rebind_conflict_action = ""
+	rebind_pending_key = 0
 
 func show_credits() -> void:
 	var box := menu_box("CHRONUS", "Créditos desta versão",true)
@@ -427,8 +467,30 @@ func _input(event: InputEvent) -> void:
 		gamepad = false
 	if is_instance_valid(world):
 		world.pad = gamepad
+	if screen == "controls_conflict" and event is InputEventKey and event.pressed and not event.echo and event.keycode == KEY_ESCAPE:
+		cancel_rebind_swap()
+		get_viewport().set_input_as_handled()
+		return
 	if not rebind_action.is_empty() and event is InputEventKey and event.pressed and not event.echo:
 		if event.keycode != KEY_ESCAPE:
+			var conflict := ""
+			for action in InputConfig.KEYS:
+				if action == rebind_action:
+					continue
+				for mapped in InputMap.action_get_events(action):
+					if mapped is InputEventKey and mapped.physical_keycode == event.physical_keycode:
+						conflict = action
+						break
+				if not conflict.is_empty():
+					break
+			if not conflict.is_empty():
+				rebind_pending_action = rebind_action
+				rebind_conflict_action = conflict
+				rebind_pending_key = event.physical_keycode
+				rebind_action = ""
+				show_rebind_conflict()
+				get_viewport().set_input_as_handled()
+				return
 			Save.settings.keys[rebind_action] = event.physical_keycode
 			InputConfig.setup(Save.settings.keys)
 			Save.store_settings()
@@ -443,6 +505,8 @@ func _input(event: InputEvent) -> void:
 			resume()
 		elif screen in ["settings","controls"]:
 			return_to(settings_return)
+		elif screen == "controls_conflict":
+			cancel_rebind_swap()
 		get_viewport().set_input_as_handled()
 	if screen=="dialogue" and event.is_action_pressed("interact"):
 		advance_dialogue()
