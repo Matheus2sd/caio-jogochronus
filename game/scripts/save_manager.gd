@@ -35,8 +35,16 @@ func read_campaign(path: String) -> Dictionary:
 func new_campaign() -> void:
 	progress = {"version": 1, "checkpoint": 0, "echo_done": false,
 		"garca": false, "garca_equipped": false, "daigo_intro": false,
-		"daigo_defeated": false, "complete": false}
+		"daigo_defeated": false, "complete": false,
+		"marks": 0, "chapter1_mark_awarded": false}
 	store_campaign()
+
+func award_chapter1_mark() -> bool:
+	if progress.get("chapter1_mark_awarded", false):
+		return false
+	progress.marks = mini(3, int(progress.get("marks", 0)) + 1)
+	progress.chapter1_mark_awarded = true
+	return true
 
 func store_campaign() -> bool:
 	if test_mode:

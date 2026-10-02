@@ -8,3 +8,5 @@
 - E01: passagem disputada, oponente armado anônimo, Akio jogável. Nada de massacre, ressurreição ou presente reescrito. Ponte física permanece quebrada. Ren conserva recursos ao retornar.
 - Arte derivada diretamente das referências será marcada TEMPORARY até revisão final; nenhuma pose será anunciada como animação final.
 - Fonte padrão incorporada na Godot; áudio sintetizado original provisório, sem download de obras externas.
+- No novo computador, a instrução de 2026-10-02 autoriza baixar Godot 4.5.1 oficial para `tools/local/`, testar o projeto existente, corrigir falhas e publicar commits em `main`; substitui os bloqueios de Godot e autenticação anotados antes.
+- A marca do Capítulo I é registrada uma única vez como `marks` + `chapter1_mark_awarded` no save. O menu de Progressão completo permanece pendente e não amplia o escopo para o Capítulo II.

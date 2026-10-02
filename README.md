@@ -20,3 +20,5 @@ Controles: A/D ou setas para mover; Ctrl para correr; Espaço para pular; Shift 
 Os recortes derivados usados em runtime são provisórios: preservam a aparência das pranchas, mas não substituem animação desenhada frame a frame. Consulte `game/ASSET_AUDIT.md` e `game/TODO_ASSETS.md`. Sons sintetizados são identificados por `TEMP_`.
 
 Para continuar: leia `AGENTS.md`, documentos oficiais, `docs/DECISIONS.md` e o DEVLOG. Verifique `PORTABILITY.md` e execute os testes documentados antes de marcar tarefas como COMPLETE. Não ampliar para outros capítulos.
+
+Validação local no Windows: `./tools/validate_chapter1.ps1 -Visual` importa o projeto, executa testes de combate/fluxo/save em perfil isolado e captura menu e início do capítulo em `tools/local/`. Consulte `game/PROJECT_PLAN.md` para o que ainda requer partida manual e polimento.

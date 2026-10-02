@@ -2,6 +2,8 @@
 
 Todos os recortes desta versão são TEMPORARY até limpeza e animação final.
 
+Validação visual em 2026-10-02: Ren aparece em cena e o fundo provisório agora cobre a tela acima do chão. Ainda é necessário revisar contraste de Ren sobre cenários detalhados, leitura dos golpes, pose de Daigo derrotado mas vivo e escala dos elementos de HUD em uma partida completa.
+
 | Estado | Nome / sistema | Animações e frames aproximados | Tamanho | Referência / motivo |
 |---|---|---|---|---|
 | TODO | Ren jovem | idle 4, walk 6, run 8, jump_start/jump/fall/land 2 cada, dodge 6, turn 2 | corpo 52; célula 96×96 | Ren_Jovem; pranchas contêm poses isoladas |

@@ -57,6 +57,8 @@ func begin(fresh: bool) -> void:
 	if fresh:
 		Save.new_campaign()
 	if Save.progress.get("complete", false):
+		if Save.award_chapter1_mark():
+			Save.store_campaign()
 		chapter_finished.emit()
 		return
 	if Save.progress.get("daigo_defeated", false):
@@ -322,6 +324,7 @@ func on_defeated(fighter) -> void:
 		message.emit("A passagem se abre. Atravesse a ponte lembrada.")
 
 func finish_chapter() -> void:
+	Save.award_chapter1_mark()
 	Save.progress.complete = true
 	Save.store_campaign()
 	locked = true
@@ -375,7 +378,7 @@ func _draw() -> void:
 	# Background moves more slowly than collision geometry and characters.
 	for i in range(-1,4):
 		var x := float(i*640) + floorf(cam_x*0.6/640)*640 - cam_x*0.25
-		draw_texture_rect(background,Rect2(x,45,640,240),false,Color(0.78,0.85,0.91) if memory else Color(0.85,0.9,0.85))
+		draw_texture_rect(background,Rect2(x,0,640,280),false,Color(0.78,0.85,0.91) if memory else Color(0.85,0.9,0.85))
 	for prop in prop_positions:
 		var texture: Texture2D = props[prop[0]]
 		var tint := Color(0.43,0.62,0.79,0.7) if memory else Color(0.82,0.86,0.78,0.85)
