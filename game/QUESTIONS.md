@@ -28,3 +28,7 @@
 ## Eco — verificação e limite
 
 Testes confirmaram a memória atravessável e retorno ao Presente sem restaurar a ponte física. Capturas são poses encenadas na Godot, não substituem partida humana. Qualidade artística permanece aberta; nenhuma decisão narrativa nova.
+
+## Akio — pacote integrado
+
+26 clipes/36 poses próprias em carvão, cinza e vermelho escuro, escala AR02 de 56 px. Resposta herdada segue o tempo real do combate. `validate_chapter1.ps1 -Visual` (agora inclui `production_visuals`) e captura Godot: exit 0; imagem inspecionada. COMPLETE técnico; TEMPORARY artístico: combos 2/3, salto, interação e giro reutilizam poses selecionadas da fonte, conforme manifesto. Próximo pacote: Daigo.

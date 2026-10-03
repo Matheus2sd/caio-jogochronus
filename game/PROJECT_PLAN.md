@@ -42,3 +42,7 @@ Somente Capítulo I está em implementação. Não iniciar Capítulo II sem auto
 ## Production Pass — Eco
 
 COMPLETE técnico: pacote Eco integrado e regressão/capturas executadas com exit 0. TEMPORARY artístico: revisão em partida humana. Próximo: Akio, ainda usando TEMP_poses; depois Daigo, HUD/menus e áudio.
+
+## Akio — pacote integrado
+
+26 clipes/36 poses próprias em carvão, cinza e vermelho escuro, escala AR02 de 56 px. Resposta herdada segue o tempo real do combate. `validate_chapter1.ps1 -Visual` (agora inclui `production_visuals`) e captura Godot: exit 0; imagem inspecionada. COMPLETE técnico; TEMPORARY artístico: combos 2/3, salto, interação e giro reutilizam poses selecionadas da fonte, conforme manifesto. Próximo pacote: Daigo.

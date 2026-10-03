@@ -51,3 +51,7 @@ Fontes oficiais consultadas e pranchas principais inspecionadas. Plano, auditori
 ## Eco — produção integrada
 
 Seis objetos novos: portão incompleto, lanterna suspensa, ruínas, ponte lembrada, cerejeira violeta e limiar. Partículas e entrada/saída em geometria pixel; a ponte do Presente continua partida. `validate_chapter1.ps1 -Visual` e `production_capture.gd`: exit 0. Captura `echo_akio.png` inspecionada. Avisos anteriores de certificados e ObjectDB permanecem; arte continua TEMPORARY.
+
+## Akio — pacote integrado
+
+26 clipes/36 poses próprias em carvão, cinza e vermelho escuro, escala AR02 de 56 px. Resposta herdada segue o tempo real do combate. `validate_chapter1.ps1 -Visual` (agora inclui `production_visuals`) e captura Godot: exit 0; imagem inspecionada. COMPLETE técnico; TEMPORARY artístico: combos 2/3, salto, interação e giro reutilizam poses selecionadas da fonte, conforme manifesto. Próximo pacote: Daigo.

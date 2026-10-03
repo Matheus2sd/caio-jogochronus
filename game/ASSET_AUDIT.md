@@ -78,3 +78,7 @@ A tabela acima descreve o baseline, nao o runtime atual. Ren/humano usam SpriteF
 ## Eco — substituição verificada
 
 REBUILD integrado: seis PNGs em `environments/echo/echo_*_v001.png`, exportados de fonte nova com alfa binário e paleta reduzida. `echo_visual.gd` trata fragmentos/limiar/transição; geometria de colisão preservada. TEMP_background antigo mantido como referência histórica. Suite completa e captura: exit 0.
+
+## Akio — pacote integrado
+
+26 clipes/36 poses próprias em carvão, cinza e vermelho escuro, escala AR02 de 56 px. Resposta herdada segue o tempo real do combate. `validate_chapter1.ps1 -Visual` (agora inclui `production_visuals`) e captura Godot: exit 0; imagem inspecionada. COMPLETE técnico; TEMPORARY artístico: combos 2/3, salto, interação e giro reutilizam poses selecionadas da fonte, conforme manifesto. Próximo pacote: Daigo.

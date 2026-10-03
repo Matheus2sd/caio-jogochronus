@@ -431,4 +431,3 @@ func _draw() -> void:
 	if debug_mode:
 		for r in platforms:
 			draw_rect(r,Color(0,1,0,0.6),false)
-

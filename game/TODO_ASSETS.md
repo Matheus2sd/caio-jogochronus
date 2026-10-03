@@ -35,3 +35,7 @@ A classificação e ordem atuais estão em ASSET_AUDIT.md e ASSET_REBUILD_PLAN.m
 ## Eco reconstruído
 
 Seis objetos e transição próprios substituem retângulos da memória. TODO: aprovação artística de contraste, densidade e fluidez das transições. Fonte, exportador e manifesto versionados. Akio ainda precisa de sua nova fonte integrada.
+
+## Akio — pacote integrado
+
+26 clipes/36 poses próprias em carvão, cinza e vermelho escuro, escala AR02 de 56 px. Resposta herdada segue o tempo real do combate. `validate_chapter1.ps1 -Visual` (agora inclui `production_visuals`) e captura Godot: exit 0; imagem inspecionada. COMPLETE técnico; TEMPORARY artístico: combos 2/3, salto, interação e giro reutilizam poses selecionadas da fonte, conforme manifesto. Próximo pacote: Daigo.

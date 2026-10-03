@@ -46,3 +46,7 @@ Commits ee481ab/0b1c716/e5d413b/32bb5c0/c914d00 confirmam auditoria, Ren, humano
 ## Pacote 7 executado
 
 Eco reconstruído e integrado; testes completos e captura verificados. Próximo pacote: Akio (fonte nova já gerada, ainda não integrada). Aceite artístico final continua TODO.
+
+## Akio — pacote integrado
+
+26 clipes/36 poses próprias em carvão, cinza e vermelho escuro, escala AR02 de 56 px. Resposta herdada segue o tempo real do combate. `validate_chapter1.ps1 -Visual` (agora inclui `production_visuals`) e captura Godot: exit 0; imagem inspecionada. COMPLETE técnico; TEMPORARY artístico: combos 2/3, salto, interação e giro reutilizam poses selecionadas da fonte, conforme manifesto. Próximo pacote: Daigo.

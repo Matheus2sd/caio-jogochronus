@@ -1,0 +1,268 @@
+{
+  "folder": "characters/akio",
+  "height": 56,
+  "sources": {
+    "body": {
+      "file": "akio_source.png",
+      "grid": [
+        6,
+        6
+      ],
+      "upright_height": 165,
+      "y_edges": [
+        0,
+        175,
+        344,
+        518,
+        708,
+        887,
+        1024
+      ]
+    }
+  },
+  "animations": {
+    "idle": {
+      "poses": [
+        "body:24",
+        "body:25"
+      ],
+      "fps": 3,
+      "loop": true
+    },
+    "idle_sheathed": {
+      "poses": [
+        "body:0",
+        "body:1"
+      ],
+      "fps": 4,
+      "loop": true
+    },
+    "walk": {
+      "poses": [
+        "body:2",
+        "body:3",
+        "body:4",
+        "body:5"
+      ],
+      "fps": 8,
+      "loop": true
+    },
+    "run": {
+      "poses": [
+        "body:6",
+        "body:7",
+        "body:8",
+        "body:7"
+      ],
+      "fps": 12,
+      "loop": true
+    },
+    "jump_start": {
+      "poses": [
+        "body:9",
+        "body:10"
+      ],
+      "fps": 8,
+      "loop": false
+    },
+    "jump": {
+      "poses": [
+        "body:10",
+        "body:11"
+      ],
+      "fps": 8,
+      "loop": false
+    },
+    "fall": {
+      "poses": [
+        "body:11",
+        "body:9"
+      ],
+      "fps": 8,
+      "loop": false
+    },
+    "land": {
+      "poses": [
+        "body:9",
+        "body:0"
+      ],
+      "fps": 8,
+      "loop": false
+    },
+    "turn": {
+      "poses": [
+        "body:1",
+        "body:0"
+      ],
+      "fps": 8,
+      "loop": false
+    },
+    "dodge": {
+      "poses": [
+        "body:32",
+        "body:9",
+        "body:0"
+      ],
+      "fps": 8,
+      "loop": false
+    },
+    "draw_sword": {
+      "poses": [
+        "body:0",
+        "body:24",
+        "body:25"
+      ],
+      "fps": 8,
+      "loop": false
+    },
+    "sheathe_sword": {
+      "poses": [
+        "body:25",
+        "body:24",
+        "body:0"
+      ],
+      "fps": 8,
+      "loop": false
+    },
+    "guard_start": {
+      "poses": [
+        "body:24",
+        "body:25"
+      ],
+      "fps": 8,
+      "loop": false
+    },
+    "guard": {
+      "poses": [
+        "body:25",
+        "body:24"
+      ],
+      "fps": 8,
+      "loop": true
+    },
+    "parry": {
+      "poses": [
+        "body:25",
+        "body:26",
+        "body:25"
+      ],
+      "fps": 8,
+      "loop": false
+    },
+    "hurt": {
+      "poses": [
+        "body:30",
+        "body:31"
+      ],
+      "fps": 8,
+      "loop": false
+    },
+    "posture_break": {
+      "poses": [
+        "body:30",
+        "body:31"
+      ],
+      "fps": 8,
+      "loop": false
+    },
+    "heal": {
+      "poses": [
+        "body:33",
+        "body:33",
+        "body:0"
+      ],
+      "fps": 8,
+      "loop": false
+    },
+    "death": {
+      "poses": [
+        "body:34",
+        "body:35"
+      ],
+      "fps": 8,
+      "loop": false
+    },
+    "interact": {
+      "poses": [
+        "body:1",
+        "body:33"
+      ],
+      "fps": 8,
+      "loop": false
+    },
+    "echo_interact": {
+      "poses": [
+        "body:1",
+        "body:33"
+      ],
+      "fps": 8,
+      "loop": false
+    },
+    "light_attack_1": {
+      "poses": [
+        "body:12",
+        "body:13",
+        "body:14",
+        "body:15",
+        "body:16",
+        "body:17"
+      ],
+      "fps": 14,
+      "loop": false
+    },
+    "light_attack_2": {
+      "poses": [
+        "body:18",
+        "body:19",
+        "body:20",
+        "body:21",
+        "body:22",
+        "body:23"
+      ],
+      "fps": 14,
+      "loop": false
+    },
+    "light_attack_3": {
+      "poses": [
+        "body:12",
+        "body:13",
+        "body:14",
+        "body:15",
+        "body:16",
+        "body:17"
+      ],
+      "fps": 14,
+      "loop": false
+    },
+    "heavy_attack": {
+      "poses": [
+        "body:18",
+        "body:19",
+        "body:20",
+        "body:21",
+        "body:22",
+        "body:23"
+      ],
+      "fps": 10,
+      "loop": false
+    },
+    "counter_attack": {
+      "poses": [
+        "body:26",
+        "body:27",
+        "body:28",
+        "body:28",
+        "body:29",
+        "body:24"
+      ],
+      "fps": 16,
+      "loop": false
+    }
+  },
+  "notes": [
+    "Original Akio body and costume, not Ren recolor.",
+    "Light combo 2 reuses diagonal heavy keyposes; combo 3 reuses light keyposes.",
+    "Jump/turn/interact use selected authored keyposes, additional in-betweens pending artistic review.",
+    "56px uses official AR02, not 52px text on reference sheet."
+  ]
+}
