@@ -21,3 +21,5 @@ Validação visual em 2026-10-02: Ren aparece em cena e o fundo provisório agor
 ## Production Pass
 
 A classificação e ordem atuais estão em ASSET_AUDIT.md e ASSET_REBUILD_PLAN.md. Recortar novamente as mesmas pranchas não satisfaz o rebuild. Novas fontes, exports, fichas e evidências devem acompanhar cada pacote.
+
+- Ren: substituido runtime por 26 clips novos, 66 keyposes; TODO interframes exclusivos dos leves 2/3 e revisao de fluidez. Fontes em tools/art_sources/ren.

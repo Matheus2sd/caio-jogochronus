@@ -1,0 +1,319 @@
+{
+  "character": "ren",
+  "status": "TEMPORARY",
+  "height": 52,
+  "cell": [
+    96,
+    96
+  ],
+  "pivot": [
+    48,
+    80
+  ],
+  "provenance": "New image_gen drawings; approved references used for identity only",
+  "notes": [
+    "Generated source motion row 8 contains empty cells 57-61: rejected, supplemented by new actions source.",
+    "Light attacks 2 and 3 reuse/resequence reviewed key poses; dedicated inbetweens remain an artistic polish task.",
+    "Shared 24-color export palette, binary alpha, feet-aligned cells. Sources retained at original resolution.",
+    "Movement shows sheathed sword as in reference sprint. Combat draws blade."
+  ],
+  "sources": {
+    "motion": {
+      "file": "ren_motion_source.png",
+      "sha256": "fd16b97461f38cfb30ada39ccfbcd2f9582e012797c921445ffe92b0b646bf86"
+    },
+    "actions": {
+      "file": "ren_actions_source.png",
+      "sha256": "001c9916e7b6aff3f5b34bfe49ebb70d6ab733a19a8a031d88f0483e126b9e62"
+    }
+  },
+  "animations": {
+    "idle": {
+      "file": "chr_ren_idle_v001.png",
+      "poses": [
+        "actions:0",
+        "actions:1",
+        "actions:3",
+        "actions:1"
+      ],
+      "fps": 5,
+      "loop": true
+    },
+    "idle_sheathed": {
+      "file": "chr_ren_idle_sheathed_v001.png",
+      "poses": [
+        "motion:0",
+        "motion:1",
+        "motion:2",
+        "motion:3"
+      ],
+      "fps": 5,
+      "loop": true
+    },
+    "walk": {
+      "file": "chr_ren_walk_v001.png",
+      "poses": [
+        "motion:8",
+        "motion:9",
+        "motion:10",
+        "motion:11",
+        "motion:12",
+        "motion:13",
+        "motion:14",
+        "motion:15"
+      ],
+      "fps": 10,
+      "loop": true
+    },
+    "run": {
+      "file": "chr_ren_run_v001.png",
+      "poses": [
+        "motion:16",
+        "motion:17",
+        "motion:18",
+        "motion:19",
+        "motion:20",
+        "motion:21",
+        "motion:22",
+        "motion:23"
+      ],
+      "fps": 14,
+      "loop": true
+    },
+    "jump_start": {
+      "file": "chr_ren_jump_start_v001.png",
+      "poses": [
+        "motion:24",
+        "motion:25"
+      ],
+      "fps": 16,
+      "loop": false
+    },
+    "jump": {
+      "file": "chr_ren_jump_v001.png",
+      "poses": [
+        "motion:26",
+        "motion:27"
+      ],
+      "fps": 8,
+      "loop": true
+    },
+    "fall": {
+      "file": "chr_ren_fall_v001.png",
+      "poses": [
+        "motion:28",
+        "motion:27"
+      ],
+      "fps": 8,
+      "loop": true
+    },
+    "land": {
+      "file": "chr_ren_land_v001.png",
+      "poses": [
+        "motion:29",
+        "motion:24"
+      ],
+      "fps": 20,
+      "loop": false
+    },
+    "turn": {
+      "file": "chr_ren_turn_v001.png",
+      "poses": [
+        "motion:8",
+        "motion:9"
+      ],
+      "fps": 20,
+      "loop": false
+    },
+    "dodge": {
+      "file": "chr_ren_dodge_v001.png",
+      "poses": [
+        "motion:24",
+        "motion:30",
+        "motion:31",
+        "motion:30"
+      ],
+      "fps": 18,
+      "loop": false
+    },
+    "draw_sword": {
+      "file": "chr_ren_draw_sword_v001.png",
+      "poses": [
+        "actions:12",
+        "actions:13",
+        "actions:14",
+        "actions:15"
+      ],
+      "fps": 14,
+      "loop": false
+    },
+    "sheathe_sword": {
+      "file": "chr_ren_sheathe_sword_v001.png",
+      "poses": [
+        "actions:15",
+        "actions:14",
+        "actions:13",
+        "actions:12"
+      ],
+      "fps": 14,
+      "loop": false
+    },
+    "light_attack_1": {
+      "file": "chr_ren_light_attack_1_v001.png",
+      "poses": [
+        "motion:33",
+        "motion:34",
+        "motion:35",
+        "motion:36",
+        "motion:37",
+        "motion:39"
+      ],
+      "fps": 14,
+      "loop": false
+    },
+    "light_attack_2": {
+      "file": "chr_ren_light_attack_2_v001.png",
+      "poses": [
+        "motion:34",
+        "motion:33",
+        "motion:36",
+        "motion:35",
+        "motion:38",
+        "motion:39"
+      ],
+      "fps": 14,
+      "loop": false
+    },
+    "light_attack_3": {
+      "file": "chr_ren_light_attack_3_v001.png",
+      "poses": [
+        "motion:40",
+        "motion:41",
+        "motion:42",
+        "motion:43",
+        "motion:44",
+        "motion:47"
+      ],
+      "fps": 14,
+      "loop": false
+    },
+    "heavy_attack": {
+      "file": "chr_ren_heavy_attack_v001.png",
+      "poses": [
+        "motion:40",
+        "motion:41",
+        "motion:42",
+        "motion:43",
+        "motion:44",
+        "motion:45",
+        "motion:46",
+        "motion:47"
+      ],
+      "fps": 12,
+      "loop": false
+    },
+    "guard_start": {
+      "file": "chr_ren_guard_start_v001.png",
+      "poses": [
+        "actions:0",
+        "actions:1"
+      ],
+      "fps": 16,
+      "loop": false
+    },
+    "guard": {
+      "file": "chr_ren_guard_v001.png",
+      "poses": [
+        "actions:1",
+        "actions:0"
+      ],
+      "fps": 5,
+      "loop": true
+    },
+    "parry": {
+      "file": "chr_ren_parry_v001.png",
+      "poses": [
+        "actions:1",
+        "actions:2",
+        "actions:3"
+      ],
+      "fps": 18,
+      "loop": false
+    },
+    "counter_attack": {
+      "file": "chr_ren_counter_attack_v001.png",
+      "poses": [
+        "actions:1",
+        "actions:2",
+        "motion:54",
+        "motion:55",
+        "motion:36",
+        "motion:39"
+      ],
+      "fps": 18,
+      "loop": false
+    },
+    "hurt": {
+      "file": "chr_ren_hurt_v001.png",
+      "poses": [
+        "motion:56",
+        "actions:8"
+      ],
+      "fps": 12,
+      "loop": false
+    },
+    "posture_break": {
+      "file": "chr_ren_posture_break_v001.png",
+      "poses": [
+        "actions:8",
+        "actions:9",
+        "motion:49",
+        "motion:50"
+      ],
+      "fps": 8,
+      "loop": false
+    },
+    "heal": {
+      "file": "chr_ren_heal_v001.png",
+      "poses": [
+        "actions:4",
+        "actions:5",
+        "actions:6",
+        "actions:7"
+      ],
+      "fps": 4,
+      "loop": false
+    },
+    "death": {
+      "file": "chr_ren_death_v001.png",
+      "poses": [
+        "actions:8",
+        "actions:9",
+        "actions:10",
+        "actions:11"
+      ],
+      "fps": 7,
+      "loop": false
+    },
+    "interact": {
+      "file": "chr_ren_interact_v001.png",
+      "poses": [
+        "motion:62",
+        "motion:63"
+      ],
+      "fps": 8,
+      "loop": false
+    },
+    "echo_interact": {
+      "file": "chr_ren_echo_interact_v001.png",
+      "poses": [
+        "motion:62",
+        "motion:63",
+        "motion:62",
+        "motion:63"
+      ],
+      "fps": 6,
+      "loop": false
+    }
+  }
+}

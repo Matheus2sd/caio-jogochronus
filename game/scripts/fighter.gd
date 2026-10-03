@@ -47,6 +47,7 @@ var elapsed := 0.0
 var previous_floor := false
 var step_clock := 0.0
 var test_control := false
+var production_visual: RefCounted
 
 func _ready() -> void:
 	add_to_group("fighters")
@@ -67,6 +68,7 @@ func _ready() -> void:
 	hurtbox.add_child(hurt_shape)
 	add_child(hurtbox)
 	sprite = Sprite2D.new()
+	production_visual = preload("res://scripts/fighter_visual.gd").new(kind)
 	var folder := "enemies/human_base" if kind == "human" else "characters/" + kind
 	sprite.texture = load("res://assets/" + folder + "/TEMP_poses.png")
 	sprite.hframes = 8
@@ -79,6 +81,7 @@ func _ready() -> void:
 		posture = max_posture
 	start_x = position.x
 	last_safe = position
+	update_visual()
 
 func set_state(next: String) -> void:
 	state = next
@@ -405,6 +408,8 @@ func process_enemy(delta: float) -> void:
 
 func update_visual() -> void:
 	if sprite == null:
+		return
+	if production_visual != null and production_visual.update(self):
 		return
 	var frame := 0
 	if state in ["walk", "run", "patrol", "approach", "dodge"]:

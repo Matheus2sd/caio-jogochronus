@@ -28,3 +28,5 @@ Somente Capítulo I está em implementação. Não iniciar Capítulo II sem auto
 - COMPLETE: auditoria de assets e baseline automatizado, com capturas; ver ASSET_AUDIT.md.
 - TODO: executar os 13 pacotes em ASSET_REBUILD_PLAN.md, mantendo testes por pacote.
 - TEMPORARY: apresentação atual; o estado funcional anterior não certifica arte final.
+
+- COMPLETE tecnico (Ren): 26 clips integrados, regressao e capturas passaram. TEMPORARY artistico: interframes de combo e revisao humana.

@@ -14,3 +14,5 @@
 
 - TODO: revisão artística das novas sequências e mixagem; testes de fluxo não certificam qualidade visual/sonora.
 - Decisão de continuidade: usar Daigo do P0 e DOCX; ignorar variante jovem, títulos e segunda forma conflitantes da folha individual. Akio 56 px conforme AR02.
+
+- Ren possui animacoes exportadas e testadas, mas combos 2/3 reutilizam keyposes. O aceite final continua artistico, nao inferido do teste funcional.

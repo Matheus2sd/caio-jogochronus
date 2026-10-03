@@ -34,3 +34,8 @@ Fontes oficiais consultadas e pranchas principais inspecionadas. Plano, auditori
 - Executados status/fetch/pull ff-only/log; operações Git precisaram de escalonamento de sandbox e então passaram. Branch production-pass-chapter1 criada em 4fa08a0. Alteração preexistente em project.godot preservada.
 - Leitura de continuidade e inspeção das 13 pranchas. Auditoria completa, plano por 13 pacotes e padrão de sprite criados.
 - Validador completo com captura visual executado antes de alterações de runtime: exit 0. Baseline salvo em docs/screenshots/chapter1/.
+
+### Pacote Ren
+- Criadas duas fontes novas por image_gen; exportador Pillow deterministico, 26 clips/66 poses selecionadas, SpriteFrames e controlador visual sincronizado com ataque. Corrigidos limites de recorte por espacos transparentes.
+- COMPLETE tecnico: regressao completa -Visual (exit 0); production_visuals passou cobertura, avanco, contato, pivo e flip; capturas Godot revistas.
+- TEMPORARY artistico: leves 2/3 reaproveitam poses; interframes dedicados e fluidez ainda precisam revisao. Nenhuma regra de dano/save alterada.
