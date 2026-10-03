@@ -12,3 +12,11 @@
 - A marca do Capítulo I é registrada uma única vez como `marks` + `chapter1_mark_awarded` no save. O menu de Progressão completo permanece pendente e não amplia o escopo para o Capítulo II.
 - No remapeamento de teclado, uma tecla já usada abre confirmação para trocar as duas ações ou cancelar, conforme UI/UX oficial. A extensão para entradas de controle requer validação própria.
 - A Progressão do Capítulo I mostra L1–L3 e E1 desde a pausa; aplicar/remover as três melhorias de Lâmina só é permitido junto a um ponto seguro sem ameaça. E1 permanece bloqueada pelo marco oficial do Capítulo IV. A primeira marca é entregue ao concluir o Capítulo I, portanto o encerramento a apresenta em consulta; a aplicação real em jogo futuro depende de um descanso posterior, sem iniciar o Capítulo II aqui.
+
+## 2026-10-03 — Production Pass
+
+- Pedido atual autoriza recriação do zero e integração incremental de arte/áudio sobre o capítulo existente. Substitui recortes como estratégia final e a antiga espera entre Fases 6/7. Somente Capítulo I.
+- Branch production-pass-chapter1; sem merge automático em main. project.godot já estava alterado localmente antes da fase e fica fora dos commits.
+- Referências são direção, não fonte para extrair novamente poses finais. P0 + DOCX prevalecem sobre variante jovem/armadura/textos incompatíveis de Daigo.
+- Akio usa 56 px conforme AR02, distinto de Ren; 52 px das pranchas antigas é divergência documentada.
+- Pipeline assistida de imagem e processamento de grade/alfa/paleta explicitamente autorizados. Fontes geradas são versionadas; executar exportador é determinístico, gerar novamente não é.

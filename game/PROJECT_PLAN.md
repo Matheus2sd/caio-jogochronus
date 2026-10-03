@@ -22,3 +22,9 @@ Estado verificado em 2026-10-02 no clone atual, com Godot 4.5.1 stable. COMPLETE
 | TODO | Encerramento editorial e polimento | Revisar falas, gesto de Daigo sobrevivente, apresentação da marca e todos os assets finais antes de declarar o capítulo completo. |
 
 Somente Capítulo I está em implementação. Não iniciar Capítulo II sem autorização.
+
+## Production Pass — 2026-10-03
+
+- COMPLETE: auditoria de assets e baseline automatizado, com capturas; ver ASSET_AUDIT.md.
+- TODO: executar os 13 pacotes em ASSET_REBUILD_PLAN.md, mantendo testes por pacote.
+- TEMPORARY: apresentação atual; o estado funcional anterior não certifica arte final.

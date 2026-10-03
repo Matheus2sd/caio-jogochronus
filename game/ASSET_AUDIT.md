@@ -1,21 +1,72 @@
-# Auditoria dos assets
+# Auditoria completa — Production Pass / 2026-10-03
 
-Auditoria inicial: 13 PNGs de referência, todos abaixo de 3 MB; DOCX/TXT oficiais; nenhum arquivo excede 100 MiB. Nenhum áudio ou sprite transparente final fornecido.
+Baseline: `4fa08a0`, branch `production-pass-chapter1`. Inspeção de todos os arquivos em `game/assets/`, código consumidor e 13 pranchas aprovadas. `tools/audit_assets.py` mede tamanho, alfa, cores, duração e SHA-256 sem editar originais.
 
-| Classe | Fonte / elemento | Uso |
+## Diagnóstico por pacote
+
+| Pacote | Classificação | Evidência e ação |
 |---|---|---|
-| C | 00_Guia_Visual_P0 | direção de escala e composição |
-| B | Ren_Jovem_Folha_Producao | recortar poses, limpar fundo escuro, normalizar 96×96 |
-| B | Akio_Jovem_Folha_Producao_01/02 | recortes com fundo claro, personagem e poses |
-| B | Daigo_Folha_Producao_VISUAL | poses humanas; ignorar textos conflitantes e fase sobrenatural |
-| B | Inimigo_Humano_Base_Folha_Producao | H1 e H2 compartilham base temporariamente |
-| B | Tileset_Capitulo1_Primavera_Referencia | tiles, objetos e fundo recortáveis; bordas exigem revisão |
-| B | Mundo_Eco_Transformacao_Referencia | fundo distinto, fragmentos e efeitos de transição |
-| C | HUD_UI_Capitulo1_Referencia | composição; regras e números vêm dos DOCX |
-| C | P1_Conjunto_Visual_01/02 e Akio_Folha_Extra | referências secundárias |
-| C | Checklist_Final_P1 | checklist visual, não prova de integração |
-| D | Interframes, transições, animações finais | produção artística posterior |
-| D | SFX, ambiente e música finais | síntese temporária original |
-| A | DOCX/TXT originais | documentação diretamente preservável |
+| Ren | REBUILD | Oito poses recortadas, contorno perfurado pelo recorte do fundo escuro, death repete combate, movimento apenas alterna pose/balança 1 px. Refazer desenhos e sequências. |
+| Humano H1/H2 | REBUILD | Guarda/hurt cortados nas laterais, fragmentos de poses vizinhas e espada solta; falta antecipação animada. Nova base e ficha de timings. |
+| Akio | REBUILD | Oito poses; efeitos embutidos; não há sequência jogável completa. Corpo e movimento próprios, 56 px conforme AR02. |
+| Daigo | REBUILD | Recorte usa variante jovem da prancha conflitante, riscos de legenda/borda incorporados; derrota é pose girada. Reconstruir pelo P0 + DOCX: largo, grisalho, barba, manto e apoio ajoelhado vivo. |
+| Tiles | REBUILD | Oito amostras 16×16, repetição de pedra coberta de musgo no subsolo, sem transições ou TileSet editável. Criar atlas modular. |
+| Props (6) | REBUILD | Recortes com restos de chão, tamanhos reamostrados e densidade desigual. Criar PNGs isolados, sem símbolos de clã inventados. |
+| Presente/fundo arena | REPLACE | Imagem 640×220 esticada para 640×280; perspectiva e chão desenhados competem com plano jogável; uma só velocidade. Produzir camadas independentes. |
+| Eco | REBUILD | Fundo próprio, porém o restante é tint e retângulos flutuantes. Reconstituir ponte e arquitetura em fragmentos localizados, manter terreno reconhecível. |
+| VFX combate/Eco | REBUILD | Pastas só têm README; runtime desenha arcos e pequenos retângulos sem sequências exportadas. Produzir efeitos separados e sincronizados. |
+| HUD/ícones/diálogo/menus | REBUILD | Só README; widgets nativos com barras retangulares e painel grande. Criar kit discreto preservando hierarquia e navegação. |
+| SFX (9) | REPLACE | 22.05 kHz/16-bit mono, ruído/seno simples; eventos importantes ausentes. Produzir transientes e materiais distinguíveis. |
+| Ambiente/música (2) | TEMP_ONLY | Dois loops mono de 8 s para todas as áreas, tocando desde menu. Substituir por ambiências situacionais e música seletiva; final musical continua sujeito a revisão. |
+| Manifesto antigo e pipeline de recorte | KEEP | Preservar proveniência e reprodução do baseline; não executar sobre o novo pacote. Novo manifesto separado. |
+| Recursos `.import` | KEEP | Configuração de importação; atualizar apenas derivados novos/removidos. Não são arte. |
+| Referências/DOCX (fora de runtime) | KEEP | Fontes oficiais imutáveis; textos de pranchas não sobrepõem cânone. |
 
-As classes não significam aprovação final. O manifesto de recortes registra fonte, caixa, pivô e tamanho de cada derivado.
+Nenhum pacote foi marcado BLOCKED: ferramentas locais de importação e Pillow estão disponíveis. A maioria exige reconstrução, não remendo. Assets anteriores ficam no lugar até substituição; então podem ser copiados para `_legacy_temp/` com `.gdignore`.
+
+## Cobertura por arquivo no baseline
+
+`*.import` são metadados associados a cada PNG/WAV abaixo (25 recursos). Os seis README e o manifesto foram lidos; o padrão de sprite criado nesta fase não é asset legado.
+
+| Arquivo | Medida | Classificação |
+|---|---|---|
+| `audio/ambient/TEMP_ambient.wav` | 8.0 s, 22050 Hz, 16 bit, 1 canal | TEMP_ONLY |
+| `audio/music/TEMP_music.wav` | 8.0 s, 22050 Hz, 16 bit, 1 canal | TEMP_ONLY |
+| `audio/sfx/TEMP_break.wav` | 0.4 s, 22050 Hz, 16 bit, 1 canal | REPLACE |
+| `audio/sfx/TEMP_echo.wav` | 1.2 s, 22050 Hz, 16 bit, 1 canal | REPLACE |
+| `audio/sfx/TEMP_guard.wav` | 0.18 s, 22050 Hz, 16 bit, 1 canal | REPLACE |
+| `audio/sfx/TEMP_heal.wav` | 0.8 s, 22050 Hz, 16 bit, 1 canal | REPLACE |
+| `audio/sfx/TEMP_heavy.wav` | 0.28 s, 22050 Hz, 16 bit, 1 canal | REPLACE |
+| `audio/sfx/TEMP_impact.wav` | 0.13 s, 22050 Hz, 16 bit, 1 canal | REPLACE |
+| `audio/sfx/TEMP_parry.wav` | 0.38 s, 22050 Hz, 16 bit, 1 canal | REPLACE |
+| `audio/sfx/TEMP_slash.wav` | 0.15 s, 22050 Hz, 16 bit, 1 canal | REPLACE |
+| `audio/sfx/TEMP_step.wav` | 0.06 s, 22050 Hz, 16 bit, 1 canal | REPLACE |
+| `characters/akio/TEMP_poses.png` | 768×96, alfa [0, 255], 7997 cores | REBUILD |
+| `characters/daigo/TEMP_poses.png` | 768×96, alfa [0, 255], 9241 cores | REBUILD |
+| `characters/ren/TEMP_poses.png` | 768×96, alfa [0, 255], 4447 cores | REBUILD |
+| `enemies/human_base/TEMP_poses.png` | 768×96, alfa [0, 255], 6160 cores | REBUILD |
+| `environments/backgrounds/TEMP_arena.png` | 640×220, alfa [255, 255], 65774 cores | REPLACE |
+| `environments/echo/TEMP_background.png` | 640×220, alfa [255, 255], 45705 cores | REPLACE |
+| `environments/present/TEMP_background.png` | 640×220, alfa [255, 255], 118417 cores | REPLACE |
+| `environments/props/TEMP_fence.png` | 110×36, alfa [0, 255], 3611 cores | REBUILD |
+| `environments/props/TEMP_gate.png` | 85×105, alfa [0, 255], 7333 cores | REBUILD |
+| `environments/props/TEMP_house.png` | 170×156, alfa [0, 255], 20637 cores | REBUILD |
+| `environments/props/TEMP_lantern.png` | 26×52, alfa [0, 255], 1121 cores | REBUILD |
+| `environments/props/TEMP_pine.png` | 78×130, alfa [0, 255], 7906 cores | REBUILD |
+| `environments/props/TEMP_tree.png` | 122×125, alfa [0, 255], 12153 cores | REBUILD |
+| `environments/tilesets/TEMP_tiles.png` | 128×16, alfa [255, 255], 2034 cores | REBUILD |
+| `manifest.json` | 7679 bytes | KEEP |
+| `ui/dialogue/README.txt` | 79 bytes | REBUILD |
+| `ui/hud/README.txt` | 79 bytes | REBUILD |
+| `ui/icons/README.txt` | 79 bytes | REBUILD |
+| `ui/menus/README.txt` | 79 bytes | REBUILD |
+| `vfx/combat/README.txt` | 79 bytes | REBUILD |
+| `vfx/echo/README.txt` | 79 bytes | REBUILD |
+
+## Verificação inicial executada
+
+COMPLETE técnico: `tools/validate_chapter1.ps1 -Visual` terminou com exit 0 antes de alterar runtime: importação, smoke, fluxo, travessia, percurso contínuo, menus, progressão, save e capturas. Avisos preexistentes de certificados e ObjectDB permanecem; não são prova de áudio/artes finais.
+
+Capturas anteriores: `docs/screenshots/chapter1/baseline_present.png`, `baseline_menu.png`, `baseline_assets.png`. Evidenciam Ren quase transparente, falta de animações, solo repetitivo e fundo disputando leitura. O teste automatizado de ausência de faixa lisa passou no baseline; o problema atual é composição/profundidade, não ausência completa de cobertura.
+
+A reconstrução completa e o aceite visual ainda estão TODO. Ver `ASSET_REBUILD_PLAN.md`.

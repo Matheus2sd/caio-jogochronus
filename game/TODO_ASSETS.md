@@ -17,3 +17,7 @@ Validação visual em 2026-10-02: Ren aparece em cena e o fundo provisório agor
 | TODO | UI final | barras/ícones/menus/diálogo | 640×360 | HUD referência; widgets nativos provisórios |
 | TODO | Cartões finais de Progressão | 4 cartões L1/L2/L3/E1; estados disponível/equipado/bloqueado, 1 quadro por estado | grade 2×2 em 640×360; cartão até 235×75 | UI/UX v0.1 e referência HUD; substituir estilo nativo provisório sem alterar nomes/efeitos oficiais |
 | TEMPORARY | Áudio | golpes, guarda, parry, cura, Eco; loops ambiente/música | WAV | síntese original; falta direção sonora final |
+
+## Production Pass
+
+A classificação e ordem atuais estão em ASSET_AUDIT.md e ASSET_REBUILD_PLAN.md. Recortar novamente as mesmas pranchas não satisfaz o rebuild. Novas fontes, exports, fichas e evidências devem acompanhar cada pacote.

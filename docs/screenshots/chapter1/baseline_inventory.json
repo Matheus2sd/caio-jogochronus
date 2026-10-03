@@ -1,0 +1,351 @@
+[
+  {
+    "file": "audio/ambient/TEMP_ambient.wav",
+    "bytes": 352844,
+    "sha256": "883cdd7b232865464d49217cf4e4d009be51b1229774c28153e7e9a951a16463",
+    "rate": 22050,
+    "channels": 1,
+    "bits": 16,
+    "seconds": 8.0
+  },
+  {
+    "file": "audio/music/TEMP_music.wav",
+    "bytes": 352844,
+    "sha256": "c43a68000364e3ae76d6c6f9b9e84d0bc38fd55d061c5bd9dc66a6ee2c40fb40",
+    "rate": 22050,
+    "channels": 1,
+    "bits": 16,
+    "seconds": 8.0
+  },
+  {
+    "file": "audio/sfx/TEMP_break.wav",
+    "bytes": 17684,
+    "sha256": "b886ade04136038896942a07725cbe9f18b0169772a719d9a3af72f857a7f0e8",
+    "rate": 22050,
+    "channels": 1,
+    "bits": 16,
+    "seconds": 0.4
+  },
+  {
+    "file": "audio/sfx/TEMP_echo.wav",
+    "bytes": 52964,
+    "sha256": "88e1b73bbe16e81702a89e51c8a8bb0ac68d0a9f9bba537a23b88334bfde7345",
+    "rate": 22050,
+    "channels": 1,
+    "bits": 16,
+    "seconds": 1.2
+  },
+  {
+    "file": "audio/sfx/TEMP_guard.wav",
+    "bytes": 7982,
+    "sha256": "879d329e88348256321614322281f7cfc8a0afb491db9006096ce6be7fa24697",
+    "rate": 22050,
+    "channels": 1,
+    "bits": 16,
+    "seconds": 0.18
+  },
+  {
+    "file": "audio/sfx/TEMP_heal.wav",
+    "bytes": 35324,
+    "sha256": "ab0ec1cb39c46c2e3b4c14d126b36a17e3741ca7109667666d97be50d5c43524",
+    "rate": 22050,
+    "channels": 1,
+    "bits": 16,
+    "seconds": 0.8
+  },
+  {
+    "file": "audio/sfx/TEMP_heavy.wav",
+    "bytes": 12392,
+    "sha256": "2b4163133ae45e5f9f9c754fd6ca59fb227a987ad81bcb98c180dc5146552ad8",
+    "rate": 22050,
+    "channels": 1,
+    "bits": 16,
+    "seconds": 0.28
+  },
+  {
+    "file": "audio/sfx/TEMP_impact.wav",
+    "bytes": 5776,
+    "sha256": "395f6198a58f6cdaca3291af09f6fac2e8e76aedb67d9f7f4f6a735040fb1581",
+    "rate": 22050,
+    "channels": 1,
+    "bits": 16,
+    "seconds": 0.13
+  },
+  {
+    "file": "audio/sfx/TEMP_parry.wav",
+    "bytes": 16802,
+    "sha256": "230e86240840634a3a3f1c1b8fc0b57dba472741beb8de560fa74dfc85cbf65f",
+    "rate": 22050,
+    "channels": 1,
+    "bits": 16,
+    "seconds": 0.38
+  },
+  {
+    "file": "audio/sfx/TEMP_slash.wav",
+    "bytes": 6658,
+    "sha256": "bebe26da9c5144fdb9f1875d3485a0db4ae78536ea94031f419ae0e17c1bca74",
+    "rate": 22050,
+    "channels": 1,
+    "bits": 16,
+    "seconds": 0.15
+  },
+  {
+    "file": "audio/sfx/TEMP_step.wav",
+    "bytes": 2690,
+    "sha256": "e9b3ce8294834a8621125ea8c8fde100dc6a52eb9f1b4a54cc2df125713ac45b",
+    "rate": 22050,
+    "channels": 1,
+    "bits": 16,
+    "seconds": 0.06
+  },
+  {
+    "file": "characters/akio/TEMP_poses.png",
+    "bytes": 37131,
+    "sha256": "bee22c5d5f079d3457314943bd2a544e573b88332b513b644c972035123da765",
+    "size": [
+      768,
+      96
+    ],
+    "alpha_range": [
+      0,
+      255
+    ],
+    "transparent_pixels": 63998,
+    "colors": 7997
+  },
+  {
+    "file": "characters/daigo/TEMP_poses.png",
+    "bytes": 42686,
+    "sha256": "6392eed70122ca2a715d63077cd679c081893066e2c065f35da037884906c8bd",
+    "size": [
+      768,
+      96
+    ],
+    "alpha_range": [
+      0,
+      255
+    ],
+    "transparent_pixels": 61328,
+    "colors": 9241
+  },
+  {
+    "file": "characters/ren/TEMP_poses.png",
+    "bytes": 22219,
+    "sha256": "23532d843793f53568a555a44fd28d986ea7f5b02d9f102d998a414285e7f61d",
+    "size": [
+      768,
+      96
+    ],
+    "alpha_range": [
+      0,
+      255
+    ],
+    "transparent_pixels": 68578,
+    "colors": 4447
+  },
+  {
+    "file": "enemies/human_base/TEMP_poses.png",
+    "bytes": 27743,
+    "sha256": "0bb467c4f3fbb42cd793c1a64d24ea7ceb725a328e4e4d27a7646a8d9b4e73ce",
+    "size": [
+      768,
+      96
+    ],
+    "alpha_range": [
+      0,
+      255
+    ],
+    "transparent_pixels": 66370,
+    "colors": 6160
+  },
+  {
+    "file": "environments/backgrounds/TEMP_arena.png",
+    "bytes": 216732,
+    "sha256": "13e84457ef7e5661efbc8f3c60a6da90ebc69cbcdcf9753e494890055e33df54",
+    "size": [
+      640,
+      220
+    ],
+    "alpha_range": [
+      255,
+      255
+    ],
+    "transparent_pixels": 0,
+    "colors": 65774
+  },
+  {
+    "file": "environments/echo/TEMP_background.png",
+    "bytes": 174587,
+    "sha256": "86fee5777759f2e5d646014f4355ee839fd2036d62a2858e72d0982c40285df4",
+    "size": [
+      640,
+      220
+    ],
+    "alpha_range": [
+      255,
+      255
+    ],
+    "transparent_pixels": 0,
+    "colors": 45705
+  },
+  {
+    "file": "environments/present/TEMP_background.png",
+    "bytes": 376903,
+    "sha256": "3efaa383ebd678eb2bfddcbfb2b550b73a7dec1f50d426fb09ca4fe85018632c",
+    "size": [
+      640,
+      220
+    ],
+    "alpha_range": [
+      255,
+      255
+    ],
+    "transparent_pixels": 0,
+    "colors": 118417
+  },
+  {
+    "file": "environments/props/TEMP_fence.png",
+    "bytes": 11277,
+    "sha256": "accd1fb6680681f93cbb05c41453cdbe612784cf3880f89b82d462d62913aca8",
+    "size": [
+      110,
+      36
+    ],
+    "alpha_range": [
+      0,
+      255
+    ],
+    "transparent_pixels": 1110,
+    "colors": 3611
+  },
+  {
+    "file": "environments/props/TEMP_gate.png",
+    "bytes": 21718,
+    "sha256": "85f37bcb7f5c193610209d56f7d9879a7aedf8255554b1c23c54906b4a5e5ec2",
+    "size": [
+      85,
+      105
+    ],
+    "alpha_range": [
+      0,
+      255
+    ],
+    "transparent_pixels": 2008,
+    "colors": 7333
+  },
+  {
+    "file": "environments/props/TEMP_house.png",
+    "bytes": 65710,
+    "sha256": "e041385ab1ac75d0f22121fcd723b58af7dd8376503198d97c05e41275e00dba",
+    "size": [
+      170,
+      156
+    ],
+    "alpha_range": [
+      0,
+      255
+    ],
+    "transparent_pixels": 5219,
+    "colors": 20637
+  },
+  {
+    "file": "environments/props/TEMP_lantern.png",
+    "bytes": 3863,
+    "sha256": "21b7b9e0e301204e5429f80bce3a462be58ae1a590fcb9932aec05437fc40fc6",
+    "size": [
+      26,
+      52
+    ],
+    "alpha_range": [
+      0,
+      255
+    ],
+    "transparent_pixels": 565,
+    "colors": 1121
+  },
+  {
+    "file": "environments/props/TEMP_pine.png",
+    "bytes": 28214,
+    "sha256": "2d6deda27ae506a6331a6010ff2ec02198bd774746a5672035073d857b8c207d",
+    "size": [
+      78,
+      130
+    ],
+    "alpha_range": [
+      0,
+      255
+    ],
+    "transparent_pixels": 3692,
+    "colors": 7906
+  },
+  {
+    "file": "environments/props/TEMP_tree.png",
+    "bytes": 42766,
+    "sha256": "1d20f6a5544d01e38ef34f30ff77b001f4ae8c8a80fde1859351a1519ff2d76f",
+    "size": [
+      122,
+      125
+    ],
+    "alpha_range": [
+      0,
+      255
+    ],
+    "transparent_pixels": 5756,
+    "colors": 12153
+  },
+  {
+    "file": "environments/tilesets/TEMP_tiles.png",
+    "bytes": 6157,
+    "sha256": "266b8b74bcdb61f61f9a45fa0aad93fd3b8cbdd5641a3f8bbc576d96c48ff827",
+    "size": [
+      128,
+      16
+    ],
+    "alpha_range": [
+      255,
+      255
+    ],
+    "transparent_pixels": 0,
+    "colors": 2034
+  },
+  {
+    "file": "manifest.json",
+    "bytes": 7679,
+    "sha256": "87279e249b291bf60e401fbfc3da21479418faf1fd4d9b8d173bde5e935a26d5"
+  },
+  {
+    "file": "SPRITE_STANDARD.md",
+    "bytes": 1864,
+    "sha256": "d2f524fec090829321dcdf7bbfcecda82157269bb9624a274e81f2527ea227c0"
+  },
+  {
+    "file": "ui/dialogue/README.txt",
+    "bytes": 79,
+    "sha256": "5081fa827083aa3fba0438607922a5f0e17104cd06d3895cccd79ddf05aca18e"
+  },
+  {
+    "file": "ui/hud/README.txt",
+    "bytes": 79,
+    "sha256": "5081fa827083aa3fba0438607922a5f0e17104cd06d3895cccd79ddf05aca18e"
+  },
+  {
+    "file": "ui/icons/README.txt",
+    "bytes": 79,
+    "sha256": "5081fa827083aa3fba0438607922a5f0e17104cd06d3895cccd79ddf05aca18e"
+  },
+  {
+    "file": "ui/menus/README.txt",
+    "bytes": 79,
+    "sha256": "5081fa827083aa3fba0438607922a5f0e17104cd06d3895cccd79ddf05aca18e"
+  },
+  {
+    "file": "vfx/combat/README.txt",
+    "bytes": 79,
+    "sha256": "5081fa827083aa3fba0438607922a5f0e17104cd06d3895cccd79ddf05aca18e"
+  },
+  {
+    "file": "vfx/echo/README.txt",
+    "bytes": 79,
+    "sha256": "5081fa827083aa3fba0438607922a5f0e17104cd06d3895cccd79ddf05aca18e"
+  }
+]

@@ -9,3 +9,8 @@
 - TODO artístico: recortes das pranchas são provisórios e não aprovam interframes nem mudanças de design. Ver `TODO_ASSETS.md`.
 - EM ABERTO no cânone: topônimos, símbolo final do clã, fonte final e nomenclatura definitiva dos Ecos. A implementação não fixa essas decisões.
 - Cânone preservado: Daigo sobrevive; não é mentor, líder nem servo; a memória não muda o passado; não há revelação antecipada do massacre.
+
+## Production Pass
+
+- TODO: revisão artística das novas sequências e mixagem; testes de fluxo não certificam qualidade visual/sonora.
+- Decisão de continuidade: usar Daigo do P0 e DOCX; ignorar variante jovem, títulos e segunda forma conflitantes da folha individual. Akio 56 px conforme AR02.

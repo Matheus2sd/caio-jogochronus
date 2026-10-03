@@ -28,3 +28,9 @@ Confirmada raiz oficial. Estrutura inicial: docs, assets_referencia, game vazio.
 Remoto confirmado vazio pelo conector (size 0) e ls-remote. Git inicializado em main, remote oficial configurado, fetch executado. GitHub CLI sem login; não foram inventadas credenciais. Windows sandbox falhou com erro 1385; comandos executados mediante escalonamento autorizado.
 
 Fontes oficiais consultadas e pranchas principais inspecionadas. Plano, auditoria, pendências e decisões criados. Implementação ainda não testada, portanto não COMPLETE.
+
+## 2026-10-03 — Production Pass: auditoria
+
+- Executados status/fetch/pull ff-only/log; operações Git precisaram de escalonamento de sandbox e então passaram. Branch production-pass-chapter1 criada em 4fa08a0. Alteração preexistente em project.godot preservada.
+- Leitura de continuidade e inspeção das 13 pranchas. Auditoria completa, plano por 13 pacotes e padrão de sprite criados.
+- Validador completo com captura visual executado antes de alterações de runtime: exit 0. Baseline salvo em docs/screenshots/chapter1/.
