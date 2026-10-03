@@ -47,3 +47,7 @@ Fontes oficiais consultadas e pranchas principais inspecionadas. Plano, auditori
 - Parallax: ceu + quatro camadas novas, fatores 0.12/0.28/0.48/0.72, repeticao espelhada sem blur, camera efetiva. Suite funcional passou; captura inicialmente detectou topo liso, corrigido elevando copa ao topo; reimportacao e capturas visual/producao passaram, imagem inspecionada.
 
 - VFX: seis efeitos exportados, seis estagios cada; camada propria em runtime, acionada por contato real, sem alterar hitboxes. Regressoes completas e captura Godot passaram; reducao de flashes respeitada.
+
+## Eco — produção integrada
+
+Seis objetos novos: portão incompleto, lanterna suspensa, ruínas, ponte lembrada, cerejeira violeta e limiar. Partículas e entrada/saída em geometria pixel; a ponte do Presente continua partida. `validate_chapter1.ps1 -Visual` e `production_capture.gd`: exit 0. Captura `echo_akio.png` inspecionada. Avisos anteriores de certificados e ObjectDB permanecem; arte continua TEMPORARY.

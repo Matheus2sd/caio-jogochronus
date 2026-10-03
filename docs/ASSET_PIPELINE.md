@@ -20,3 +20,7 @@ Python 3 + Pillow exportam a partir dessas fontes. Scripts resolvem a raiz por `
 ## Critérios de liberação
 
 Dimensões, transparência, pivôs, importação, presença das animações e caminho de recursos precisam passar. Avaliar a imagem real na Godot: forma do corpo, arma, ritmo, costuras e contraste. Som precisa de inspeção de clipping/loop e escuta; música sem revisão final permanece TEMPORARY. Não confundir um teste lógico verde com aprovação estética.
+
+## Eco
+
+`python tools/build_echo.py` exporta seis objetos a partir de `tools/art_sources/echo/echo_source.png`; recortes e escala registrados no script/manifesto. Ponte: 296×140, deck a 40 px do topo, desenhada em y=240 para manter superfície em y=280. Transições não mudam duração nem colisões. `production_capture.gd` salva entrada, memória e saída.

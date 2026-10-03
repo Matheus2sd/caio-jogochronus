@@ -30,6 +30,7 @@ var boss_started := false
 var background: Texture2D
 var backdrop: RefCounted
 var combat_fx: Node2D
+var echo_visual: RefCounted
 var tiles := preload("res://assets/environments/tilesets/env_spring_v001.png")
 var props: Dictionary = {}
 var prop_positions: Array = []
@@ -45,6 +46,7 @@ const AFTER = [["Ren", "Não fale como se o conhecesse melhor do que eu."],
 
 func _ready() -> void:
 	backdrop = preload("res://scripts/chapter_backdrop.gd").new()
+	echo_visual = preload("res://scripts/echo_visual.gd").new()
 	geometry = Node2D.new()
 	add_child(geometry)
 	cast = Node2D.new()
@@ -204,6 +206,7 @@ func living_enemies() -> int:
 func _process(delta: float) -> void:
 	if get_tree().paused:
 		return
+	echo_visual.tick(delta)
 	hitstop = maxf(0,hitstop-delta)
 	if not locked:
 		clock += delta
@@ -282,6 +285,7 @@ func snapshot() -> Dictionary:
 
 func enter_memory() -> void:
 	ren_snapshot = snapshot()
+	echo_visual.begin(player.position,false)
 	player.set_state("echo_interact")
 	Sound.play("echo")
 	fade_to(func():
@@ -290,6 +294,7 @@ func enter_memory() -> void:
 			["AKIO JOVEM · CONTROLE, PRECISÃO", "Apare com %s no instante do golpe. Pressione %s logo depois para avançar e cortar." % [InputConfig.prompt("guard",pad),InputConfig.prompt("light_attack",pad)]]],func():locked=false))
 
 func leave_memory() -> void:
+	echo_visual.begin(player.position,true)
 	Save.progress.echo_done = true
 	# Resume after memory at a valid checkpoint on reload, never inside the gap.
 	Save.progress.checkpoint = 3
@@ -382,7 +387,12 @@ func _draw() -> void:
 		return
 	var cam_x := 0.0 if camera==null else clampf(camera.get_screen_center_position().x-320,0,level_width-640)
 	backdrop.paint(self,cam_x,memory,zone==4)
+	if memory:
+		echo_visual.atmosphere(self,cam_x,clock)
 	for prop in prop_positions:
+		if memory and prop[0] in ["tree", "pine", "gate", "lantern"]:
+			echo_visual.prop(self,"tree" if prop[0] == "pine" else prop[0],prop[1],Color(0.8,0.82,0.95,0.8))
+			continue
 		var texture: Texture2D = props[prop[0]]
 		var tint := Color(0.43,0.62,0.79,0.7) if memory else Color(0.82,0.86,0.78,0.85)
 		draw_texture(texture,prop[1]-Vector2(texture.get_width()/2.0,texture.get_height()),tint)
@@ -402,23 +412,16 @@ func _draw() -> void:
 		for i in range(12):
 			draw_line(Vector2(410+i*22,310+sin(clock+i)*3),Vector2(425+i*22,310+sin(clock+i)*3),Color("57859a"))
 		if memory:
-			for x in range(400,680,16):
-				draw_rect(Rect2(x,280,15,8),Color("64a9b8"))
-				draw_line(Vector2(x,252),Vector2(x+16,252),Color("97dbe7"),2)
-				if x%48==16:
-					draw_rect(Rect2(x,246,4,36),Color("468ba6"))
+			# Authored bridge has its deck at y=280; collision remains owned by the memory.
+			draw_texture(echo_visual.textures.bridge,Vector2(392,240))
 		else:
 			draw_line(Vector2(386,280),Vector2(426,310),Color("5b4839"),5)
 			draw_line(Vector2(654,306),Vector2(691,280),Color("5b4839"),5)
-			draw_arc(Vector2(350,258),21+sin(clock*2)*2,0,TAU,24,Color("8aceed"),2)
+			echo_visual.limiar(self,Vector2(350,280),clock)
 	if zone==1 and not Save.progress.get("garca",false):
 		draw_colored_polygon(PackedVector2Array([Vector2(1170,187),Vector2(1179,198),Vector2(1170,207),Vector2(1161,198)]),Color("f4d394"))
-	# Eco reconstructs displaced architecture as well as the usable bridge.
-	if memory:
-		for i in range(18):
-			var x := 210+i*37.0
-			var y := 170+sin(i*2.1+clock)*12
-			draw_rect(Rect2(x,y,12,5),Color(0.32,0.78,0.94,0.22+sin(clock+i)*0.1))
+	if is_instance_valid(player):
+		echo_visual.transition(self,player.position,not Save.settings.flashes)
 	for i in range(35):
 		var x := fmod(i*77.7+clock*(9 if memory else -7),level_width)
 		var y := fmod(i*47.3+clock*( -9 if memory else 7)+360,280)
@@ -428,3 +431,4 @@ func _draw() -> void:
 	if debug_mode:
 		for r in platforms:
 			draw_rect(r,Color(0,1,0,0.6),false)
+

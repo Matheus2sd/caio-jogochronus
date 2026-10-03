@@ -74,3 +74,7 @@ A reconstrução completa e o aceite visual ainda estão TODO. Ver `ASSET_REBUIL
 ## Reinspecao apos os primeiros pacotes
 
 A tabela acima descreve o baseline, nao o runtime atual. Ren/humano usam SpriteFrames novos; tiles/props/parallax substituidos e verificados. VFX possui seis sequencias exportadas e camada independente, validacao completa exit 0. Akio/Daigo ainda carregam TEMP_poses; Eco ainda usa tint/retangulos; HUD/menus ainda nativos; audio ainda TEMP mono. Pastas reais: game/assets/audio e game/tests; nao existem game/audio nem tests na raiz.
+
+## Eco — substituição verificada
+
+REBUILD integrado: seis PNGs em `environments/echo/echo_*_v001.png`, exportados de fonte nova com alfa binário e paleta reduzida. `echo_visual.gd` trata fragmentos/limiar/transição; geometria de colisão preservada. TEMP_background antigo mantido como referência histórica. Suite completa e captura: exit 0.

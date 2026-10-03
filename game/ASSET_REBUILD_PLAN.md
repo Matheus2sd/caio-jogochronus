@@ -42,3 +42,7 @@ Cada pacote: produzir → revisar pixels/pivôs/contraste → integrar → execu
 ## Estado verificado na reinspecao
 
 Commits ee481ab/0b1c716/e5d413b/32bb5c0/c914d00 confirmam auditoria, Ren, humano, Presente e parallax. VFX integrado e validado nesta continuacao. Esses pacotes tem integracao tecnica verificada, mas arte TEMPORARY e polimento especifico ainda listado. Proximo pacote pendente: Mundo Eco, seguido de Akio, Daigo, HUD, menus e audio.
+
+## Pacote 7 executado
+
+Eco reconstruído e integrado; testes completos e captura verificados. Próximo pacote: Akio (fonte nova já gerada, ainda não integrada). Aceite artístico final continua TODO.

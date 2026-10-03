@@ -74,10 +74,17 @@ func capture() -> void:
 	main.world.actors[0].state_time = 0.3
 	main.world.actors[0].update_visual()
 	await save_shot("human_telegraph")
+	stage(2)
+	main.world.player.position.x = 350
+	pose("echo_interact")
+	main.world.echo_visual.begin(main.world.player.position,false)
+	await save_shot("echo_entry")
 	stage(2,true)
 	main.world.player.position.x = 470
 	pose("idle")
 	await save_shot("echo_akio")
+	main.world.echo_visual.begin(main.world.player.position,true)
+	await save_shot("echo_exit")
 	stage(4)
 	pose("guard_hold")
 	main.world.actors[0].update_visual()

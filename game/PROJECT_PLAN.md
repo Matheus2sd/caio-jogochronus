@@ -38,3 +38,7 @@ Somente Capítulo I está em implementação. Não iniciar Capítulo II sem auto
 - Parallax: ceu + quatro camadas novas, fatores 0.12/0.28/0.48/0.72, repeticao espelhada sem blur, camera efetiva. Suite funcional passou; captura inicialmente detectou topo liso, corrigido elevando copa ao topo; reimportacao e capturas visual/producao passaram, imagem inspecionada.
 
 - VFX: seis efeitos exportados, seis estagios cada; camada propria em runtime, acionada por contato real, sem alterar hitboxes. Regressoes completas e captura Godot passaram; reducao de flashes respeitada.
+
+## Production Pass — Eco
+
+COMPLETE técnico: pacote Eco integrado e regressão/capturas executadas com exit 0. TEMPORARY artístico: revisão em partida humana. Próximo: Akio, ainda usando TEMP_poses; depois Daigo, HUD/menus e áudio.

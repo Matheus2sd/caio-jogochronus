@@ -24,3 +24,7 @@
 - Parallax: ceu + quatro camadas novas, fatores 0.12/0.28/0.48/0.72, repeticao espelhada sem blur, camera efetiva. Suite funcional passou; captura inicialmente detectou topo liso, corrigido elevando copa ao topo; reimportacao e capturas visual/producao passaram, imagem inspecionada.
 
 - VFX: seis efeitos exportados, seis estagios cada; camada propria em runtime, acionada por contato real, sem alterar hitboxes. Regressoes completas e captura Godot passaram; reducao de flashes respeitada.
+
+## Eco — verificação e limite
+
+Testes confirmaram a memória atravessável e retorno ao Presente sem restaurar a ponte física. Capturas são poses encenadas na Godot, não substituem partida humana. Qualidade artística permanece aberta; nenhuma decisão narrativa nova.

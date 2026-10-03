@@ -31,3 +31,7 @@ A classificação e ordem atuais estão em ASSET_AUDIT.md e ASSET_REBUILD_PLAN.m
 - Parallax: ceu + quatro camadas novas, fatores 0.12/0.28/0.48/0.72, repeticao espelhada sem blur, camera efetiva. Suite funcional passou; captura inicialmente detectou topo liso, corrigido elevando copa ao topo; reimportacao e capturas visual/producao passaram, imagem inspecionada.
 
 - VFX: seis efeitos exportados, seis estagios cada; camada propria em runtime, acionada por contato real, sem alterar hitboxes. Regressoes completas e captura Godot passaram; reducao de flashes respeitada.
+
+## Eco reconstruído
+
+Seis objetos e transição próprios substituem retângulos da memória. TODO: aprovação artística de contraste, densidade e fluidez das transições. Fonte, exportador e manifesto versionados. Akio ainda precisa de sua nova fonte integrada.

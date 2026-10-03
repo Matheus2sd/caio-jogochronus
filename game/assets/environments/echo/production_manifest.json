@@ -1,0 +1,90 @@
+{
+  "status": "TEMPORARY",
+  "source_sha256": "ae3568b8d5311c32d0ea278f75cb8aaed820fd51321015c293ba853f4406a29e",
+  "assets": {
+    "gate": {
+      "file": "echo_gate_v001.png",
+      "size": [
+        112,
+        96
+      ],
+      "box": [
+        25,
+        40,
+        615,
+        520
+      ],
+      "deck_y": null
+    },
+    "lantern": {
+      "file": "echo_lantern_v001.png",
+      "size": [
+        39,
+        75
+      ],
+      "box": [
+        733,
+        30,
+        1004,
+        525
+      ],
+      "deck_y": null
+    },
+    "fragments": {
+      "file": "echo_fragments_v001.png",
+      "size": [
+        94,
+        92
+      ],
+      "box": [
+        1110,
+        80,
+        1529,
+        490
+      ],
+      "deck_y": null
+    },
+    "bridge": {
+      "file": "echo_bridge_v001.png",
+      "size": [
+        296,
+        140
+      ],
+      "box": [
+        15,
+        650,
+        652,
+        982
+      ],
+      "deck_y": 40
+    },
+    "tree": {
+      "file": "echo_tree_v001.png",
+      "size": [
+        164,
+        140
+      ],
+      "box": [
+        650,
+        520,
+        1220,
+        1010
+      ],
+      "deck_y": null
+    },
+    "memory": {
+      "file": "echo_memory_v001.png",
+      "size": [
+        36,
+        52
+      ],
+      "box": [
+        1218,
+        551,
+        1530,
+        1004
+      ],
+      "deck_y": null
+    }
+  }
+}
