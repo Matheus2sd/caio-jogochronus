@@ -1,0 +1,34 @@
+{
+  "layers": [
+    {
+      "name": "mountains",
+      "y": 68,
+      "height": 150,
+      "speed": 0.12,
+      "repeat": 1280
+    },
+    {
+      "name": "far_forest",
+      "y": 152,
+      "height": 112,
+      "speed": 0.28,
+      "repeat": 1280
+    },
+    {
+      "name": "mid_forest",
+      "y": 186,
+      "height": 114,
+      "speed": 0.48,
+      "repeat": 1280
+    },
+    {
+      "name": "near_forest",
+      "y": 0,
+      "height": 280,
+      "speed": 0.72,
+      "repeat": 1280
+    }
+  ],
+  "sky": "procedural original with discrete cloud clusters",
+  "repeat": "original 640px then mirrored 640px; no alpha blend/blur"
+}

@@ -28,6 +28,7 @@ var pad := false
 var checkpoint_notice := false
 var boss_started := false
 var background: Texture2D
+var backdrop: RefCounted
 var tiles := preload("res://assets/environments/tilesets/env_spring_v001.png")
 var props: Dictionary = {}
 var prop_positions: Array = []
@@ -42,6 +43,7 @@ const AFTER = [["Ren", "Não fale como se o conhecesse melhor do que eu."],
 	["Daigo", "Isamu cuidava de um lugar marcado por essas memórias. Comece por lá. Não espere que ele goste da visita."]]
 
 func _ready() -> void:
+	backdrop = preload("res://scripts/chapter_backdrop.gd").new()
 	geometry = Node2D.new()
 	add_child(geometry)
 	cast = Node2D.new()
@@ -91,9 +93,7 @@ func load_zone(next: int, in_memory: bool = false, resources: Dictionary = {}) -
 	boss_started = false
 	checkpoint_notice = false
 	level_width = [1000.0, 1600.0, 1000.0, 1280.0, 640.0][zone]
-	background = load("res://assets/environments/%s/TEMP_background.png" % ("echo" if memory else "present"))
-	if zone == 4:
-		background = load("res://assets/environments/backgrounds/TEMP_arena.png")
+	background = backdrop.sky
 	if zone == 2 and not memory:
 		add_platform(Rect2(0,280,400,140),0)
 		add_platform(Rect2(680,280,320,140),0)
@@ -137,7 +137,7 @@ func load_zone(next: int, in_memory: bool = false, resources: Dictionary = {}) -
 	camera.position = Vector2(player.position.x,180)
 	camera.reset_smoothing()
 	for x in range(0, int(level_width), 480):
-		prop_positions.append(["tree" if x%480==0 else "pine", Vector2(x+80,280)])
+		prop_positions.append(["tree" if x%960==0 else "pine", Vector2(x+80,280)])
 		prop_positions.append(["fence",Vector2(x+360,280)])
 		prop_positions.append(["bush",Vector2(x+150,280)])
 		prop_positions.append(["rocks",Vector2(x+440,280)])
@@ -375,12 +375,8 @@ func prompt_text() -> String:
 func _draw() -> void:
 	if background == null:
 		return
-	var cam_x := 0.0 if camera==null else clampf(camera.position.x-320,0,level_width-640)
-	draw_rect(Rect2(cam_x-30,0,700,360),Color("0c1927") if memory else Color("b6c7be"))
-	# Background moves more slowly than collision geometry and characters.
-	for i in range(-1,4):
-		var x := float(i*640) + floorf(cam_x*0.6/640)*640 - cam_x*0.25
-		draw_texture_rect(background,Rect2(x,0,640,280),false,Color(0.78,0.85,0.91) if memory else Color(0.85,0.9,0.85))
+	var cam_x := 0.0 if camera==null else clampf(camera.get_screen_center_position().x-320,0,level_width-640)
+	backdrop.paint(self,cam_x,memory,zone==4)
 	for prop in prop_positions:
 		var texture: Texture2D = props[prop[0]]
 		var tint := Color(0.43,0.62,0.79,0.7) if memory else Color(0.82,0.86,0.78,0.85)
