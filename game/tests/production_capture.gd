@@ -89,6 +89,11 @@ func capture() -> void:
 	pose("guard_hold")
 	main.world.actors[0].update_visual()
 	await save_shot("daigo_arena")
+	main.world.actors[0].set_state("death")
+	main.world.actors[0].update_visual()
+	main.world.actors[0].production_visual.time = 0.8
+	main.world.actors[0].update_visual()
+	await save_shot("daigo_defeat")
 	print("PRODUCTION CAPTURE PASS: staged presentation frames at 640x360")
 	main.free()
 	await process_frame

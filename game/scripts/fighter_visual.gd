@@ -30,7 +30,8 @@ func update(fighter) -> bool:
 		next = "guard_start"
 	if fighter.kind == "daigo":
 		if next == "death": next = "defeat"
-		elif next.begins_with("light_attack"): next = "attack_1" if fighter.ai_cycle % 2 else "attack_2"
+		elif not fighter.attack.is_empty() and fighter.attack.type in ["retaliate", "counter"]: next = "counter"
+		elif next.begins_with("light_attack"): next = "attack_1" if fighter.ai_cycle % 4 == 1 else "attack_2"
 	if fighter.kind == "human" and not fighter.attack.is_empty():
 		next = "attack"
 	if next == "idle" and not fighter.sword_drawn and frames.has_animation("idle_sheathed"):

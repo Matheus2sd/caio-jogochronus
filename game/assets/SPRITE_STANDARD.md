@@ -10,3 +10,5 @@
 - Sem translação de um único recorte vendida como animação nova. Reuso/reversão de poses permitido quando registrado; interframes faltantes ficam TODO.
 - Origem: referências aprovadas como direção; geração assistida cria desenhos novos; pós-processamento reproduzível autorizado (grade, alfa, paleta, normalização nearest) com ficha de ajustes. Não editar fontes oficiais.
 - Critérios: arma legível sobre fundo claro/escuro, pivô estável, preparação/contato/recuperação distintos, continuidade de volume, contorno sem halos. COMPLETE técnico não equivale a aceite artístico final.
+
+- Akio/Daigo usam células 192×96 e pivô (96,80): os cortes extensos extrapolam 128 px quando ancorados pelos pés. A altura do corpo permanece 56/58 px; somente a margem transparente cresce. Extração por componentes preserva lâminas fora da grade.

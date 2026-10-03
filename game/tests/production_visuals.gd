@@ -1,13 +1,13 @@
 extends SceneTree
+var failed := false
 
 func _initialize() -> void:
 	call_deferred("run")
 
 func check(ok: bool, message: String) -> void:
 	if not ok:
+		failed = true
 		push_error(message)
-		quit(1)
-		assert(ok, message)
 
 func run() -> void:
 	var path := "res://assets/characters/ren/ren_frames.tres"
@@ -57,7 +57,20 @@ func run() -> void:
 	check(player.production_visual.frames == akio, "Memory must use Akio's own drawings")
 	check(player.sprite.texture != preparation, "Akio response must reach its own contact pose")
 	check(player.sprite.position == Vector2(0,-32), "Akio feet pivot must remain fixed")
-	print("PRODUCTION VISUALS PASS: Ren/Akio coverage, advancement, contact phases, pivot and flip")
+	main.world.load_zone(4)
+	var boss = main.world.actors[0]
+	var daigo: SpriteFrames = boss.production_visual.frames
+	for clip in ["idle","walk","guard","attack_1","attack_2","heavy_attack","counter","push","hurt","posture_break","defeat"]:
+		check(daigo.has_animation(clip), "Daigo production coverage: " + clip)
+	boss.hp = 0
+	boss.die()
+	check(main.world.locked, "Daigo dialogue locks combat")
+	for i in range(50):
+		await physics_frame
+	check(boss.production_visual.animation == "defeat", "Locked dialogue must still show Daigo defeated alive")
+	check(boss.sprite.texture == daigo.get_frame_texture("defeat",2), "Defeat must settle on living kneeling pose")
+	if not failed:
+		print("PRODUCTION VISUALS PASS: character coverage, motion/contact, pivots and living Daigo defeat")
 	main.free()
 	await process_frame
-	quit(0)
+	quit(1 if failed else 0)

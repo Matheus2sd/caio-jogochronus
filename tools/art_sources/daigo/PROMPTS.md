@@ -1,0 +1,5 @@
+# Daigo — image_gen original
+
+Referência: Guia Visual P0, guerreiro veterano largo, 52 anos, cabelo grisalho preso, barba grisalha, túnica marrom, manto curto cinza áspero, calça oliva, katana/bainha. DOCX prevalece sobre a folha individual conflitante. Prompt: transparent 6×6 production sprite atlas, side view facing right, crisp pixel art for 58px body; no labels/grid/effects, full feet and swords. Row 1 idle×2/guard×2/walk×2. Rows 2–5 each six phases (two preparation, two contact, two recovery): first horizontal cut, second descending cut, heavy overhead cut, controlled counter thrust. Row 6 palm push, push recovery, hurt, posture break, lowering to knee alive, defeated alive leaning on planted katana. Heavy grounded experienced presence, no young navy warrior, no corpse or supernatural phase.
+
+Exportação por componentes conectados preserva espadas que atravessam a grade. Célula 192×96, corpo 58 px e pivô de pés 96,80. Fonte imutável e parâmetros versionados. TEMPORARY artístico até revisão humana.

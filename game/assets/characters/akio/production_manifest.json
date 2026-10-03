@@ -3,11 +3,11 @@
   "status": "TEMPORARY",
   "height": 56,
   "cell": [
-    96,
+    192,
     96
   ],
   "pivot": [
-    48,
+    96,
     80
   ],
   "provenance": "New image_gen drawings; approved references used for identity only",
@@ -15,7 +15,8 @@
     "Original Akio body and costume, not Ren recolor.",
     "Light combo 2 reuses diagonal heavy keyposes; combo 3 reuses light keyposes.",
     "Jump/turn/interact use selected authored keyposes, additional in-betweens pending artistic review.",
-    "56px uses official AR02, not 52px text on reference sheet."
+    "56px uses official AR02, not 52px text on reference sheet.",
+    "Connected silhouettes preserve extended swords, including detached blade in prone pose; 192x96 cell pivot96,80."
   ],
   "sources": {
     "body": {

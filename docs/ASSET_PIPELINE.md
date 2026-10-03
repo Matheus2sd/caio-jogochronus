@@ -24,3 +24,7 @@ Dimensões, transparência, pivôs, importação, presença das animações e ca
 ## Eco
 
 `python tools/build_echo.py` exporta seis objetos a partir de `tools/art_sources/echo/echo_source.png`; recortes e escala registrados no script/manifesto. Ponte: 296×140, deck a 40 px do topo, desenhada em y=240 para manter superfície em y=280. Transições não mudam duração nem colisões. `production_capture.gd` salva entrada, memória e saída.
+
+## Personagens com poses amplas
+
+`python tools/build_character.py akio` / `daigo`: `isolated_components` extrai silhuetas completas, ordenadas pelas linhas de pés da ficha. Partes desconectadas grandes (espada junto ao corpo caído de Akio) são associadas ao corpo mais próximo da mesma linha. Contagem de poses é validada. Exportação 192×96 mantém arma inteira e pivô de pés; sem aumentar corpo ou alcance físico.

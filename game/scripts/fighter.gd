@@ -91,7 +91,13 @@ func set_state(next: String) -> void:
 		attack = {}
 
 func _physics_process(delta: float) -> void:
-	if world == null or world.locked or world.hitstop > 0:
+	if world == null or world.hitstop > 0:
+		return
+	if world.locked:
+		# Dialogue freezes combat, but the living defeat and memory gesture still settle.
+		if state in ["death", "echo_interact"]:
+			elapsed += delta
+			update_visual()
 		return
 	elapsed += delta
 	state_time += delta
