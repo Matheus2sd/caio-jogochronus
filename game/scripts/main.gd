@@ -6,6 +6,9 @@ var ui: CanvasLayer
 var hud: Control
 var overlay: Control
 var bars: Dictionary = {}
+var heal_icons: Array[TextureRect] = []
+var talisman_icon: TextureRect
+var echo_icon: TextureRect
 var resource_text: Label
 var name_text: Label
 var area_text: Label
@@ -55,17 +58,34 @@ func make_style(color: Color, border: Color, width: int = 1) -> StyleBoxFlat:
 	style.content_margin_bottom = 5
 	return style
 
+func pixel_panel(focus: bool = false) -> StyleBoxTexture:
+	var style := StyleBoxTexture.new()
+	style.texture = load("res://assets/ui/production/%s.png" % ("focus" if focus else "panel"))
+	for side in [SIDE_LEFT,SIDE_TOP,SIDE_RIGHT,SIDE_BOTTOM]:
+		style.set_texture_margin(side,8)
+		style.set_content_margin(side,8)
+	return style
+
+func icon(parent: Control, key: String, point: Vector2) -> TextureRect:
+	var item := TextureRect.new()
+	item.texture = load("res://assets/ui/production/%s.png" % key)
+	item.position = point
+	item.size = Vector2(16,16)
+	item.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	parent.add_child(item)
+	return item
+
 func make_theme() -> Theme:
 	var theme := Theme.new()
 	theme.default_font_size = 13
 	theme.set_color("font_color","Label",Color("e7e1d1"))
 	theme.set_color("font_color","Button",Color("e7e1d1"))
 	theme.set_color("font_hover_color","Button",Color("fff2cb"))
-	theme.set_stylebox("normal","Button",make_style(Color("14242a"),Color("51615e")))
-	theme.set_stylebox("hover","Button",make_style(Color("293c40"),Color("d5b77b")))
+	theme.set_stylebox("normal","Button",pixel_panel())
+	theme.set_stylebox("hover","Button",pixel_panel(true))
 	theme.set_stylebox("pressed","Button",make_style(Color("39473f"),Color("f2d8a3")))
 	theme.set_stylebox("focus","Button",make_style(Color(0,0,0,0),Color("e6c98f"),2))
-	theme.set_stylebox("panel","PanelContainer",make_style(Color("101e26"),Color("526466")))
+	theme.set_stylebox("panel","PanelContainer",pixel_panel())
 	return theme
 
 func label(text: String, size: int = 13) -> Label:
@@ -100,7 +120,7 @@ func shade(alpha: float = 0.8) -> void:
 
 func menu_box(title: String, subtitle: String = "", wide: bool = false) -> VBoxContainer:
 	clear_overlay()
-	shade(0.91 if wide else 0.77)
+	shade(0.91 if wide else 0.50)
 	var box := VBoxContainer.new()
 	box.position = Vector2(70,32) if wide else Vector2(42,37)
 	box.size = Vector2(500,290) if wide else Vector2(246,286)
@@ -123,15 +143,7 @@ func show_menu() -> void:
 	screen = "menu"
 	hud.hide()
 	var box := menu_box("C H R O N U S", "CAPÍTULO I  /  PRIMAVERA")
-	# Reference-derived landscape, deliberately without concept-sheet text.
-	var bg := TextureRect.new()
-	bg.texture = load("res://assets/environments/present/TEMP_background.png")
-	bg.position = Vector2(0,0)
-	bg.size = Vector2(640,360)
-	bg.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
-	bg.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_COVERED
-	bg.modulate = Color(0.45,0.53,0.55)
-	bg.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	var bg := preload("res://scripts/menu_backdrop.gd").new()
 	overlay.add_child(bg)
 	overlay.move_child(bg,0)
 	var first: Button
@@ -148,7 +160,7 @@ func show_menu() -> void:
 	var caption := label("TEMPO  ·  MEMÓRIA  ·  HERANÇA",12)
 	caption.position = Vector2(370,294)
 	overlay.add_child(caption)
-	var build_label := label("Fatia jogável • arte e áudio provisórios",10)
+	var build_label := label("O PESO DO TEMPO",10)
 	build_label.position = Vector2(42,337)
 	overlay.add_child(build_label)
 
@@ -183,28 +195,34 @@ func build_hud() -> void:
 	hud.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
 	hud.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	ui.add_child(hud)
-	var panel := PanelContainer.new()
-	panel.position = Vector2(12,10)
-	panel.size = Vector2(202,90)
+	var panel := Panel.new()
+	panel.position = Vector2(10,8)
+	panel.size = Vector2(212,80)
+	panel.add_theme_stylebox_override("panel",pixel_panel())
 	panel.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	hud.add_child(panel)
-	var rows := VBoxContainer.new()
-	rows.add_theme_constant_override("separation",2)
-	panel.add_child(rows)
-	name_text = label("REN",12)
-	rows.add_child(name_text)
-	for entry in [["VIDA","b9665e"],["STAMINA","78aa9a"],["POSTURA","c5a976"]]:
-		var row := HBoxContainer.new()
-		rows.add_child(row)
+	name_text = label("REN",11)
+	name_text.position = Vector2(18,12)
+	hud.add_child(name_text)
+	var row_index := 0
+	for entry in [["VIDA","b9665e","health_bar"],["STAMINA","78aa9a","stamina_bar"],["POSTURA","c5a976","posture_bar"]]:
+		var y := 28+row_index*12
 		var title := label(entry[0],8)
-		title.custom_minimum_size.x = 52
-		row.add_child(title)
-		var bar := make_bar(Color(entry[1]))
-		bar.custom_minimum_size = Vector2(119,7)
-		row.add_child(bar)
+		title.position = Vector2(18,y)
+		hud.add_child(title)
+		var bar := make_bar(Color(entry[1]),entry[2])
+		bar.position = Vector2(70,y+3)
+		bar.size = Vector2(140-row_index*8,9-row_index*2)
+		hud.add_child(bar)
 		bars[entry[0]] = bar
-	resource_text = label("CURAS  ◆ ◆",9)
-	rows.add_child(resource_text)
+		row_index += 1
+	heal_icons.append(icon(hud,"heal_icon",Vector2(18,67)))
+	heal_icons.append(icon(hud,"heal_icon",Vector2(34,67)))
+	talisman_icon = icon(hud,"talisman_slot",Vector2(190,67))
+	echo_icon = icon(hud,"echo_memory",Vector2(198,11))
+	resource_text = label("2/2",9)
+	resource_text.position = Vector2(55,68)
+	hud.add_child(resource_text)
 	area_text = label("",11)
 	area_text.position = Vector2(285,14)
 	area_text.size.x = 342
@@ -213,11 +231,11 @@ func build_hud() -> void:
 	boss_label = label("DAIGO",12)
 	boss_label.position = Vector2(268,40)
 	hud.add_child(boss_label)
-	boss_hp = make_bar(Color("b9665e"))
+	boss_hp = make_bar(Color("b9665e"),"boss_bar")
 	boss_hp.position = Vector2(268,59)
 	boss_hp.size = Vector2(275,6)
 	hud.add_child(boss_hp)
-	boss_posture = make_bar(Color("c5a976"))
+	boss_posture = make_bar(Color("c5a976"),"enemy_posture")
 	boss_posture.position = Vector2(268,69)
 	boss_posture.size = Vector2(275,4)
 	hud.add_child(boss_posture)
@@ -238,13 +256,21 @@ func build_hud() -> void:
 	notice.add_theme_constant_override("shadow_offset_y",1)
 	hud.add_child(notice)
 
-func make_bar(color: Color) -> ProgressBar:
+func make_bar(color: Color, key: String = "health_bar") -> ProgressBar:
 	var bar := ProgressBar.new()
 	bar.show_percentage = false
 	bar.max_value = 100
 	bar.mouse_filter = Control.MOUSE_FILTER_IGNORE
-	bar.add_theme_stylebox_override("background",make_style(Color("23343a"),Color("435054"),0))
-	bar.add_theme_stylebox_override("fill",make_style(color,color,0))
+	var background := StyleBoxTexture.new()
+	background.texture = load("res://assets/ui/production/%s.png" % key)
+	background.texture_margin_left = 3
+	background.texture_margin_right = 3
+	bar.add_theme_stylebox_override("background",background)
+	var fill := StyleBoxFlat.new()
+	fill.bg_color = color
+	fill.border_color = color.lightened(0.25)
+	fill.border_width_top = 1
+	bar.add_theme_stylebox_override("fill",fill)
 	return bar
 
 func _process(delta: float) -> void:
@@ -259,7 +285,11 @@ func _process(delta: float) -> void:
 	bars.VIDA.value = player.hp
 	bars.STAMINA.value = player.stamina
 	bars.POSTURA.value = player.posture
-	resource_text.text = "CURAS %s   %s" % ["◆".repeat(player.cures)+"◇".repeat(2-player.cures),"GARÇA" if Save.progress.get("garca_equipped",false) else ""]
+	resource_text.text = "%d/2   %s" % [player.cures,"GARÇA" if Save.progress.get("garca_equipped",false) else ""]
+	for i in range(2):
+		heal_icons[i].modulate.a = 1.0 if i<player.cures else 0.25
+	talisman_icon.modulate.a = 1.0 if Save.progress.get("garca_equipped",false) else 0.25
+	echo_icon.visible = world.memory
 	area_text.text = "E01   A PONTE LEMBRADA" if world.memory else world.TITLES[world.zone]
 	prompt.text = world.prompt_text()
 	var boss: bool = world.zone==4 and world.actors.size()>0 and world.actors[0].hp>0

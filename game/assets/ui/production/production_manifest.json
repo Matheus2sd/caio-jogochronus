@@ -1,0 +1,54 @@
+{
+  "status": "TEMPORARY",
+  "source": "Original pixel geometry in tools/build_ui.py",
+  "assets": {
+    "panel": [
+      32,
+      32
+    ],
+    "focus": [
+      32,
+      32
+    ],
+    "health_bar": [
+      32,
+      10
+    ],
+    "stamina_bar": [
+      32,
+      8
+    ],
+    "posture_bar": [
+      32,
+      6
+    ],
+    "enemy_posture": [
+      32,
+      5
+    ],
+    "boss_bar": [
+      32,
+      10
+    ],
+    "heal_icon": [
+      16,
+      16
+    ],
+    "talisman_slot": [
+      16,
+      16
+    ],
+    "echo_memory": [
+      16,
+      16
+    ],
+    "interaction_prompt": [
+      16,
+      16
+    ],
+    "progression": [
+      16,
+      16
+    ]
+  }
+}

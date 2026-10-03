@@ -28,3 +28,7 @@ Dimensões, transparência, pivôs, importação, presença das animações e ca
 ## Personagens com poses amplas
 
 `python tools/build_character.py akio` / `daigo`: `isolated_components` extrai silhuetas completas, ordenadas pelas linhas de pés da ficha. Partes desconectadas grandes (espada junto ao corpo caído de Akio) são associadas ao corpo mais próximo da mesma linha. Contagem de poses é validada. Exportação 192×96 mantém arma inteira e pivô de pés; sem aumentar corpo ou alcance físico.
+
+## Interface
+
+`python tools/build_ui.py` exporta molduras 32×32 para nine-patch, cinco fundos de barras e cinco ícones 16×16. Barras continuam ProgressBar, evitando alterar valores e testes; preenchimento é dinâmico. Menus reutilizam props/parallax de produção em `menu_backdrop.gd`.

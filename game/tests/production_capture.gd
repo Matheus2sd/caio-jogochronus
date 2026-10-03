@@ -90,10 +90,22 @@ func capture() -> void:
 	main.world.actors[0].update_visual()
 	await save_shot("daigo_arena")
 	main.world.actors[0].set_state("death")
+	main.world.actors[0].hp = 0
 	main.world.actors[0].update_visual()
 	main.world.actors[0].production_visual.time = 0.8
 	main.world.actors[0].update_visual()
 	await save_shot("daigo_defeat")
+	stage(0)
+	main.show_pause()
+	await save_shot("production_pause")
+	main.show_settings("pause")
+	await save_shot("production_settings")
+	main.resume()
+	main.world.locked = true
+	main.show_death(false)
+	await save_shot("production_death")
+	main.show_complete()
+	await save_shot("production_complete")
 	print("PRODUCTION CAPTURE PASS: staged presentation frames at 640x360")
 	main.free()
 	await process_frame

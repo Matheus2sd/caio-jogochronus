@@ -446,7 +446,7 @@ func _draw() -> void:
 	draw_circle(Vector2.ZERO, 17, Color(0.015,0.025,0.04,0.5))
 	draw_set_transform(Vector2.ZERO)
 	if enemy and hp > 0 and world != null and is_instance_valid(world.player) and absf(position.x-world.player.position.x) < 250:
-		draw_rect(Rect2(-20,-65,40,3),Color("152332"))
+		draw_texture_rect(preload("res://assets/ui/production/enemy_posture.png"),Rect2(-21,-66,42,5),false)
 		draw_rect(Rect2(-20,-65,40*posture/max_posture,3),Color("d9b66f"))
 		if not attack.is_empty() and state_time < float(attack.windup):
 			var progress: float = state_time / float(attack.windup)

@@ -86,3 +86,7 @@ REBUILD integrado: seis PNGs em `environments/echo/echo_*_v001.png`, exportados 
 ## Daigo — pacote integrado
 
 11 clipes/36 poses novas do veterano P0, 58 px, derrota viva ajoelhada. Extração por componentes conectados evita cortar lâminas; aplicada também a Akio. Célula larga 192×96, pivô 96,80, sem alterar hitbox. Teste de derrota durante diálogo falhou antes da correção e passou depois; animação visual pode terminar com combate bloqueado. Suite completa -Visual: exit 0; reimportação, teste de apresentação e capturas após ajuste das lâminas: exit 0. COMPLETE técnico / TEMPORARY artístico. Push é apenas clipe disponível, não uma mecânica nova. Próximo: HUD/menus e áudio.
+
+## HUD e menus — pacote integrado
+
+Kit pixel original: molduras slate/dourado, barras separadas, ícones de bandagem/talismã/memória, HUD compacto e fundos do cenário novo. Widgets e navegação existentes preservados. Suite completa -Visual: exit 0; captura de menu, pausa, settings, morte, fim e HUD; menu_smoke repetido após acabamento: exit 0. COMPLETE técnico; TEMPORARY artístico, fonte final e revisão humana de legibilidade continuam TODO. Nenhuma barra de energia Eco nem habilidade extra foi adicionada. Próximo: áudio.
