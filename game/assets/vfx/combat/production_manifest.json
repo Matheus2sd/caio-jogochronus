@@ -1,0 +1,92 @@
+{
+  "slash": {
+    "file": "fx_slash_v001.png",
+    "cell": [
+      96,
+      96
+    ],
+    "pivot": [
+      48,
+      48
+    ],
+    "frames": 6,
+    "fps": 20,
+    "source": "Original pixel geometry in tools/build_effects.py",
+    "status": "TEMPORARY"
+  },
+  "heavy_slash": {
+    "file": "fx_heavy_slash_v001.png",
+    "cell": [
+      96,
+      96
+    ],
+    "pivot": [
+      48,
+      48
+    ],
+    "frames": 6,
+    "fps": 20,
+    "source": "Original pixel geometry in tools/build_effects.py",
+    "status": "TEMPORARY"
+  },
+  "impact": {
+    "file": "fx_impact_v001.png",
+    "cell": [
+      96,
+      96
+    ],
+    "pivot": [
+      48,
+      48
+    ],
+    "frames": 6,
+    "fps": 20,
+    "source": "Original pixel geometry in tools/build_effects.py",
+    "status": "TEMPORARY"
+  },
+  "parry": {
+    "file": "fx_parry_v001.png",
+    "cell": [
+      96,
+      96
+    ],
+    "pivot": [
+      48,
+      48
+    ],
+    "frames": 6,
+    "fps": 20,
+    "source": "Original pixel geometry in tools/build_effects.py",
+    "status": "TEMPORARY"
+  },
+  "posture_break": {
+    "file": "fx_posture_break_v001.png",
+    "cell": [
+      96,
+      96
+    ],
+    "pivot": [
+      48,
+      48
+    ],
+    "frames": 6,
+    "fps": 20,
+    "source": "Original pixel geometry in tools/build_effects.py",
+    "status": "TEMPORARY"
+  },
+  "heal": {
+    "file": "fx_heal_v001.png",
+    "cell": [
+      96,
+      96
+    ],
+    "pivot": [
+      48,
+      48
+    ],
+    "frames": 6,
+    "fps": 10,
+    "source": "Original pixel geometry in tools/build_effects.py",
+    "status": "TEMPORARY"
+  }
+}

@@ -18,7 +18,7 @@
 
 Cada pacote: produzir → revisar pixels/pivôs/contraste → integrar → executar `tools/validate_chapter1.ps1` → registrar evidência → commit específico. Estado COMPLETE só com execução comprovada.
 
-1. [ ] Auditoria: `tools/audit_assets.py`, `game/ASSET_AUDIT.md`, inventário por arquivo, capturas anteriores, este plano e padrão de sprite.
+1. [x] Auditoria: `tools/audit_assets.py`, `game/ASSET_AUDIT.md`, inventário por arquivo, capturas anteriores, este plano e padrão de sprite.
 2. [ ] Ren: novas fontes em `tools/art_sources/ren/`; exportações por animação em `game/assets/characters/ren/`; ficha JSON; integração em `game/scripts/fighter.gd`. Idle/walk/run/jump_start/jump/fall/land/turn/dodge/draw_sword/sheathe_sword/light_attack_1/2/3/heavy_attack/guard_start/guard/parry/counter_attack/hurt/posture_break/heal/death/interact/echo_interact. Testar sincronismo preparação/contato/recuperação e flip.
 3. [ ] Humano: oito animações, chapéu e manto reconhecíveis; telegraph sustentado durante todo windup real. H2 legível; sem alterar IA ou estatísticas.
 4. [ ] Presente: atlas 16×16, TileSet Godot e props separados; materiais da referência, costuras e superfícies legíveis. Manter plataformas físicas existentes.
@@ -38,3 +38,7 @@ Cada pacote: produzir → revisar pixels/pivôs/contraste → integrar → execu
 - Técnica de assets: alfa, dimensões/células, pivôs, quadros não vazios, ficheiros e origem; snapshots renderizados na Godot.
 - Visual: inspecionar capturas a 640×360 e ampliação inteira. Teste lógico não certifica estética, fluidez percebida nem mixagem.
 - Pendências finais: partida humana, áudio em dispositivo real, gamepad e outros sistemas permanecem explícitas se não executadas.
+
+## Estado verificado na reinspecao
+
+Commits ee481ab/0b1c716/e5d413b/32bb5c0/c914d00 confirmam auditoria, Ren, humano, Presente e parallax. VFX integrado e validado nesta continuacao. Esses pacotes tem integracao tecnica verificada, mas arte TEMPORARY e polimento especifico ainda listado. Proximo pacote pendente: Mundo Eco, seguido de Akio, Daigo, HUD, menus e audio.

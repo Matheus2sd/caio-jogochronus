@@ -19,6 +19,7 @@ func save_shot(name: String) -> void:
 		quit(1)
 
 func stage(zone: int, memory: bool = false) -> void:
+	main.notice_time = 0
 	main.clear_overlay()
 	main.screen = "game"
 	main.world.load_zone(zone,memory)
@@ -65,6 +66,7 @@ func capture() -> void:
 	main.world.on_feedback("parry",main.world.player.position+Vector2(24,-30))
 	await save_shot("parry")
 	pose("idle")
+	main.notice_time = 0
 	await save_shot("present_parallax_hud")
 	stage(1)
 	main.world.actors[0].position.x = 340

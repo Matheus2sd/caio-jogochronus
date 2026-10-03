@@ -296,6 +296,7 @@ func process_attack(delta: float) -> void:
 
 func strike() -> void:
 	Sound.play("heavy" if attack.type == "heavy" else "slash")
+	world.combat_fx.burst("heavy_slash" if attack.type == "heavy" else "slash",global_position+Vector2(facing*12,-30),facing)
 	var shape := RectangleShape2D.new()
 	shape.size = Vector2(attack.reach, 40)
 	var query := PhysicsShapeQueryParameters2D.new()
@@ -444,10 +445,6 @@ func _draw() -> void:
 		if not attack.is_empty() and state_time < float(attack.windup):
 			var progress: float = state_time / float(attack.windup)
 			draw_arc(Vector2(0,-74),5,-PI/2,-PI/2+TAU*progress,16,Color("f4ce8c"),2)
-	if not attack.is_empty() and attack_hit and state_time < float(attack.windup)+0.14:
-		var color := Color("bfeafa") if kind == "akio" else Color("fff0c9")
-		var center := Vector2(facing*12,-30)
-		draw_arc(center, float(attack.reach)*0.75, -1.2 if facing>0 else 1.9, 1.2 if facing>0 else 4.3, 12, color, 2)
 	if world != null and world.debug_mode:
 		draw_rect(Rect2(-8,-42,16,42),Color(0,1,0,0.7),false)
 		if not attack.is_empty():

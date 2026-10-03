@@ -70,3 +70,7 @@ COMPLETE técnico: `tools/validate_chapter1.ps1 -Visual` terminou com exit 0 ant
 Capturas anteriores: `docs/screenshots/chapter1/baseline_present.png`, `baseline_menu.png`, `baseline_assets.png`. Evidenciam Ren quase transparente, falta de animações, solo repetitivo e fundo disputando leitura. O teste automatizado de ausência de faixa lisa passou no baseline; o problema atual é composição/profundidade, não ausência completa de cobertura.
 
 A reconstrução completa e o aceite visual ainda estão TODO. Ver `ASSET_REBUILD_PLAN.md`.
+
+## Reinspecao apos os primeiros pacotes
+
+A tabela acima descreve o baseline, nao o runtime atual. Ren/humano usam SpriteFrames novos; tiles/props/parallax substituidos e verificados. VFX possui seis sequencias exportadas e camada independente, validacao completa exit 0. Akio/Daigo ainda carregam TEMP_poses; Eco ainda usa tint/retangulos; HUD/menus ainda nativos; audio ainda TEMP mono. Pastas reais: game/assets/audio e game/tests; nao existem game/audio nem tests na raiz.

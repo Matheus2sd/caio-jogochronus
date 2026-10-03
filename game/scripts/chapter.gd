@@ -29,6 +29,7 @@ var checkpoint_notice := false
 var boss_started := false
 var background: Texture2D
 var backdrop: RefCounted
+var combat_fx: Node2D
 var tiles := preload("res://assets/environments/tilesets/env_spring_v001.png")
 var props: Dictionary = {}
 var prop_positions: Array = []
@@ -48,6 +49,8 @@ func _ready() -> void:
 	add_child(geometry)
 	cast = Node2D.new()
 	add_child(cast)
+	combat_fx = preload("res://scripts/combat_effects.gd").new()
+	add_child(combat_fx)
 	camera = Camera2D.new()
 	camera.position_smoothing_enabled = true
 	camera.position_smoothing_speed = 7
@@ -84,6 +87,7 @@ func clear_level() -> void:
 	platforms.clear()
 	prop_positions.clear()
 	particles.clear()
+	combat_fx.events.clear()
 
 func load_zone(next: int, in_memory: bool = false, resources: Dictionary = {}) -> void:
 	clear_level()
@@ -341,11 +345,12 @@ func respawn() -> void:
 
 func on_feedback(kind: String, point: Vector2) -> void:
 	Sound.play(kind)
+	combat_fx.burst(kind,point)
 	if kind in ["parry","impact","break"]:
 		hitstop = 0.06 if kind=="parry" else 0.04
 		shake = 2.5 if kind=="parry" else 1.3
 	var color := Color("9eeafa") if kind=="parry" else (Color("9fcc9e") if kind=="heal" else Color("eed09b"))
-	for i in range(12 if kind=="parry" else 7):
+	for i in range(3):
 		particles.append({"pos":point,"vel":Vector2.from_angle(randf()*TAU)*randf_range(12,65),"life":0.32,"color":color})
 	if kind=="parry":
 		message.emit("PARRY • %s para resposta herdada" % InputConfig.prompt("light_attack",pad))
