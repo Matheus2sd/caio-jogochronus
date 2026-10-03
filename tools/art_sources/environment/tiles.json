@@ -1,0 +1,18 @@
+{
+  "seed": 101,
+  "cell": [
+    16,
+    16
+  ],
+  "rows": [
+    "grass_path",
+    "earth",
+    "wood",
+    "stone_steps",
+    "grass_flowers",
+    "water",
+    "bridge",
+    "roof"
+  ],
+  "source": "Original procedural pixel clusters, palette from AR02/V03"
+}

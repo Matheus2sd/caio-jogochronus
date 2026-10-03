@@ -28,7 +28,7 @@ var pad := false
 var checkpoint_notice := false
 var boss_started := false
 var background: Texture2D
-var tiles := preload("res://assets/environments/tilesets/TEMP_tiles.png")
+var tiles := preload("res://assets/environments/tilesets/env_spring_v001.png")
 var props: Dictionary = {}
 var prop_positions: Array = []
 const TITLES = ["01   O CAMINHO ANTIGO", "02   A LINGUAGEM DA ESPADA", "03   TRAVESSIA INTERROMPIDA", "04   O GESTO HERDADO", "05   O ABRIGO DE DAIGO"]
@@ -50,8 +50,8 @@ func _ready() -> void:
 	camera.position_smoothing_enabled = true
 	camera.position_smoothing_speed = 7
 	add_child(camera)
-	for name in ["tree", "pine", "gate", "lantern", "house", "fence"]:
-		props[name] = load("res://assets/environments/props/TEMP_%s.png" % name)
+	for name in ["tree", "pine", "gate", "lantern", "house", "fence", "bush", "well", "rocks"]:
+		props[name] = load("res://assets/environments/props/env_%s_v001.png" % name)
 
 func begin(fresh: bool) -> void:
 	if fresh:
@@ -136,9 +136,11 @@ func load_zone(next: int, in_memory: bool = false, resources: Dictionary = {}) -
 	camera.limit_right = int(level_width)
 	camera.position = Vector2(player.position.x,180)
 	camera.reset_smoothing()
-	for x in range(0, int(level_width), 240):
+	for x in range(0, int(level_width), 480):
 		prop_positions.append(["tree" if x%480==0 else "pine", Vector2(x+80,280)])
-		prop_positions.append(["fence",Vector2(x+170,280)])
+		prop_positions.append(["fence",Vector2(x+360,280)])
+		prop_positions.append(["bush",Vector2(x+150,280)])
+		prop_positions.append(["rocks",Vector2(x+440,280)])
 	if zone == 4:
 		prop_positions = [["house",Vector2(290,280)],["tree",Vector2(40,280)],["tree",Vector2(610,280)]]
 	else:
@@ -384,14 +386,16 @@ func _draw() -> void:
 		var tint := Color(0.43,0.62,0.79,0.7) if memory else Color(0.82,0.86,0.78,0.85)
 		draw_texture(texture,prop[1]-Vector2(texture.get_width()/2.0,texture.get_height()),tint)
 	for r in platforms:
-		var base := 2 if zone==4 or r.position.y<280 else 0
+		var base := 3 if zone==4 or r.position.y<280 else 0
 		for x in range(int(r.position.x),int(r.end.x),16):
 			if x<cam_x-32 or x>cam_x+672:
 				continue
 			for y in range(int(r.position.y),int(minf(r.end.y,368)),16):
-				var tile := base if y==int(r.position.y) else 7
-				draw_texture_rect_region(tiles,Rect2(x,y,16,16),Rect2(tile*16,0,16,16),Color(0.48,0.68,0.8) if memory else Color.WHITE)
-			draw_line(Vector2(x,r.position.y),Vector2(x+16,r.position.y),Color("b0ad69") if not memory else Color("70d9df"),2)
+				var row := base if y==int(r.position.y) else (3 if zone==4 else 1)
+				var variant := (x/16 + y/16*3) % 16
+				draw_texture_rect_region(tiles,Rect2(x,y,16,16),Rect2(variant*16,row*16,16,16),Color(0.48,0.68,0.8) if memory else Color.WHITE)
+			if base == 0 and x % 64 == 0:
+				draw_texture_rect_region(tiles,Rect2(x,r.position.y-12,16,16),Rect2((8+x/64%8)*16,64,16,16))
 	if zone==2:
 		draw_rect(Rect2(400,280,280,80),Color("102c42"))
 		for i in range(12):

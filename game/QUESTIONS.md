@@ -18,3 +18,5 @@
 - Ren possui animacoes exportadas e testadas, mas combos 2/3 reutilizam keyposes. O aceite final continua artistico, nao inferido do teste funcional.
 
 - Pacote humano: 8 clips/28 poses novas de chapeu de palha e manto; preparacao sustentada no windup real, guarda e queda proprias. Validador completo exit 0; H1/H2 compartilham a base, variacao final H2 permanece TODO.
+
+- Ambiente Presente: 9 props novos e 128 tiles originais 16x16 com TileSet Godot; solo/terra/madeira/pedra/vegetacao/agua/ponte/telhado. Geometria preservada. Regressoes e captura visual passaram (exit 0); revisao artistica final continua TODO.

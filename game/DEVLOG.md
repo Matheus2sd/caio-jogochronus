@@ -41,3 +41,5 @@ Fontes oficiais consultadas e pranchas principais inspecionadas. Plano, auditori
 - TEMPORARY artistico: leves 2/3 reaproveitam poses; interframes dedicados e fluidez ainda precisam revisao. Nenhuma regra de dano/save alterada.
 
 - Pacote humano: 8 clips/28 poses novas de chapeu de palha e manto; preparacao sustentada no windup real, guarda e queda proprias. Validador completo exit 0; H1/H2 compartilham a base, variacao final H2 permanece TODO.
+
+- Ambiente Presente: 9 props novos e 128 tiles originais 16x16 com TileSet Godot; solo/terra/madeira/pedra/vegetacao/agua/ponte/telhado. Geometria preservada. Regressoes e captura visual passaram (exit 0); revisao artistica final continua TODO.
