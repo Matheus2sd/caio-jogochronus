@@ -1,0 +1,110 @@
+{
+  "folder": "enemies/human_base",
+  "height": 48,
+  "sources": {
+    "base": {
+      "file": "human_source.png",
+      "grid": [
+        6,
+        5
+      ],
+      "upright_height": 195,
+      "y_edges": [
+        0,
+        243,
+        459,
+        712,
+        928,
+        1145
+      ]
+    }
+  },
+  "animations": {
+    "idle": {
+      "poses": [
+        "base:0",
+        "base:1",
+        "base:2"
+      ],
+      "fps": 5,
+      "loop": true
+    },
+    "walk": {
+      "poses": [
+        "base:6",
+        "base:7",
+        "base:8",
+        "base:9",
+        "base:10",
+        "base:11"
+      ],
+      "fps": 9,
+      "loop": true
+    },
+    "approach": {
+      "poses": [
+        "base:6",
+        "base:7",
+        "base:8",
+        "base:9",
+        "base:10",
+        "base:11"
+      ],
+      "fps": 12,
+      "loop": true
+    },
+    "attack": {
+      "poses": [
+        "base:12",
+        "base:13",
+        "base:14",
+        "base:15",
+        "base:16",
+        "base:17"
+      ],
+      "fps": 12,
+      "loop": false
+    },
+    "guard": {
+      "poses": [
+        "base:3",
+        "base:4",
+        "base:5"
+      ],
+      "fps": 6,
+      "loop": true
+    },
+    "hurt": {
+      "poses": [
+        "base:18",
+        "base:19"
+      ],
+      "fps": 10,
+      "loop": false
+    },
+    "posture_break": {
+      "poses": [
+        "base:20",
+        "base:21"
+      ],
+      "fps": 5,
+      "loop": true
+    },
+    "death": {
+      "poses": [
+        "base:24",
+        "base:25",
+        "base:26",
+        "base:27",
+        "base:28",
+        "base:29"
+      ],
+      "fps": 8,
+      "loop": false
+    }
+  },
+  "notes": [
+    "H1/H2 share approved base; approach uses walk at faster cadence.",
+    "Attack preparation occupies first third of poses but full 0.58s simulation windup."
+  ]
+}

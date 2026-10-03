@@ -16,3 +16,5 @@
 - Decisão de continuidade: usar Daigo do P0 e DOCX; ignorar variante jovem, títulos e segunda forma conflitantes da folha individual. Akio 56 px conforme AR02.
 
 - Ren possui animacoes exportadas e testadas, mas combos 2/3 reutilizam keyposes. O aceite final continua artistico, nao inferido do teste funcional.
+
+- Pacote humano: 8 clips/28 poses novas de chapeu de palha e manto; preparacao sustentada no windup real, guarda e queda proprias. Validador completo exit 0; H1/H2 compartilham a base, variacao final H2 permanece TODO.

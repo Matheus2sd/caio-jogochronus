@@ -30,3 +30,5 @@ Somente Capítulo I está em implementação. Não iniciar Capítulo II sem auto
 - TEMPORARY: apresentação atual; o estado funcional anterior não certifica arte final.
 
 - COMPLETE tecnico (Ren): 26 clips integrados, regressao e capturas passaram. TEMPORARY artistico: interframes de combo e revisao humana.
+
+- Pacote humano: 8 clips/28 poses novas de chapeu de palha e manto; preparacao sustentada no windup real, guarda e queda proprias. Validador completo exit 0; H1/H2 compartilham a base, variacao final H2 permanece TODO.
