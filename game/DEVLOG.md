@@ -73,3 +73,7 @@ Kit pixel original: molduras slate/dourado, barras separadas, ícones de bandage
 Inspeção Git confirmou branch sincronizada em a2e34fa; mudanças locais de project.godot preservadas. Auditor de margem detectou cabeça cortada em run quadro 4 de Ren: âncora automática usava só o pé traseiro. Ajustada para (80,148) na fonte existente, sem gerar nova arte. Exportador, alfa/margens/pivôs, importação, production_visuals e capturas passaram. Carregamento de TEMP_poses agora só ocorre no fallback; os quatro personagens usam SpriteFrames próprios. README/portabilidade e tabelas de continuidade consolidados para eliminar estados antigos tratados como atuais. Revisão independente e verificação de cópia limpa em andamento.
 
 A revisão independente encontrou clipe parry não acionado pelo sucesso real: estado lógico permanecia parry_window e exibia guard_start. Teste com Ren/Akio falhou antes; após evento visual dedicado de 0,16 s, passou sem alterar janela/counter. Contra-ataque e dano têm prioridade. Captura passou a usar receive_hit real. Revisor confirmou a correção sem outro achado direto.
+
+## Fechamento técnico — clone limpo
+
+Clone da branch remota em b4a0961 sem cache .godot e usando project.godot versionado 4.5: validador completo -Visual, verificador de sprites e verificador dos 39 WAVs passaram (exit 0). Pronto para revisão humana; pendências artísticas/sonoras e warnings de saída continuam explícitos. Nenhum merge em main; alteração local de project.godot preservada. Relatório em `docs/PRODUCTION_REVIEW.md`.

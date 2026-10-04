@@ -45,6 +45,6 @@ Cada pacote: produzir → revisar pixels/pivôs/contraste → integrar → execu
 
 Pacotes 1–12 integrados e validados; commits de auditoria até `a2e34fa` registram a sequência. Fontes próprias, exports e capturas presentes. Não recriar os pacotes sem regressão ou defeito concreto.
 
-Pacote 13 em fechamento: corrigido pivô do quadro 4 de corrida de Ren após teste de margem falhar; teste passou após ajuste. Animações, captura e importação verificadas novamente. Revisão independente encontrou e confirmou correção do parry real (teste RED/GREEN). Resta validação final em cópia limpa do commit, seguidas de commit/push da evidência.
+Pacote 13 COMPLETE técnico: pivô de corrida de Ren corrigido; parry real ligado ao clipe sem mudar relógios; revisão independente concluída. Clone remoto de `b4a0961` sem `.godot`, com project.godot versionado 4.5, passou o validador completo -Visual e os verificadores de sprites/áudio (exit 0). Versão pronta para revisão humana; não equivale a aceite final artístico ou sonoro. Ver `docs/PRODUCTION_REVIEW.md`.
 
 Música, som e arte continuam TEMPORARY para revisão humana. Pendências precisas em `TODO_ASSETS.md`. Histórico por milestone em `DEVLOG.md`; tabelas de baseline em `ASSET_AUDIT.md` são históricas.

@@ -16,3 +16,7 @@
 - Em aberto no cânone: topônimos, símbolo final do clã e nomenclatura definitiva dos Ecos. Esta fase não fixa essas decisões.
 
 Não há BLOCKED externo que impeça revisão humana da versão. Fontes novas, scripts e exports ficam no repositório; docs e pranchas originais foram preservados.
+
+## Fechamento técnico — clone limpo
+
+Clone da branch remota em b4a0961 sem cache .godot e usando project.godot versionado 4.5: validador completo -Visual, verificador de sprites e verificador dos 39 WAVs passaram (exit 0). Pronto para revisão humana; pendências artísticas/sonoras e warnings de saída continuam explícitos. Nenhum merge em main; alteração local de project.godot preservada. Relatório em `docs/PRODUCTION_REVIEW.md`.

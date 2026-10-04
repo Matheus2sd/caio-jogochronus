@@ -17,3 +17,7 @@ Os pacotes abaixo já foram reconstruídos, integrados e tecnicamente testados. 
 | QA humana e plataformas | TODO | Partida início→fim, gamepad, acessibilidade, Linux/macOS; investigar warnings de saída |
 
 Sem dependência externa BLOCKED. Nenhum aceite final artístico ou auditivo foi presumido. Os assets antigos `TEMP_` continuam preservados como referência histórica; não são a fonte de arte final. Inventário baseline em `ASSET_AUDIT.md`, estado de execução em `ASSET_REBUILD_PLAN.md`.
+
+## Fechamento técnico — clone limpo
+
+Clone da branch remota em b4a0961 sem cache .godot e usando project.godot versionado 4.5: validador completo -Visual, verificador de sprites e verificador dos 39 WAVs passaram (exit 0). Pronto para revisão humana; pendências artísticas/sonoras e warnings de saída continuam explícitos. Nenhum merge em main; alteração local de project.godot preservada. Relatório em `docs/PRODUCTION_REVIEW.md`.
