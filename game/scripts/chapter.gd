@@ -95,6 +95,10 @@ func load_zone(next: int, in_memory: bool = false, resources: Dictionary = {}) -
 	clear_level()
 	zone = next
 	memory = in_memory
+	Sound.set_context("echo" if memory else ("boss" if zone == 4 else ("start" if zone == 0 else "present")))
+	Sound.set_water(zone == 2)
+	if memory:
+		Sound.play("akio")
 	memory_won = false
 	boss_started = false
 	checkpoint_notice = false
@@ -241,6 +245,7 @@ func near_checkpoint() -> bool:
 func interact() -> void:
 	if not player.attack.is_empty() or player.state in ["hurt","posture_break","death"]:
 		return
+	Sound.play("interact")
 	if near_checkpoint() and not nearby_threat():
 		Save.progress.checkpoint = zone
 		player.hp = 100
@@ -299,7 +304,7 @@ func leave_memory() -> void:
 	# Resume after memory at a valid checkpoint on reload, never inside the gap.
 	Save.progress.checkpoint = 3
 	Save.store_campaign()
-	Sound.play("echo")
+	Sound.play("echo_exit")
 	fade_to(func():
 		load_zone(3,false,ren_snapshot)
 		player.position.x = 72
@@ -316,6 +321,7 @@ func fade_to(action: Callable) -> void:
 		player.queued_light = false
 
 func start_boss() -> void:
+	Sound.play("boss")
 	Save.progress.daigo_intro = true
 	Save.store_campaign()
 	locked = false

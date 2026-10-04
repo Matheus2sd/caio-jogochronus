@@ -1,0 +1,280 @@
+{
+  "origin": "Original deterministic synthesis; tools/build_audio.mjs",
+  "license": "Project-original waveforms; no third party samples",
+  "review": "Technical only; final music and device listening pending",
+  "sounds": {
+    "step_1": {
+      "channels": 1,
+      "rate": 48000,
+      "seconds": 0.15,
+      "peak": 0.12,
+      "status": "TEMPORARY"
+    },
+    "step_2": {
+      "channels": 1,
+      "rate": 48000,
+      "seconds": 0.16,
+      "peak": 0.12,
+      "status": "TEMPORARY"
+    },
+    "step_3": {
+      "channels": 1,
+      "rate": 48000,
+      "seconds": 0.14,
+      "peak": 0.11999999999999998,
+      "status": "TEMPORARY"
+    },
+    "step_wood_1": {
+      "channels": 1,
+      "rate": 48000,
+      "seconds": 0.15,
+      "peak": 0.12000000000000001,
+      "status": "TEMPORARY"
+    },
+    "step_wood_2": {
+      "channels": 1,
+      "rate": 48000,
+      "seconds": 0.16,
+      "peak": 0.12,
+      "status": "TEMPORARY"
+    },
+    "step_wood_3": {
+      "channels": 1,
+      "rate": 48000,
+      "seconds": 0.14,
+      "peak": 0.12,
+      "status": "TEMPORARY"
+    },
+    "jump": {
+      "channels": 1,
+      "rate": 48000,
+      "seconds": 0.24,
+      "peak": 0.14,
+      "status": "TEMPORARY"
+    },
+    "land": {
+      "channels": 1,
+      "rate": 48000,
+      "seconds": 0.28,
+      "peak": 0.2,
+      "status": "TEMPORARY"
+    },
+    "dodge": {
+      "channels": 1,
+      "rate": 48000,
+      "seconds": 0.22,
+      "peak": 0.16,
+      "status": "TEMPORARY"
+    },
+    "slash": {
+      "channels": 1,
+      "rate": 48000,
+      "seconds": 0.25,
+      "peak": 0.24,
+      "status": "TEMPORARY"
+    },
+    "heavy": {
+      "channels": 1,
+      "rate": 48000,
+      "seconds": 0.42,
+      "peak": 0.29,
+      "status": "TEMPORARY"
+    },
+    "impact": {
+      "channels": 1,
+      "rate": 48000,
+      "seconds": 0.26,
+      "peak": 0.3,
+      "status": "TEMPORARY"
+    },
+    "parry": {
+      "channels": 1,
+      "rate": 48000,
+      "seconds": 0.62,
+      "peak": 0.34,
+      "status": "TEMPORARY"
+    },
+    "guard": {
+      "channels": 1,
+      "rate": 48000,
+      "seconds": 0.3,
+      "peak": 0.23,
+      "status": "TEMPORARY"
+    },
+    "break": {
+      "channels": 1,
+      "rate": 48000,
+      "seconds": 0.5,
+      "peak": 0.32,
+      "status": "TEMPORARY"
+    },
+    "heal": {
+      "channels": 1,
+      "rate": 48000,
+      "seconds": 0.9,
+      "peak": 0.15,
+      "status": "TEMPORARY"
+    },
+    "interact": {
+      "channels": 1,
+      "rate": 48000,
+      "seconds": 0.22,
+      "peak": 0.1,
+      "status": "TEMPORARY"
+    },
+    "echo": {
+      "channels": 1,
+      "rate": 48000,
+      "seconds": 1.2,
+      "peak": 0.18,
+      "status": "TEMPORARY"
+    },
+    "echo_exit": {
+      "channels": 1,
+      "rate": 48000,
+      "seconds": 1.2,
+      "peak": 0.18,
+      "status": "TEMPORARY"
+    },
+    "akio": {
+      "channels": 1,
+      "rate": 48000,
+      "seconds": 0.85,
+      "peak": 0.15,
+      "status": "TEMPORARY"
+    },
+    "hurt": {
+      "channels": 1,
+      "rate": 48000,
+      "seconds": 0.32,
+      "peak": 0.22000000000000003,
+      "status": "TEMPORARY"
+    },
+    "death": {
+      "channels": 1,
+      "rate": 48000,
+      "seconds": 1.3,
+      "peak": 0.18,
+      "status": "TEMPORARY"
+    },
+    "menu": {
+      "channels": 1,
+      "rate": 48000,
+      "seconds": 0.12,
+      "peak": 0.065,
+      "status": "TEMPORARY"
+    },
+    "confirm": {
+      "channels": 1,
+      "rate": 48000,
+      "seconds": 0.2,
+      "peak": 0.1,
+      "status": "TEMPORARY"
+    },
+    "cancel": {
+      "channels": 1,
+      "rate": 48000,
+      "seconds": 0.18,
+      "peak": 0.085,
+      "status": "TEMPORARY"
+    },
+    "boss": {
+      "channels": 1,
+      "rate": 48000,
+      "seconds": 0.9,
+      "peak": 0.17,
+      "status": "TEMPORARY"
+    },
+    "boss_impact": {
+      "channels": 1,
+      "rate": 48000,
+      "seconds": 0.38,
+      "peak": 0.32,
+      "status": "TEMPORARY"
+    },
+    "boss_defeat": {
+      "channels": 1,
+      "rate": 48000,
+      "seconds": 0.7,
+      "peak": 0.18,
+      "status": "TEMPORARY"
+    },
+    "ambient_start": {
+      "channels": 2,
+      "rate": 48000,
+      "seconds": 16,
+      "peak": 0.09171917526500036,
+      "status": "TEMPORARY"
+    },
+    "music_start": {
+      "channels": 2,
+      "rate": 48000,
+      "seconds": 16,
+      "peak": 0.0916083269112471,
+      "status": "TEMPORARY"
+    },
+    "ambient_present": {
+      "channels": 2,
+      "rate": 48000,
+      "seconds": 16,
+      "peak": 0.08482949595256246,
+      "status": "TEMPORARY"
+    },
+    "music_present": {
+      "channels": 2,
+      "rate": 48000,
+      "seconds": 16,
+      "peak": 0.09497614847450926,
+      "status": "TEMPORARY"
+    },
+    "ambient_echo": {
+      "channels": 2,
+      "rate": 48000,
+      "seconds": 16,
+      "peak": 0.0869386925027803,
+      "status": "TEMPORARY"
+    },
+    "music_echo": {
+      "channels": 2,
+      "rate": 48000,
+      "seconds": 16,
+      "peak": 0.0960956437219348,
+      "status": "TEMPORARY"
+    },
+    "ambient_boss": {
+      "channels": 2,
+      "rate": 48000,
+      "seconds": 16,
+      "peak": 0.08482121783265925,
+      "status": "TEMPORARY"
+    },
+    "music_boss": {
+      "channels": 2,
+      "rate": 48000,
+      "seconds": 16,
+      "peak": 0.09360427099119013,
+      "status": "TEMPORARY"
+    },
+    "ambient_ending": {
+      "channels": 2,
+      "rate": 48000,
+      "seconds": 16,
+      "peak": 0.09039726083818873,
+      "status": "TEMPORARY"
+    },
+    "music_ending": {
+      "channels": 2,
+      "rate": 48000,
+      "seconds": 16,
+      "peak": 0.09457327390174373,
+      "status": "TEMPORARY"
+    },
+    "ambient_water": {
+      "channels": 2,
+      "rate": 48000,
+      "seconds": 16,
+      "peak": 0.08958344074403642,
+      "status": "TEMPORARY"
+    }
+  }
+}

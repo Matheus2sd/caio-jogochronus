@@ -32,3 +32,7 @@ Dimensões, transparência, pivôs, importação, presença das animações e ca
 ## Interface
 
 `python tools/build_ui.py` exporta molduras 32×32 para nine-patch, cinco fundos de barras e cinco ícones 16×16. Barras continuam ProgressBar, evitando alterar valores e testes; preenchimento é dinâmico. Menus reutilizam props/parallax de produção em `menu_backdrop.gd`.
+
+## Áudio
+
+`node tools/build_audio.mjs` gera ondas originais sem dependências; `node tools/validate_audio.mjs` verifica PCM e salva relatório. Fontes sintéticas continuam provisórias, sem samples externos. A Godot importa WAVs versionados; Node não é necessário para jogar. `audio_smoke.gd` verifica transições; `audio_capture.gd` grava o Master real para revisão. Volume medido não equivale a qualidade de escuta aprovada.

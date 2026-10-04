@@ -1,0 +1,372 @@
+{
+  "status": "COMPLETE technical / TEMPORARY artistic",
+  "checks": [
+    "step_1: 48 kHz WAV",
+    "step_1: nonempty and no clipping",
+    "step_1: declared duration",
+    "step_2: 48 kHz WAV",
+    "step_2: nonempty and no clipping",
+    "step_2: declared duration",
+    "step_3: 48 kHz WAV",
+    "step_3: nonempty and no clipping",
+    "step_3: declared duration",
+    "step_wood_1: 48 kHz WAV",
+    "step_wood_1: nonempty and no clipping",
+    "step_wood_1: declared duration",
+    "step_wood_2: 48 kHz WAV",
+    "step_wood_2: nonempty and no clipping",
+    "step_wood_2: declared duration",
+    "step_wood_3: 48 kHz WAV",
+    "step_wood_3: nonempty and no clipping",
+    "step_wood_3: declared duration",
+    "jump: 48 kHz WAV",
+    "jump: nonempty and no clipping",
+    "jump: declared duration",
+    "land: 48 kHz WAV",
+    "land: nonempty and no clipping",
+    "land: declared duration",
+    "dodge: 48 kHz WAV",
+    "dodge: nonempty and no clipping",
+    "dodge: declared duration",
+    "slash: 48 kHz WAV",
+    "slash: nonempty and no clipping",
+    "slash: declared duration",
+    "heavy: 48 kHz WAV",
+    "heavy: nonempty and no clipping",
+    "heavy: declared duration",
+    "impact: 48 kHz WAV",
+    "impact: nonempty and no clipping",
+    "impact: declared duration",
+    "parry: 48 kHz WAV",
+    "parry: nonempty and no clipping",
+    "parry: declared duration",
+    "guard: 48 kHz WAV",
+    "guard: nonempty and no clipping",
+    "guard: declared duration",
+    "break: 48 kHz WAV",
+    "break: nonempty and no clipping",
+    "break: declared duration",
+    "heal: 48 kHz WAV",
+    "heal: nonempty and no clipping",
+    "heal: declared duration",
+    "interact: 48 kHz WAV",
+    "interact: nonempty and no clipping",
+    "interact: declared duration",
+    "echo: 48 kHz WAV",
+    "echo: nonempty and no clipping",
+    "echo: declared duration",
+    "echo_exit: 48 kHz WAV",
+    "echo_exit: nonempty and no clipping",
+    "echo_exit: declared duration",
+    "akio: 48 kHz WAV",
+    "akio: nonempty and no clipping",
+    "akio: declared duration",
+    "hurt: 48 kHz WAV",
+    "hurt: nonempty and no clipping",
+    "hurt: declared duration",
+    "death: 48 kHz WAV",
+    "death: nonempty and no clipping",
+    "death: declared duration",
+    "menu: 48 kHz WAV",
+    "menu: nonempty and no clipping",
+    "menu: declared duration",
+    "confirm: 48 kHz WAV",
+    "confirm: nonempty and no clipping",
+    "confirm: declared duration",
+    "cancel: 48 kHz WAV",
+    "cancel: nonempty and no clipping",
+    "cancel: declared duration",
+    "boss: 48 kHz WAV",
+    "boss: nonempty and no clipping",
+    "boss: declared duration",
+    "boss_impact: 48 kHz WAV",
+    "boss_impact: nonempty and no clipping",
+    "boss_impact: declared duration",
+    "boss_defeat: 48 kHz WAV",
+    "boss_defeat: nonempty and no clipping",
+    "boss_defeat: declared duration",
+    "ambient_start: 48 kHz WAV",
+    "ambient_start: nonempty and no clipping",
+    "ambient_start: low-discontinuity loop boundary",
+    "ambient_start: declared duration",
+    "music_start: 48 kHz WAV",
+    "music_start: nonempty and no clipping",
+    "music_start: low-discontinuity loop boundary",
+    "music_start: declared duration",
+    "ambient_present: 48 kHz WAV",
+    "ambient_present: nonempty and no clipping",
+    "ambient_present: low-discontinuity loop boundary",
+    "ambient_present: declared duration",
+    "music_present: 48 kHz WAV",
+    "music_present: nonempty and no clipping",
+    "music_present: low-discontinuity loop boundary",
+    "music_present: declared duration",
+    "ambient_echo: 48 kHz WAV",
+    "ambient_echo: nonempty and no clipping",
+    "ambient_echo: low-discontinuity loop boundary",
+    "ambient_echo: declared duration",
+    "music_echo: 48 kHz WAV",
+    "music_echo: nonempty and no clipping",
+    "music_echo: low-discontinuity loop boundary",
+    "music_echo: declared duration",
+    "ambient_boss: 48 kHz WAV",
+    "ambient_boss: nonempty and no clipping",
+    "ambient_boss: low-discontinuity loop boundary",
+    "ambient_boss: declared duration",
+    "music_boss: 48 kHz WAV",
+    "music_boss: nonempty and no clipping",
+    "music_boss: low-discontinuity loop boundary",
+    "music_boss: declared duration",
+    "ambient_ending: 48 kHz WAV",
+    "ambient_ending: nonempty and no clipping",
+    "ambient_ending: low-discontinuity loop boundary",
+    "ambient_ending: declared duration",
+    "music_ending: 48 kHz WAV",
+    "music_ending: nonempty and no clipping",
+    "music_ending: low-discontinuity loop boundary",
+    "music_ending: declared duration",
+    "ambient_water: 48 kHz WAV",
+    "ambient_water: nonempty and no clipping",
+    "ambient_water: low-discontinuity loop boundary",
+    "ambient_water: declared duration",
+    "Footsteps below parry",
+    "UI below combat",
+    "Three distinct footstep variants"
+  ],
+  "sounds": {
+    "step_1": {
+      "peak_db": -18.416728515992396,
+      "rms_db": -31.800684621869344,
+      "duration": 0.15,
+      "seam": 0
+    },
+    "step_2": {
+      "peak_db": -18.416728515992396,
+      "rms_db": -31.580920848129356,
+      "duration": 0.16,
+      "seam": 0
+    },
+    "step_3": {
+      "peak_db": -18.416728515992396,
+      "rms_db": -33.967693284654935,
+      "duration": 0.14,
+      "seam": 0
+    },
+    "step_wood_1": {
+      "peak_db": -18.416728515992396,
+      "rms_db": -34.15632216885904,
+      "duration": 0.15,
+      "seam": 0
+    },
+    "step_wood_2": {
+      "peak_db": -18.416728515992396,
+      "rms_db": -32.26429755125265,
+      "duration": 0.16,
+      "seam": 0
+    },
+    "step_wood_3": {
+      "peak_db": -18.416728515992396,
+      "rms_db": -33.202716136981095,
+      "duration": 0.14,
+      "seam": 0
+    },
+    "jump": {
+      "peak_db": -17.07842389655471,
+      "rms_db": -33.52626163250289,
+      "duration": 0.24,
+      "seam": 0
+    },
+    "land": {
+      "peak_db": -13.980195340071585,
+      "rms_db": -31.046297976865812,
+      "duration": 0.28,
+      "seam": 0
+    },
+    "dodge": {
+      "peak_db": -15.91740154491989,
+      "rms_db": -32.25056934174027,
+      "duration": 0.22,
+      "seam": 0
+    },
+    "slash": {
+      "peak_db": -12.396128602712775,
+      "rms_db": -27.8104890570023,
+      "duration": 0.25,
+      "seam": 0
+    },
+    "heavy": {
+      "peak_db": -10.752698177530625,
+      "rms_db": -26.330123878863624,
+      "duration": 0.42,
+      "seam": 0
+    },
+    "impact": {
+      "peak_db": -10.457928342551646,
+      "rms_db": -25.730564892463043,
+      "duration": 0.26,
+      "seam": 0
+    },
+    "parry": {
+      "peak_db": -9.37051521459366,
+      "rms_db": -27.97548525129228,
+      "duration": 0.62,
+      "seam": 0
+    },
+    "guard": {
+      "peak_db": -12.76618090349794,
+      "rms_db": -28.826903253590075,
+      "duration": 0.3,
+      "seam": 0
+    },
+    "break": {
+      "peak_db": -9.897630003167105,
+      "rms_db": -28.467115217516703,
+      "duration": 0.5,
+      "seam": 0
+    },
+    "heal": {
+      "peak_db": -16.47852825583127,
+      "rms_db": -26.52195916716036,
+      "duration": 0.9,
+      "seam": 0
+    },
+    "interact": {
+      "peak_db": -19.999469871546843,
+      "rms_db": -37.6234325923582,
+      "duration": 0.22,
+      "seam": 0
+    },
+    "echo": {
+      "peak_db": -14.894903334878773,
+      "rms_db": -25.365408942589095,
+      "duration": 1.2,
+      "seam": 0
+    },
+    "echo_exit": {
+      "peak_db": -14.894903334878773,
+      "rms_db": -25.378251341824317,
+      "duration": 1.2,
+      "seam": 0
+    },
+    "akio": {
+      "peak_db": -16.47852825583127,
+      "rms_db": -26.92825017684561,
+      "duration": 0.85,
+      "seam": 0
+    },
+    "hurt": {
+      "peak_db": -13.151498188723107,
+      "rms_db": -30.598777142204877,
+      "duration": 0.32,
+      "seam": 0
+    },
+    "death": {
+      "peak_db": -14.894903334878773,
+      "rms_db": -24.909631738835945,
+      "duration": 1.3,
+      "seam": 0
+    },
+    "menu": {
+      "peak_db": -23.741406630419604,
+      "rms_db": -38.5932011545102,
+      "duration": 0.12,
+      "seam": 0
+    },
+    "confirm": {
+      "peak_db": -19.999469871546843,
+      "rms_db": -37.37598599164583,
+      "duration": 0.2,
+      "seam": 0
+    },
+    "cancel": {
+      "peak_db": -21.412494708999404,
+      "rms_db": -39.33062107394642,
+      "duration": 0.18,
+      "seam": 0
+    },
+    "boss": {
+      "peak_db": -15.39189479571978,
+      "rms_db": -25.672299657028198,
+      "duration": 0.9,
+      "seam": 0
+    },
+    "boss_impact": {
+      "peak_db": -9.897630003167105,
+      "rms_db": -27.343656148312615,
+      "duration": 0.38,
+      "seam": 0
+    },
+    "boss_defeat": {
+      "peak_db": -14.894903334878773,
+      "rms_db": -36.8802763160362,
+      "duration": 0.7,
+      "seam": 0
+    },
+    "ambient_start": {
+      "peak_db": -20.75210917241919,
+      "rms_db": -34.749038159927984,
+      "duration": 16,
+      "seam": 0
+    },
+    "music_start": {
+      "peak_db": -20.76078494104933,
+      "rms_db": -35.30648481922496,
+      "duration": 16,
+      "seam": 0
+    },
+    "ambient_present": {
+      "peak_db": -21.428102780832834,
+      "rms_db": -34.834401669305414,
+      "duration": 16,
+      "seam": 0
+    },
+    "music_present": {
+      "peak_db": -20.448206932841334,
+      "rms_db": -35.30833524971308,
+      "duration": 16,
+      "seam": 0
+    },
+    "ambient_echo": {
+      "peak_db": -21.215149714404824,
+      "rms_db": -34.281324874162756,
+      "duration": 16,
+      "seam": 0
+    },
+    "music_echo": {
+      "peak_db": -20.34554548646348,
+      "rms_db": -35.28908509940128,
+      "duration": 16,
+      "seam": 0
+    },
+    "ambient_boss": {
+      "peak_db": -21.43122776364692,
+      "rms_db": -34.63730646533473,
+      "duration": 16,
+      "seam": 0
+    },
+    "music_boss": {
+      "peak_db": -20.574723179544648,
+      "rms_db": -35.29332664376228,
+      "duration": 16,
+      "seam": 0
+    },
+    "ambient_ending": {
+      "peak_db": -20.877297615490566,
+      "rms_db": -34.67757835795755,
+      "duration": 16,
+      "seam": 0
+    },
+    "music_ending": {
+      "peak_db": -20.484567174408696,
+      "rms_db": -35.28621242139295,
+      "duration": 16,
+      "seam": 0
+    },
+    "ambient_water": {
+      "peak_db": -20.956836587521693,
+      "rms_db": -34.763707482536994,
+      "duration": 16,
+      "seam": 0
+    }
+  }
+}

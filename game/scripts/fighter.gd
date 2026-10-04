@@ -159,6 +159,7 @@ func _physics_process(delta: float) -> void:
 	position.x = clampf(position.x, 18, world.level_width - 18)
 	if is_on_floor() and not previous_floor and state in ["jump", "fall"]:
 		set_state("land")
+		Sound.play("land")
 	previous_floor = is_on_floor()
 	if position.y > 430:
 		position = last_safe
@@ -177,6 +178,7 @@ func process_player(delta: float) -> void:
 		jump_buffer = 0
 		coyote = 0
 		set_state("jump_start")
+		Sound.play("jump")
 	if Input.is_action_just_pressed("guard"):
 		start_guard()
 	if state in ["guard_start", "parry_window", "guard_hold", "parry"]:
@@ -190,6 +192,7 @@ func process_player(delta: float) -> void:
 		return
 	if Input.is_action_just_pressed("dodge") and is_on_floor() and dodge_cooldown <= 0 and spend(18):
 		set_state("dodge")
+		Sound.play("dodge")
 		dodge_cooldown = 0.45
 		return
 	if Input.is_action_just_pressed("heal") and cures > 0 and hp < max_hp and is_on_floor():
@@ -214,7 +217,7 @@ func process_player(delta: float) -> void:
 	if is_on_floor() and absf(velocity.x) > 30:
 		step_clock -= delta
 		if step_clock <= 0:
-			Sound.play("step")
+			Sound.play("step_wood" if world.memory and position.x>400 and position.x<680 else "step")
 			step_clock = 0.32
 
 func start_guard() -> void:
@@ -351,7 +354,11 @@ func receive_hit(source, damage: float, pressure: float, heavy: bool = false, ru
 	if not enemy and Save.settings.damage_assist:
 		damage *= 0.85
 	hp = maxf(0, hp - damage)
+	if not enemy:
+		Sound.play("hurt")
 	feedback.emit("impact", global_position + Vector2(0,-25))
+	if source.kind == "daigo" and heavy:
+		Sound.play("boss_impact")
 	if hp <= 0:
 		die()
 		return "defeat"
@@ -375,6 +382,7 @@ func damage_posture(amount: float) -> void:
 		feedback.emit("break", global_position + Vector2(0,-30))
 
 func die() -> void:
+	Sound.play("boss_defeat" if kind == "daigo" else "death")
 	set_state("death")
 	velocity = Vector2.ZERO
 	hurtbox.set_deferred("monitorable", false)

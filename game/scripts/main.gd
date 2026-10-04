@@ -100,6 +100,8 @@ func button(parent: Control, text: String, action: Callable) -> Button:
 	b.text = text
 	b.custom_minimum_size.y = 28
 	b.pressed.connect(action)
+	b.pressed.connect(func(): Sound.play("cancel" if text.begins_with("Voltar") or text.begins_with("Cancelar") else "confirm"))
+	b.focus_entered.connect(func(): Sound.play("menu"))
 	parent.add_child(b)
 	return b
 
@@ -135,6 +137,8 @@ func menu_box(title: String, subtitle: String = "", wide: bool = false) -> VBoxC
 	return box
 
 func show_menu() -> void:
+	Sound.set_context("start")
+	Sound.set_water(false)
 	reset_rebind()
 	get_tree().paused = false
 	if is_instance_valid(world):
@@ -363,6 +367,7 @@ func show_pause() -> void:
 	button(box,"Voltar ao menu",show_menu)
 
 func resume() -> void:
+	Sound.play("cancel")
 	reset_rebind()
 	clear_overlay()
 	get_tree().paused = false
@@ -516,6 +521,8 @@ func show_death(in_memory: bool) -> void:
 	button(box,"Voltar ao menu",show_menu)
 
 func show_complete() -> void:
+	Sound.set_context("ending")
+	Sound.set_water(false)
 	screen = "complete"
 	var box := menu_box("CAPÍTULO I — FIM","PRIMAVERA",true)
 	box.add_child(label("Daigo cede a passagem. A dúvida segue com Ren.",15))
