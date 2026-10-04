@@ -1,0 +1,54 @@
+{
+  "scope": "Character runtime exports",
+  "status": "COMPLETE technical only",
+  "characters": {
+    "ren": {
+      "clips": 26,
+      "frames": 105,
+      "cell": [
+        96,
+        96
+      ],
+      "pivot": [
+        48,
+        80
+      ]
+    },
+    "human": {
+      "clips": 8,
+      "frames": 34,
+      "cell": [
+        96,
+        96
+      ],
+      "pivot": [
+        48,
+        80
+      ]
+    },
+    "akio": {
+      "clips": 26,
+      "frames": 81,
+      "cell": [
+        192,
+        96
+      ],
+      "pivot": [
+        96,
+        80
+      ]
+    },
+    "daigo": {
+      "clips": 11,
+      "frames": 41,
+      "cell": [
+        192,
+        96
+      ],
+      "pivot": [
+        96,
+        80
+      ]
+    }
+  }
+}

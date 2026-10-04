@@ -20,3 +20,5 @@
 - Referências são direção, não fonte para extrair novamente poses finais. P0 + DOCX prevalecem sobre variante jovem/armadura/textos incompatíveis de Daigo.
 - Akio usa 56 px conforme AR02, distinto de Ren; 52 px das pranchas antigas é divergência documentada.
 - Pipeline assistida de imagem e processamento de grade/alfa/paleta explicitamente autorizados. Fontes geradas são versionadas; executar exportador é determinístico, gerar novamente não é.
+
+- Fechamento técnico: clipes de parry e derrota podem reagir visualmente sem mudar relógios de combate. Sons em 48 kHz PCM16, 28 efeitos e 11 loops originais; música permanece esboço TEMPORARY. A aprovação humana visual/auditiva não é inferida de testes.

@@ -6,6 +6,12 @@ var time := 0.0
 var last_elapsed := 0.0
 var last_facing := 1.0
 var turn_until := 0.0
+var parry_until := -1.0
+
+func confirm_parry(elapsed: float) -> void:
+	parry_until = elapsed+0.16
+	# Presentation only: do not restart the fighter's defense/counter clocks.
+	animation = ""
 
 func _init(kind: String) -> void:
 	var folder := "enemies/human_base" if kind == "human" else "characters/" + kind
@@ -28,6 +34,8 @@ func update(fighter) -> bool:
 		next = "guard"
 	elif next == "parry_window":
 		next = "guard_start"
+	if fighter.elapsed < parry_until and next in ["guard_start","guard","idle","walk"] and frames.has_animation("parry"):
+		next = "parry"
 	if fighter.kind == "daigo":
 		if next == "death": next = "defeat"
 		elif not fighter.attack.is_empty() and fighter.attack.type in ["retaliate", "counter"]: next = "counter"

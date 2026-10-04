@@ -57,6 +57,22 @@ func run() -> void:
 	check(player.production_visual.frames == akio, "Memory must use Akio's own drawings")
 	check(player.sprite.texture != preparation, "Akio response must reach its own contact pose")
 	check(player.sprite.position == Vector2(0,-32), "Akio feet pivot must remain fixed")
+	for memory in [false,true]:
+		main.world.load_zone(2 if memory else 1,memory)
+		main.world.locked = false
+		player = main.world.player
+		var foe = main.world.actors[0]
+		foe.position = player.position+Vector2(30,0)
+		player.facing = 1
+		player.set_state("parry_window")
+		player.state_time = 0.05
+		check(player.receive_hit(foe,10,10)=="parry","Real contact must parry")
+		player.update_visual()
+		check(player.production_visual.animation=="parry","Successful contact must animate the parry")
+		check(player.state=="parry_window","Visual response must not alter defense timing")
+		player.start_attack("counter")
+		player.update_visual()
+		check(player.production_visual.animation=="counter_attack","Counter presentation must take priority over parry reaction")
 	main.world.load_zone(4)
 	var boss = main.world.actors[0]
 	var daigo: SpriteFrames = boss.production_visual.frames

@@ -19,7 +19,13 @@
         948,
         1109,
         1254
-      ]
+      ],
+      "anchors": {
+        "20": [
+          80,
+          148
+        ]
+      }
     },
     "actions": {
       "file": "ren_actions_source.png",
@@ -311,6 +317,7 @@
     "Generated source motion row 8 contains empty cells 57-61: rejected, supplemented by new actions source.",
     "Light attacks 2 and 3 reuse/resequence reviewed key poses; dedicated inbetweens remain an artistic polish task.",
     "Shared 24-color export palette, binary alpha, feet-aligned cells. Sources retained at original resolution.",
-    "Movement shows sheathed sword as in reference sprint. Combat draws blade."
+    "Movement shows sheathed sword as in reference sprint. Combat draws blade.",
+    "Run pose motion:20 uses reviewed center-foot anchor (80,148): trailing foot alone previously pushed head beyond cell."
   ]
 }

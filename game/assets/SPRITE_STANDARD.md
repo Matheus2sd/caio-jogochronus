@@ -12,3 +12,5 @@
 - Critérios: arma legível sobre fundo claro/escuro, pivô estável, preparação/contato/recuperação distintos, continuidade de volume, contorno sem halos. COMPLETE técnico não equivale a aceite artístico final.
 
 - Akio/Daigo usam células 192×96 e pivô (96,80): os cortes extensos extrapolam 128 px quando ancorados pelos pés. A altura do corpo permanece 56/58 px; somente a margem transparente cresce. Extração por componentes preserva lâminas fora da grade.
+
+- Exports atuais de personagens usam paleta compartilhada de até 24 cores por personagem (o alvo 8–12 é artístico, não aprovação final). `validate_production_assets.py` verifica alfa binário, poses não vazias, margens e linha dos pés.

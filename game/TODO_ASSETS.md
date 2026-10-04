@@ -1,53 +1,19 @@
-# Produção artística pendente
+# Acabamento pendente — Production Pass
 
-Todos os recortes desta versão são TEMPORARY até limpeza e animação final.
+Os pacotes abaixo já foram reconstruídos, integrados e tecnicamente testados. Não repetir geração sem defeito demonstrado. **TEMPORARY** indica aceite artístico/sonoro pendente; fontes e manifests registram reusos.
 
-Validação visual em 2026-10-02: Ren aparece em cena e o fundo provisório agora cobre a tela acima do chão. A grade provisória de Progressão cabe em 640×360 e mantém legível o cartão E1 bloqueado. Ainda é necessário revisar contraste de Ren sobre cenários detalhados, leitura dos golpes, pose de Daigo derrotado mas vivo e escala dos elementos de HUD em uma partida completa.
+| Pacote | Estado | Pendência específica |
+|---|---|---|
+| Ren | TEMPORARY | Revisar fluidez dos combos 2/3 e ações que reutilizam poses; pivô de run quadro 4 corrigido por falha de margem |
+| Humano H1/H2 | TEMPORARY | Variante visual H2 e revisão humana da antecipação |
+| Akio | TEMPORARY | Interframes de salto/giro/interação e combos 2/3; corpo próprio de 56 px já integrado |
+| Daigo | TEMPORARY | Ritmo/peso em partida humana; 11 clipes próprios, derrota viva e lâminas inteiras já integrados. Push disponível como clip, sem mecânica nova |
+| Primavera/tiles/props | TEMPORARY | Variedade de superfícies e repetição da pedra, acabamento de costuras e transições entre materiais |
+| Parallax | TEMPORARY | Rever continuidade/composição em movimento por todas as zonas; camadas e cobertura já testadas |
+| VFX/Eco | TEMPORARY | Contraste de combate, partículas e entrada/saída em movimento; identidade espacial já integrada |
+| HUD/menus | TEMPORARY | Fonte final, legibilidade em telas físicas, estados de foco/gamepad; kit novo e navegação testados |
+| Efeitos/ambiência | TEMPORARY | Escuta em fones/caixas, materiais, fadiga e repetição dos loops; picos/mix/transições testados |
+| Música | TEMPORARY | Substituir esboços sintéticos por composição final adequada; sem material externo |
+| QA humana e plataformas | TODO | Partida início→fim, gamepad, acessibilidade, Linux/macOS; investigar warnings de saída |
 
-| Estado | Nome / sistema | Animações e frames aproximados | Tamanho | Referência / motivo |
-|---|---|---|---|---|
-| TODO | Ren jovem | idle 4, walk 6, run 8, jump_start/jump/fall/land 2 cada, dodge 6, turn 2 | corpo 52; célula 96×96 | Ren_Jovem; pranchas contêm poses isoladas |
-| TODO | Ren espada | draw/sheathe 4, leves 3×6, forte 8, guard/parry 3, counter 6 | 96×96/128×96 | mesma fonte; faltam interframes |
-| TODO | Ren reações | hurt 3, posture_break 4, heal 6, death 6, interact/echo_interact 4 | 96×96 | mesma fonte; poses reaproveitadas provisoriamente |
-| TODO | Akio jovem | movimento 6–8/ação; golpes 6; parry/counter 4–6; reações 3–6 | corpo 52; 96×96 | Akio folhas 01/02; preservar economia gestual |
-| TODO | Daigo | idle/guard 4, walk 6, cortes 6–8, hurt 3, derrota ajoelhada 6 | corpo 58; 96×96 | Daigo VISUAL; não usar morte ou fase sobrenatural |
-| TODO | H1/H2 | patrol 6, attack 6, guard/hurt 3, break/death 5 | corpo 48; 96×96 | humano base; H2 precisa variação visual final |
-| TODO | Tileset final | terra/grama/pedra/madeira/água, bordas e transições | 16×16 | tileset referência; recortes exigem costuras finais |
-| TODO | VFX final | slash/heavy/impact/parry/break/heal/eco 4–8 | 32–128 px | Eco e pranchas de combate; implementação procedural provisória |
-| TODO | UI final | barras/ícones/menus/diálogo | 640×360 | HUD referência; widgets nativos provisórios |
-| TODO | Cartões finais de Progressão | 4 cartões L1/L2/L3/E1; estados disponível/equipado/bloqueado, 1 quadro por estado | grade 2×2 em 640×360; cartão até 235×75 | UI/UX v0.1 e referência HUD; substituir estilo nativo provisório sem alterar nomes/efeitos oficiais |
-| TEMPORARY | Áudio | golpes, guarda, parry, cura, Eco; loops ambiente/música | WAV | síntese original; falta direção sonora final |
-
-## Production Pass
-
-A classificação e ordem atuais estão em ASSET_AUDIT.md e ASSET_REBUILD_PLAN.md. Recortar novamente as mesmas pranchas não satisfaz o rebuild. Novas fontes, exports, fichas e evidências devem acompanhar cada pacote.
-
-- Ren: substituido runtime por 26 clips novos, 66 keyposes; TODO interframes exclusivos dos leves 2/3 e revisao de fluidez. Fontes em tools/art_sources/ren.
-
-- Pacote humano: 8 clips/28 poses novas de chapeu de palha e manto; preparacao sustentada no windup real, guarda e queda proprias. Validador completo exit 0; H1/H2 compartilham a base, variacao final H2 permanece TODO.
-
-- Ambiente Presente: 9 props novos e 128 tiles originais 16x16 com TileSet Godot; solo/terra/madeira/pedra/vegetacao/agua/ponte/telhado. Geometria preservada. Regressoes e captura visual passaram (exit 0); revisao artistica final continua TODO.
-
-- Parallax: ceu + quatro camadas novas, fatores 0.12/0.28/0.48/0.72, repeticao espelhada sem blur, camera efetiva. Suite funcional passou; captura inicialmente detectou topo liso, corrigido elevando copa ao topo; reimportacao e capturas visual/producao passaram, imagem inspecionada.
-
-- VFX: seis efeitos exportados, seis estagios cada; camada propria em runtime, acionada por contato real, sem alterar hitboxes. Regressoes completas e captura Godot passaram; reducao de flashes respeitada.
-
-## Eco reconstruído
-
-Seis objetos e transição próprios substituem retângulos da memória. TODO: aprovação artística de contraste, densidade e fluidez das transições. Fonte, exportador e manifesto versionados. Akio ainda precisa de sua nova fonte integrada.
-
-## Akio — pacote integrado
-
-26 clipes/36 poses próprias em carvão, cinza e vermelho escuro, escala AR02 de 56 px. Resposta herdada segue o tempo real do combate. `validate_chapter1.ps1 -Visual` (agora inclui `production_visuals`) e captura Godot: exit 0; imagem inspecionada. COMPLETE técnico; TEMPORARY artístico: combos 2/3, salto, interação e giro reutilizam poses selecionadas da fonte, conforme manifesto. Próximo pacote: Daigo.
-
-## Daigo — pacote integrado
-
-11 clipes/36 poses novas do veterano P0, 58 px, derrota viva ajoelhada. Extração por componentes conectados evita cortar lâminas; aplicada também a Akio. Célula larga 192×96, pivô 96,80, sem alterar hitbox. Teste de derrota durante diálogo falhou antes da correção e passou depois; animação visual pode terminar com combate bloqueado. Suite completa -Visual: exit 0; reimportação, teste de apresentação e capturas após ajuste das lâminas: exit 0. COMPLETE técnico / TEMPORARY artístico. Push é apenas clipe disponível, não uma mecânica nova. Próximo: HUD/menus e áudio.
-
-## HUD e menus — pacote integrado
-
-Kit pixel original: molduras slate/dourado, barras separadas, ícones de bandagem/talismã/memória, HUD compacto e fundos do cenário novo. Widgets e navegação existentes preservados. Suite completa -Visual: exit 0; captura de menu, pausa, settings, morte, fim e HUD; menu_smoke repetido após acabamento: exit 0. COMPLETE técnico; TEMPORARY artístico, fonte final e revisão humana de legibilidade continuam TODO. Nenhuma barra de energia Eco nem habilidade extra foi adicionada. Próximo: áudio.
-
-## Áudio — pacote integrado
-
-28 efeitos originais + 11 loops estéreo de 16 s, PCM16/48 kHz; passos terra/madeira, movimento, combate, UI/cancelamento, Eco/Akio e Daigo. Ambientes/música por contexto com transição de volume e água somente na ponte. Pool de oito vozes e limiter no Master. `node tools/validate_audio.mjs`: 39 WAVs sem clipping, duração e emendas verificadas; passos/UI abaixo do combate. `audio_smoke` e suite completa -Visual: exit 0. `audio_capture.gd` gravou 641536 frames reais em 48 kHz, pico 0.2680, em `docs/audio/chapter1/runtime_mix_review.wav`. COMPLETE técnico; sons e música TEMPORARY, escuta em dispositivo e composição final TODO. Nenhum sample externo. Próximo: correção pontual do pivô de corrida de Ren, documentação consolidada e verificação de clone limpo.
+Sem dependência externa BLOCKED. Nenhum aceite final artístico ou auditivo foi presumido. Os assets antigos `TEMP_` continuam preservados como referência histórica; não são a fonte de arte final. Inventário baseline em `ASSET_AUDIT.md`, estado de execução em `ASSET_REBUILD_PLAN.md`.

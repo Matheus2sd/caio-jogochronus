@@ -62,9 +62,14 @@ func capture() -> void:
 	await save_shot("ren_run")
 	pose("light_attack_1",0.17)
 	await save_shot("ren_attack")
-	pose("parry",0.08)
-	main.world.on_feedback("parry",main.world.player.position+Vector2(24,-30))
+	main.world.spawn_enemy(main.world.player.position.x+34)
+	var parry_foe = main.world.actors[0]
+	parry_foe.set_physics_process(false)
+	pose("parry_window",0.05)
+	main.world.player.receive_hit(parry_foe,10,10)
+	main.world.player.update_visual()
 	await save_shot("parry")
+	stage(0)
 	pose("idle")
 	main.notice_time = 0
 	await save_shot("present_parallax_hud")

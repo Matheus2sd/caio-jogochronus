@@ -509,7 +509,7 @@ func reset_rebind() -> void:
 
 func show_credits() -> void:
 	var box := menu_box("CHRONUS", "Créditos desta versão",true)
-	var text := label("Conceito, personagens e direção: documentação oficial do projeto.\nArte: recortes das pranchas fornecidas pelo autor.\nImplementação e processamento: assistência de Codex.\nÁudio: síntese original provisória, sem samples externos.\nEngine: Godot, licença MIT. Fonte: padrão da engine.\n\nAnimações, UI e áudio permanecem em produção.",13)
+	var text := label("Conceito, personagens e direção: documentação oficial do projeto.\nArte: produção assistida baseada nas referências oficiais.\nImplementação e processamento: assistência de Codex.\nÁudio: síntese original provisória, sem samples externos.\nEngine: Godot, licença MIT. Fonte: padrão da engine.\n\nAnimações, UI e áudio permanecem em produção.",13)
 	box.add_child(text)
 	button(box,"Voltar",show_menu).grab_focus()
 

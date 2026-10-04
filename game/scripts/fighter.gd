@@ -70,8 +70,9 @@ func _ready() -> void:
 	sprite = Sprite2D.new()
 	production_visual = preload("res://scripts/fighter_visual.gd").new(kind)
 	var folder := "enemies/human_base" if kind == "human" else "characters/" + kind
-	sprite.texture = load("res://assets/" + folder + "/TEMP_poses.png")
-	sprite.hframes = 8
+	if production_visual.frames == null:
+		sprite.texture = load("res://assets/" + folder + "/TEMP_poses.png")
+		sprite.hframes = 8
 	sprite.position = Vector2(0, -32)
 	add_child(sprite)
 	if enemy:
@@ -329,6 +330,7 @@ func receive_hit(source, damage: float, pressure: float, heavy: bool = false, ru
 		return "immune"
 	var front: bool = (source.global_position.x - global_position.x) * facing >= -3
 	if front and state == "parry_window" and state_time <= active_parry_window():
+		production_visual.confirm_parry(elapsed)
 		counter_window = 0.35
 		posture = minf(max_posture, posture + 12)
 		if kind == "ren" and Save.has_upgrade("l2"):

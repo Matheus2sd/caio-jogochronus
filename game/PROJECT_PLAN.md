@@ -1,60 +1,22 @@
-# Plano do Capítulo I
+# Capítulo I — estado atual
 
-Estado verificado em 2026-10-02 no clone atual, com Godot 4.5.1 stable. COMPLETE significa execução e verificação sem erro crítico conhecido; não significa arte final nem uma partida humana completa.
+Production Pass, 2026-10-03. Branch `production-pass-chapter1`, sem merge em main. COMPLETE abaixo significa integração técnica verificada, não arte final nem partida humana.
 
-| Estado | Entrega | Evidência / próximo passo |
+| Estado | Entrega | Evidência |
 |---|---|---|
-| COMPLETE | Git e continuidade | `main` contém `2713870`; `git fetch origin` e divergência `0/0` com `origin/main` antes das mudanças desta sessão. |
-| COMPLETE | Importação e abertura | Godot 4.5.1 importa `game/project.godot`; a cena principal abre em modo headless e em janela OpenGL Compatibility. |
-| COMPLETE | Primeira milestone: menu e Ren controlável | `game/tests/chapter_smoke.gd` abre Novo jogo, encontra o sprite de Ren e verifica deslocamento; `game/tests/visual_capture.gd` captura a cena renderizada. |
-| COMPLETE | Combate básico e recursos em teste automatizado | Smoke verifica salto, esquiva, ataque com dano, guarda com gasto de stamina, parry, quebra de postura, cura e morte/respawn. |
-| COMPLETE | Lógica de percurso do Capítulo I em teste automatizado | `game/tests/chapter_flow.gd` verifica portões, inimigos, CP2, falha/recomeço no Eco, Akio, restauração de Ren, CP3, nova tentativa com Daigo sem repetir conversa, encerramento e marca única. O teste acelera deslocamento e derrota de inimigos; não substitui partida manual. |
-| COMPLETE | Travessia física automatizada | `game/tests/chapter_traversal.gd` percorre com movimento e salto reais todas as áreas de Ren e Akio, sem teleporte de posição; inimigos são derrotados programaticamente para isolar colisões e saídas. |
-| COMPLETE | Percurso integrado automatizado com combate | `game/tests/chapter_playthrough.gd` chega do Novo Jogo a `CAPÍTULO I — FIM` numa execução, usando ações de movimento, salto, ataque e interação; inimigos e Daigo caem por dano de espada, sem alteração direta de HP nem teleporte. Passou duas vezes; continua sendo um controlador de teste, não partida humana. |
-| COMPLETE | Pausa e remapeamento de teclado em teste automatizado | `game/tests/menu_smoke.gd` verifica pausa, configurações, botão de remapear, confirmação de troca, cancelamento, tecla livre, descarte ao sair, Escape com Pausa remapeada e retomada. |
-| COMPLETE | Progressão L1–L3 em ponto seguro | `game/tests/progression_smoke.gd` verifica cartões, aplicação/reembolso, efeitos de combate, consulta fora do descanso e bloqueio de E1. A marca do Capítulo I é obtida somente no fim; o teste injeta uma marca para exercer a troca antes do fim. `save_io.gd` verifica persistência em disco. |
-| TEMPORARY | Arte, UI e áudio | Recortes e síntese `TEMP_` funcionam, mas precisam de animação, integração visual, revisão de leitura e produção final. Ver `TODO_ASSETS.md`. |
-| TODO | Partida humana do começo ao fim | O percurso automatizado sem teleporte nem derrota programática passou. Jogar manualmente para revisar ritmo, colisões, acessibilidade, gamepad, áudio e legibilidade de todas as áreas. |
-| TODO | Menus e configurações completos | Há menu, pausa, Progressão, controles, configurações e equipamento de consulta. Cobertura completa das opções oficiais e remapeamento de gamepad ainda faltam. |
-| COMPLETE | Persistência em disco isolada | `game/tests/save_io.gd` gravou e leu campanha, checkpoint, backup, marca e configurações em `tools/local/profile` via `user://`; também validou conclusão repetida e migração de save v1 completo sem duplicar a marca. |
-| COMPLETE | Reimportação a partir de cópia limpa | `git archive` de `cadcfb4` sem `.godot/` foi extraído em `tools/local/`; o validador reimportou 25 recursos e passou smoke/fluxo/save. |
-| COMPLETE | Importação após clone limpo | Clones da URL oficial em `tools/local/`: no estado publicado `df551f5`, Godot reimportou 25 recursos e passou todo o validador, inclusive percurso contínuo e captura visual. |
-| TODO | Encerramento editorial e polimento | Revisar falas, gesto de Daigo sobrevivente, apresentação da marca e todos os assets finais antes de declarar o capítulo completo. |
+| COMPLETE | Novo Jogo, movimento, combate, parry, postura, morte/retry | Validador oficial, `chapter_smoke` |
+| COMPLETE | Eco/Akio, retorno a Ren, Daigo vivo e encerramento | `chapter_flow`, `chapter_traversal`, `chapter_playthrough` |
+| COMPLETE | Menus, remapeamento, progressão L1–L3/E1 bloqueada, save | `menu_smoke`, `progression_smoke`, `save_io` |
+| COMPLETE técnico / TEMPORARY artístico | Ren 26 clipes, humano 8, Akio 26, Daigo 11 | Fontes próprias, SpriteFrames, `production_visuals`, capturas reais |
+| COMPLETE técnico / TEMPORARY artístico | Primavera, 128 tiles, 9 props, 5 camadas parallax | TileSet e capturas em 640×360 |
+| COMPLETE técnico / TEMPORARY artístico | Seis VFX, arquitetura e transições Eco, HUD/menus | Runtime e capturas preservando o fluxo |
+| COMPLETE técnico / TEMPORARY sonoro | 28 efeitos + 11 loops de contexto | `audio_smoke`, 39 WAVs medidos, captura Master pico 0.2680 |
+| COMPLETE | Margens, alfa e pivôs dos sprites | `tools/validate_production_assets.py`; corrigido um pivô de corrida de Ren |
+| TODO | Verificação final a partir de cópia limpa do commit | Executar sem `.godot` e sem alteração local de `project.godot` |
+| TODO | Revisão humana visual/sonora e partida completa | Ver `TODO_ASSETS.md`; música não é composição final |
 
-Somente Capítulo I está em implementação. Não iniciar Capítulo II sem autorização.
+Regressão completa passou após cada pacote relevante com Godot 4.5.1. A última suite inclui importação, oito testes funcionais/de apresentação e áudio, mais captura de menu/início/progressão. `production_capture.gd` gera poses encenadas na Godot; `chapter_playthrough` percorre o capítulo por movimento e dano reais. Esses dois tipos de evidência não equivalem a uma partida humana.
 
-## Production Pass — 2026-10-03
+`game/project.godot` tem alteração local preexistente da Godot 4.6. Ela permanece preservada e fora dos commits de produção. Recursos e caminhos são portáveis; saves/configurações usam `user://`.
 
-- COMPLETE: auditoria de assets e baseline automatizado, com capturas; ver ASSET_AUDIT.md.
-- TODO: executar os 13 pacotes em ASSET_REBUILD_PLAN.md, mantendo testes por pacote.
-- TEMPORARY: apresentação atual; o estado funcional anterior não certifica arte final.
-
-- COMPLETE tecnico (Ren): 26 clips integrados, regressao e capturas passaram. TEMPORARY artistico: interframes de combo e revisao humana.
-
-- Pacote humano: 8 clips/28 poses novas de chapeu de palha e manto; preparacao sustentada no windup real, guarda e queda proprias. Validador completo exit 0; H1/H2 compartilham a base, variacao final H2 permanece TODO.
-
-- Ambiente Presente: 9 props novos e 128 tiles originais 16x16 com TileSet Godot; solo/terra/madeira/pedra/vegetacao/agua/ponte/telhado. Geometria preservada. Regressoes e captura visual passaram (exit 0); revisao artistica final continua TODO.
-
-- Parallax: ceu + quatro camadas novas, fatores 0.12/0.28/0.48/0.72, repeticao espelhada sem blur, camera efetiva. Suite funcional passou; captura inicialmente detectou topo liso, corrigido elevando copa ao topo; reimportacao e capturas visual/producao passaram, imagem inspecionada.
-
-- VFX: seis efeitos exportados, seis estagios cada; camada propria em runtime, acionada por contato real, sem alterar hitboxes. Regressoes completas e captura Godot passaram; reducao de flashes respeitada.
-
-## Production Pass — Eco
-
-COMPLETE técnico: pacote Eco integrado e regressão/capturas executadas com exit 0. TEMPORARY artístico: revisão em partida humana. Próximo: Akio, ainda usando TEMP_poses; depois Daigo, HUD/menus e áudio.
-
-## Akio — pacote integrado
-
-26 clipes/36 poses próprias em carvão, cinza e vermelho escuro, escala AR02 de 56 px. Resposta herdada segue o tempo real do combate. `validate_chapter1.ps1 -Visual` (agora inclui `production_visuals`) e captura Godot: exit 0; imagem inspecionada. COMPLETE técnico; TEMPORARY artístico: combos 2/3, salto, interação e giro reutilizam poses selecionadas da fonte, conforme manifesto. Próximo pacote: Daigo.
-
-## Daigo — pacote integrado
-
-11 clipes/36 poses novas do veterano P0, 58 px, derrota viva ajoelhada. Extração por componentes conectados evita cortar lâminas; aplicada também a Akio. Célula larga 192×96, pivô 96,80, sem alterar hitbox. Teste de derrota durante diálogo falhou antes da correção e passou depois; animação visual pode terminar com combate bloqueado. Suite completa -Visual: exit 0; reimportação, teste de apresentação e capturas após ajuste das lâminas: exit 0. COMPLETE técnico / TEMPORARY artístico. Push é apenas clipe disponível, não uma mecânica nova. Próximo: HUD/menus e áudio.
-
-## HUD e menus — pacote integrado
-
-Kit pixel original: molduras slate/dourado, barras separadas, ícones de bandagem/talismã/memória, HUD compacto e fundos do cenário novo. Widgets e navegação existentes preservados. Suite completa -Visual: exit 0; captura de menu, pausa, settings, morte, fim e HUD; menu_smoke repetido após acabamento: exit 0. COMPLETE técnico; TEMPORARY artístico, fonte final e revisão humana de legibilidade continuam TODO. Nenhuma barra de energia Eco nem habilidade extra foi adicionada. Próximo: áudio.
-
-## Áudio — pacote integrado
-
-28 efeitos originais + 11 loops estéreo de 16 s, PCM16/48 kHz; passos terra/madeira, movimento, combate, UI/cancelamento, Eco/Akio e Daigo. Ambientes/música por contexto com transição de volume e água somente na ponte. Pool de oito vozes e limiter no Master. `node tools/validate_audio.mjs`: 39 WAVs sem clipping, duração e emendas verificadas; passos/UI abaixo do combate. `audio_smoke` e suite completa -Visual: exit 0. `audio_capture.gd` gravou 641536 frames reais em 48 kHz, pico 0.2680, em `docs/audio/chapter1/runtime_mix_review.wav`. COMPLETE técnico; sons e música TEMPORARY, escuta em dispositivo e composição final TODO. Nenhum sample externo. Próximo: correção pontual do pivô de corrida de Ren, documentação consolidada e verificação de clone limpo.
+Avisos preexistentes de certificados no sandbox e ObjectDB/recursos ao sair continuam registrados. Não houve falha de importação ou dos testes executados. Nenhum Capítulo II implementado.

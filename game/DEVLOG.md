@@ -67,3 +67,9 @@ Kit pixel original: molduras slate/dourado, barras separadas, ícones de bandage
 ## Áudio — pacote integrado
 
 28 efeitos originais + 11 loops estéreo de 16 s, PCM16/48 kHz; passos terra/madeira, movimento, combate, UI/cancelamento, Eco/Akio e Daigo. Ambientes/música por contexto com transição de volume e água somente na ponte. Pool de oito vozes e limiter no Master. `node tools/validate_audio.mjs`: 39 WAVs sem clipping, duração e emendas verificadas; passos/UI abaixo do combate. `audio_smoke` e suite completa -Visual: exit 0. `audio_capture.gd` gravou 641536 frames reais em 48 kHz, pico 0.2680, em `docs/audio/chapter1/runtime_mix_review.wav`. COMPLETE técnico; sons e música TEMPORARY, escuta em dispositivo e composição final TODO. Nenhum sample externo. Próximo: correção pontual do pivô de corrida de Ren, documentação consolidada e verificação de clone limpo.
+
+## Integração final — revisão técnica
+
+Inspeção Git confirmou branch sincronizada em a2e34fa; mudanças locais de project.godot preservadas. Auditor de margem detectou cabeça cortada em run quadro 4 de Ren: âncora automática usava só o pé traseiro. Ajustada para (80,148) na fonte existente, sem gerar nova arte. Exportador, alfa/margens/pivôs, importação, production_visuals e capturas passaram. Carregamento de TEMP_poses agora só ocorre no fallback; os quatro personagens usam SpriteFrames próprios. README/portabilidade e tabelas de continuidade consolidados para eliminar estados antigos tratados como atuais. Revisão independente e verificação de cópia limpa em andamento.
+
+A revisão independente encontrou clipe parry não acionado pelo sucesso real: estado lógico permanecia parry_window e exibia guard_start. Teste com Ren/Akio falhou antes; após evento visual dedicado de 0,16 s, passou sem alterar janela/counter. Contra-ataque e dano têm prioridade. Captura passou a usar receive_hit real. Revisor confirmou a correção sem outro achado direto.

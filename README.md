@@ -15,9 +15,11 @@ Controles: A/D ou setas para mover; Ctrl para correr; Espaço para pular; Shift 
 - `docs/`: fontes oficiais e decisões complementares.
 - `assets_referencia/`: pranchas originais aprovadas, não spritesheets finais.
 - `game/`: projeto, cenas, scripts e assets de runtime.
-- `tools/`: extração reproduzível, geração de áudio temporário e validação.
+- `tools/`: exportação reproduzível de arte, síntese sonora e validação.
 
-Os recortes derivados usados em runtime são provisórios: preservam a aparência das pranchas, mas não substituem animação desenhada frame a frame. Consulte `game/ASSET_AUDIT.md` e `game/TODO_ASSETS.md`. Sons sintetizados são identificados por `TEMP_`.
+O production pass usa sprites novos de Ren, Akio, Daigo e humano-base, tileset/props, parallax em camadas, arquitetura Eco, VFX e kit de HUD/menus. Áudio original sintetizado: 28 efeitos e 11 loops por contexto. Integração técnica testada; arte, animação e música permanecem **TEMPORARY** até revisão humana. Fontes, fichas e exports estão versionados. Recursos `TEMP_` antigos são históricos, não a apresentação atual.
+
+Veja [plano atualizado](game/ASSET_REBUILD_PLAN.md), [pendências](game/TODO_ASSETS.md), [capturas Godot](docs/screenshots/chapter1/) e [mix de revisão](docs/audio/chapter1/README.md).
 
 Para continuar: leia `AGENTS.md`, documentos oficiais, `docs/DECISIONS.md` e o DEVLOG. Verifique `PORTABILITY.md` e execute os testes documentados antes de marcar tarefas como COMPLETE. Não ampliar para outros capítulos.
 

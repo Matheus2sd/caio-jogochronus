@@ -2,7 +2,21 @@
 
 Baseline: `4fa08a0`, branch `production-pass-chapter1`. Inspeção de todos os arquivos em `game/assets/`, código consumidor e 13 pranchas aprovadas. `tools/audit_assets.py` mede tamanho, alfa, cores, duração e SHA-256 sem editar originais.
 
-## Diagnóstico por pacote
+## Estado atual — 2026-10-03
+
+| Pacote | Classificação atual | Evidência |
+|---|---|---|
+| Ren / humano / Akio / Daigo | KEEP na integração; TEMP_ONLY para aceite final | 26/8/26/11 clipes próprios, testes e capturas; corpo 52/48/56/58 px |
+| Tiles / props / parallax | KEEP na integração; TEMP_ONLY artístico | 128 tiles, 9 props, cinco camadas, TileSet e runtime |
+| VFX / Eco | KEEP na integração; TEMP_ONLY artístico | Seis efeitos + seis objetos de memória, transições e captura |
+| HUD / menus | KEEP na integração; TEMP_ONLY artístico | Kit próprio, barras/ícones, navegação preservada e testada |
+| Áudio | REPLACE realizado; TEMP_ONLY sonoro | 28 efeitos + 11 loops originais; 39 WAVs medidos, mix real capturado |
+| Recursos antigos TEMP_ | TEMP_ONLY histórico | Preservados; não regenerar como produção atual |
+| Fonte UI/composição musical/variante H2 | TODO de acabamento | Não BLOCKED; revisão humana e produção final ainda pendentes |
+
+Todo o restante deste documento é o histórico da auditoria e milestones; descrições de recortes/tint/retângulos referem-se ao momento registrado, não ao runtime atual.
+
+## Diagnóstico do baseline por pacote
 
 | Pacote | Classificação | Evidência e ação |
 |---|---|---|
